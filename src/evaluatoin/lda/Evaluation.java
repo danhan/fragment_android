@@ -31,29 +31,35 @@ public class Evaluation {
 	
 	
 	public static void main(String args[]){
-		Evaluation evalue = new Evaluation("htc");
+		String vendor = "htc";
+		String home = "./data/"+vendor+"/";
+		Evaluation evalue = new Evaluation(vendor);
 		XMatrix regular = evalue.getDistribution4R();
-		evalue.serializeMatrix(regular,"./data/output.csv");
+		evalue.serializeMatrix(regular,home+"matrix-regular.csv");
+		XMatrix label = evalue.getDistribution4L();		
+		evalue.serializeMatrix(label,home+"matrix-label.csv");		
+		XMatrix similarity = evalue.JaccardSimilarity(regular,label,0.2);
+		evalue.serializeMatrix(similarity,home+"matrix-similarity.csv");
 	}
 	
 	/*
-	 * Calculate Jaccard simularity of topics from regular LDA and Labelled LDA with a threshold
+	 * Calculate Jaccard similarity of topics from regular LDA and Labelled LDA with a threshold
 	 * input: regular distribution matrix(topics*bugs), label distribution matrix(topics*bugs)
 	 * output: matrix (regular_topics, label_topics)  
 	 */
-	public XMatrix JaccardSimularity (XMatrix r_topic_distr,XMatrix l_topic_distr,double threshold){
-		XMatrix simularity = new XMatrix(r_topic_distr.getM(),l_topic_distr.getM());
+	public XMatrix JaccardSimilarity (XMatrix r_topic_distr,XMatrix l_topic_distr,double threshold){
+		XMatrix similarity = new XMatrix(r_topic_distr.getM(),l_topic_distr.getM());
 		try{
 			for(int r=0;r<r_topic_distr.getM();r++){
 				for(int l=0;l<l_topic_distr.getM();l++){
-					simularity.setData(r, l, makeJaccard(r_topic_distr.getRow(r),l_topic_distr.getRow(l),threshold));		
+					similarity.setData(r, l, makeJaccard(r_topic_distr.getRow(r),l_topic_distr.getRow(l),threshold));		
 				}
 			}							
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 		
-		return simularity;		
+		return similarity;		
 	}
 	
 	/*
@@ -71,14 +77,17 @@ public class Evaluation {
 			}
 						
 			for(int j=0;j<l_distribution.length;j++){
-				if(r_distribution[j]>=threshold)
+				if(l_distribution[j]>=threshold)
 					labeled.add(j);
 			}
+			//System.out.println(regular);
 			int intersection = regular.size();
 			regular.removeAll(labeled);
 			intersection -= regular.size();
 			regular.addAll(labeled);
 			int union = regular.size();
+			
+			System.out.println(intersection+"/"+union);
 			
 			return (intersection * 1.0)/ (union * 1.0);
 			
@@ -164,6 +173,7 @@ public class Evaluation {
 	private XMatrix getDistribution4L(){
 		
 		XMatrix matrix = new XMatrix(this.label_lda_topics.size(),this.num_of_bugs);
+		System.out.println("label matrix : "+matrix.getM()+";"+matrix.getN());
 		BufferedReader br = null;
 		try{
 			br = new BufferedReader(new FileReader(this.home+Constant.LABEL_DISTRIBUTION_FILE));
@@ -171,13 +181,14 @@ public class Evaluation {
 			int bugs = 0;
 			while(line != null){
 				line = line.trim();
-				String[] metrics = line.split(",");
+				String[] metrics = line.split(",");				
 				//1,3,5,7
-				for(int i=1;i<=(metrics.length-1)/2;i+=2){
+				for(int i=1;i<metrics.length;i+=2){
 					int topic_index = Integer.parseInt(metrics[i]);
 					double value = Double.parseDouble(metrics[i+1]);
-					matrix.setData(bugs,topic_index,value);
-					}					
+					System.out.println(topic_index+";"+bugs+"=>"+value);
+					matrix.setData(topic_index,bugs,value);
+				}					
 				line = br.readLine();
 				bugs++;
 			}
