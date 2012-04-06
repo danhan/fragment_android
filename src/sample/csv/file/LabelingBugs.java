@@ -7,24 +7,26 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 
+/*
+ * @deprecated
+ * 
+ */
 public class LabelingBugs {	
 	
 	protected ArrayList<String> regular_topics = null;
 	protected ArrayList<String> labelled_topics = null;
 	protected ArrayList<String> union_topics = null;
-	private double[] cases = null;
+	private double[] cases = null; // find the better threshold for finding the main distributions
 	
 	protected String homeFolder = "";	
 	protected static String R_TOPIC_FILE_NAME = "regular-topics.csv";
 	protected static String L_TOPIC_FILE_NAME = "label-topics.csv";
 	protected static String R_DISTRIBUTE_TOPIC_FILE_NAME = "regular-topic-distribute.csv";
 	protected static String L_BUG_TOPIC_ENTIRE_NAME = "label-bug-topic-entire.csv";
-	protected static String R_BUG_TOPIC_FILE_NAME = "i-regular-bug_topic.csv";
+	protected static String R_BUG_TOPIC_FILE_NAME = "i-regular-bug-topic.csv";
 	protected static String L_BUG_TOPIC_FILE_NAME = "i-label-bug-topic.csv";
 	protected static String O_BUG_TOPIC_FILE_NAME = "o-merged-bug-topic.csv";
 	protected static String O_FALSE_POSITIVE_FILE_NAME = "o-false-positive.csv";
@@ -69,6 +71,7 @@ public class LabelingBugs {
 
 	
 	/*
+	 * @deprecated
 	 * add label for all bugs in the input file
 	 * entire: true, the output file includes all items from  original file; false, the output file only contains the bug and topics
 	 */
@@ -147,10 +150,11 @@ public class LabelingBugs {
 	}
 	
 	/*
+	 * @deprecated
 	 * get neat bug topic for labelled LDA
 	 * left file is Label-LDA file, right file is regular LDA file
 	 */
-	public void preprocess4LabelledLDA(boolean entire){
+	public void preprocess4LabelledLDA(boolean entire,char delimiter){
 		BufferedReader br = null;
 		BufferedWriter bw = null;
 		String inFile = this.homeFolder + "/"+ L_BUG_TOPIC_ENTIRE_NAME;
@@ -166,7 +170,7 @@ public class LabelingBugs {
 			while(line != null){
 				String[] metrics = line.split(",");
 				String bugId = metrics[0];
-				String labels = metrics[1].replace(' ','#');				
+				String labels = metrics[1].replace(delimiter,'#');				
 				
 				bw.write(bugId+","+labels);
 				if(entire){
@@ -192,7 +196,32 @@ public class LabelingBugs {
 		}				
 	}
 	
-	public void getJaccard(int num_of_case){
+	private ArrayList<String> toArrayList(String[] str){
+		ArrayList<String> output = new ArrayList<String>();
+		try{
+			if(str!=null){				
+				for(int i=0;i<str.length;i++){					
+					String tmp = str[i].trim();
+					if(tmp.length()==0)
+						continue;
+					output.add(str[i]);
+				}
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return output;
+	}
+	
+	
+	/*
+	 * @deprecated
+	 * get the jaccard value by each bug
+	 * A is the set of topics from regular LDA for this bug
+	 * B is the set of topics from labelled LDA for this bug
+	 */
+	public void getJaccard(int num_of_case,char delimiter){
 		String[] inFiles = new String[]{			
 			this.homeFolder + "/"+ L_BUG_TOPIC_FILE_NAME,
 			this.homeFolder + "/"+ R_BUG_TOPIC_FILE_NAME
@@ -222,7 +251,7 @@ public class LabelingBugs {
 			while(left != null){
 				String[] left_metrics = left.split(",");
 				String left_bugId = left_metrics[0];
-				String left_labels = left_metrics[1].replace(' ', '#');
+				String left_labels = left_metrics[1].replace(delimiter, '#');
 				// write the labelled lda into the file
 				bw.write(left_bugId+","+left_labels);
 				// statistics of bug numbers
@@ -249,6 +278,8 @@ public class LabelingBugs {
 				if(left_bugId.equals(right_bugId)){					
 					bw.write("\n");				
 					bw.flush();					
+				}else{
+					System.err.println("left bug is not equal to right bug: "+left_bugId+";"+right_bugId);
 				}
 			
 				left = br1.readLine();
@@ -286,10 +317,11 @@ public class LabelingBugs {
 	
 	
 	/*
+	 * @deprecated
 	 * caculate JACCA the intersection of A and B divide the union of A and B
 	 * left_labels: the string with the demiliter "#"
 	 */
-	public double jaccard(String left_labels,String right_labels){		
+	private double jaccard(String left_labels,String right_labels){		
 		try{
 			if(left_labels == null && right_labels == null)
 				throw new Exception("The input label has problems!");
@@ -312,28 +344,13 @@ public class LabelingBugs {
 		return -1;
 		
 	}
-	
-	private ArrayList<String> toArrayList(String[] str){
-		ArrayList<String> output = new ArrayList<String>();
-		try{
-			if(str!=null){				
-				for(int i=0;i<str.length;i++){					
-					String tmp = str[i].trim();
-					if(tmp.length()==0)
-						continue;
-					output.add(str[i]);
-				}
-			}
-			
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		return output;
-	}
+
 	
 	/*
+	 * @deprecated
 	 * categorize bugs by topics
 	 * the input file is o-merged-bug-topics.csv
+	 * out put file is the false positive and true positive
 	 */
 	public void categorizeBugsByTopics(int num_of_case){
 		
@@ -450,11 +467,12 @@ public class LabelingBugs {
 	
 	
 	/*
+	 *  @deprecated
 	 * get the false positive for regular LDA
 	 * false positive: by topics from label LDA, and cacluate all the bugs including this topics in regular LDA,
 	 * formula: not bugs in this topics/ all bugs predicted 
 	 */
-	public double[] falsePositive(String[] regular,String[] label){
+	private double[] falsePositive(String[] regular,String[] label){
 		ArrayList<String> regular_bugs = null;
 		ArrayList<String> labeled_bugs = null;		
 		try{
