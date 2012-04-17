@@ -1,3 +1,14 @@
+===============Folder Description============
+1 Paper_Latex
+   The source file of paper in Latex
+
+2 archive
+   All the data from LDA and Labeled LDA, and the data for ploting
+
+3 /src, /bin , /data
+  They are for source code.
+
+
 
 =================Describe the Archive folder==============================
 
