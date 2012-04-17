@@ -1,0 +1,21 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [1][-]{section.2}{Background}{}
+\BOOKMARK [1][-]{section.3}{Related Work}{}
+\BOOKMARK [1][-]{section.4}{Methodology}{}
+\BOOKMARK [2][-]{subsection.4.1}{Generating the data}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{Multi-labeling}{section.4}
+\BOOKMARK [2][-]{subsection.4.3}{Applying Labeled LDA}{section.4}
+\BOOKMARK [2][-]{subsection.4.4}{Applying LDA}{section.4}
+\BOOKMARK [2][-]{subsection.4.5}{LDA vs. Labeled LDA}{section.4}
+\BOOKMARK [1][-]{section.5}{Performance of LDA and Labeled LDA}{}
+\BOOKMARK [1][-]{section.6}{Topic Mining and Analysis}{}
+\BOOKMARK [2][-]{subsection.6.1}{Overview of bug reports in HTC and Motorola}{section.6}
+\BOOKMARK [2][-]{subsection.6.2}{Topics Analysis of HTC and Motorola}{section.6}
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Common Troubled Topic}{subsection.6.2}
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Common Improved Topic}{subsection.6.2}
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Unique Topics}{subsection.6.2}
+\BOOKMARK [1][-]{section.7}{Discussion}{}
+\BOOKMARK [2][-]{subsection.7.1}{Does Android have fragmentation issues?}{section.7}
+\BOOKMARK [2][-]{subsection.7.2}{Who can benefit from the Topic analysis?}{section.7}
+\BOOKMARK [1][-]{section.8}{Threats to validity}{}
+\BOOKMARK [1][-]{section.9}{Conclusion and Future Work}{}
