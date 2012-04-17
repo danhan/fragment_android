@@ -17,7 +17,9 @@ public class HTCLabeling extends LabelingBugs{
 		htc.AddLabels4Regular(35,cases,false);
 		htc.preprocess4LabelledLDA(false,' ');
 		htc.getJaccard(cases.length,';');
-		htc.categorizeBugsByTopics(cases.length);
+		
+		
+		//htc.categorizeBugsByTopics(cases.length);
 	}
 
 }
