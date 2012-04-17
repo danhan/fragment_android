@@ -10,6 +10,7 @@ Doc
 
     ----bug-num-over-time.xlsx (data for ploting the bugs over time in Topic Mining and Analysis)
     ----topic_relevance_analysis.xlsx (data for ploting the topic relevance in Topic Mining and Analysis)
+    ----similarity_comparison_of_LDA_Labeled_LDA.xlsx (data for ploting the similarity of regular LDA and Labeled LDA for both vendors)
 
 0 HTC.csv/moto.csv
   They contains all bugs and the labels manually put on. 
