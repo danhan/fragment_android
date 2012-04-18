@@ -523,8 +523,8 @@ Then we selected bug reports that identified themselves as being
 relevant to HTC or Motorola through a mention of the words HTC or
 Motorola in the title text, description text of the bug report.  
 We used regular expressions to extract these relevant bug reports (e.g.,
-'\texttt{\%[^0-9a-z]HTC[^0-9a-z]\%}' and
-'\texttt{\%[^0-9a-z]motorola[^0-9a-z]\%}').
+'\texttt{[\^0-9a-z]HTC[\^0-9a-z]}' and
+'\texttt{[\^0-9a-z]motorola[\^0-9a-z]}').
 % Using regexes, we extract bug reports highly related to
 % Android phones of HTC and Motorola respectively. 
 % We use the title,
@@ -1149,7 +1149,7 @@ For the future work, we will plan to investigate more vendors in order to reveal
 
 % Better way for balancing the last page:
 
-\balance
+%\balance
 
 % references section
 
@@ -1171,18 +1171,9 @@ For the future work, we will plan to investigate more vendors in order to reveal
 \small
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,msrreference}
-
-
-%\bibitem{IEEEhowto:kopka}
-%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
-%\end{thebibliography}
+%\bibliography{msrreference}
 
 
 
 
-% that's all folks
 \end{document}
-
-
