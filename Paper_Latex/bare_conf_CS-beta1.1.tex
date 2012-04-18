@@ -500,18 +500,33 @@ the average relevance of bug reports to each label over
 time\cite{Hindle} and compare them between two Android vendors, HTC
 and Motorola.
 
-\subsection{Generating the data}2
+\subsection{Generating the data}
 
-We use the Android bug reports provided by the MSR Mining Challenge
-\cite{MSRChallenge2012}and store all the XML data into a SQL
+% 1. Extract data: We converted the XML dump of bug reports into SQL
+% database. We extracted all the bug reports of HTC and Motorola from
+% the SQL database using regular expressions,
+% e.g. '%[^0-9a-z]HTC[^0-9a-z]%' and '%[^0-9a-z]motorola[^0-9a-z]%'. We
+% also removed the declined and duplicated bug reports.
+
+We use the Android bug reports provided by the MSR Mining
+Challenge~\cite{MSRChallenge2012}
+and parse store the bug reports, described as XML data, into a
+database using SQL
 Server. 
-Using regexes, we extract bug reports highly related to
-Android phones of HTC and Motorola respectively. 
-We use the title,
-opened date and description in each bug report. 
-After removing all the
-declined and duplicate bug reports, we have 1503 HTC bug reports and
-1058 Motorola bug reports.
+
+Then we selected bug reports that identified themselves as being
+relevant to HTC or Motorola through a mention of the words HTC or
+Motorola in the title text, description text of the bug report.  We
+used regular expressions to extract these relevant bug reports (e.g.,
+'\texttt{\%[^0-9a-z]HTC[^0-9a-z]\%}' and
+'\texttt{\%[^0-9a-z]motorola[^0-9a-z]\%}').
+% Using regexes, we extract bug reports highly related to
+% Android phones of HTC and Motorola respectively. 
+% We use the title,
+% opened date and description in each bug report. 
+% XXX: What does declined mean
+We then removed all the declined and duplicate bug reports, leaving us
+with 1503 HTC bug reports and 1058 Motorola bug reports.
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
