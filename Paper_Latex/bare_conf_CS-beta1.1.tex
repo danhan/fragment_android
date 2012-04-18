@@ -365,7 +365,7 @@
 \IEEEauthorblockA{Department of Computing Science\\
 University of Alberta \\
 Edmonton, Canada\\
-\{dhan3, chenlei1, xf2, hindle1, kenw, stroulia\}@cs.ualberta.ca}
+\{dhan3, chenlei1, xf2, hindle1, kenw, stroulia\}@ualberta.ca}
 
 }
 
@@ -428,30 +428,20 @@ Bug reports; Topic mining; Labeled LDA
 
 \section{Introduction}
 % no \IEEEPARstart
-The market share of mobile phones is always increasing and getting more and more competitive among various mobile device vendors\footnote{\url{http://asymco.com/2011/11/17/the-global-smartphone-market-landscape}}. iPhone and Android phone share the majority of mobile device market. Compared to Apple’s closed ecosystem for iOS, Android system has many fragmentation. These fragmentation highlights include Android five major versions, diverse customized Android versions and various Android mobile devices provided by different device vendors \cite{androidfragmentation}.
 
-Android fragmentation has been a controversial topic which swells up now and again. Some people argue that there should be many issues about the fragmentation on Android platform. They hold the point that there are too many existing Android versions, various Android mobile devices running these versions and too many branches from multiple vendors \cite{androidfragmentation}\cite{timetoendfragmentation}. On the other hand, there is an opposite viewpoint that there is no issues about fragmentation in Android community, only differentiation \cite{androidcompatibility}. However, both proponents and opponents cannot provide strong evidences to support their statements.
+The market share of mobile phones is always increasing and getting more and more competitive among various mobile model vendors\footnote{\url{http://asymco.com/2011/11/17/the-global-smartphone-market-landscape}}. iPhone and Android phone share almost 70\% of US mobile phone market \cite{usmarket}. Compared to Apple’s closed ecosystem for iOS, in general, Android has both software fragmentation and hardware fragmentation\cite{analysis}. Android Software fragmentation includes (1) Customized device-specific Android and UI-specific Android from vendors (2) Customized carrier-specific  Android from vendors. Hardware fragmentation means that at any given point in time, devices based on the same Android are running on different types of hardware, related to Processors, Graphics Processors, screen size  and so on \cite{analysis}.  These fragmentation leads to the additional testing work for Android application across multiple devices; it causes Android users are left out of some new feature because of the low upgrade, and it also makes someone lose confidence in Android.  
 
-In order to make this debate more clear, we will explore the bug topics for different vendors from Android bug reports using Labeled LDA [1]. We choose the bug reports of HTC and Motorola in this study. HTC’s first Android phone was the HTC Dream manufactured in Oct. 2008. HTC has made more than thirty different Android phones since then. Motorola made their first Android phone in Oct. 2009 and has released more than twenty different Android phones since then . Their Android products have gained widespread popularity. 
+Android fragmentation has been a controversial topic which swells up now and again regrading its provenance and its impacts.  However, no one can provide strong evidences to support their statements. Someone from industry performed experiments of Android on different devices and found that the root cause of fragmentation is the classical software engineering issues\cite{testing}.
 
-In this study, our goal is to investigate the topics in bug reports related to the two Android vendors, HTC and Motorola, with the purpose of understanding how their bug topics evolve over time.  We utilize the Labeled LDA, a novel technique in software engineering, to build the topic models and analyze the topic evolution models\cite{Thomas:2010} of bug reports in HTC and Motorola. Researchers have applied LDA and other topic models to a lot of software projects\cite{Marcus04aninformation}\cite{Asuncion:2010}\cite{Linstead:2009}\cite{Thomas:2011}. We will also apply LDA on our data and try to evaluate the performance between LDA and Labeled LDA.
-
-This paper makes the following contributions:
-
+In our study, we want to explore this problem by mining and analyzing Android user bug reports. We applied Labeled LDA\cite{labeledlda}. on bug reports of different vendors to analyze the bug topics. We then did the analysis on the bug topics and based on the topics analysis, and we discussed what features of Android contributed much on Android fragmentation in the end. In terms of bug reports,   We chose the bug reports of HTC and Motorola in this study. HTC’s first Android phone was the HTC Dream manufactured in Oct. 2008. HTC has made more than thirty different Android phones since then. Motorola made their first Android phone in Oct. 2009 and has released more than twenty different Android phones since then. Their Android products have gained widespread popularity.  
+ 
+This paper makes the following contribution:
 \begin{itemize}
-\item We introduce the Labeled LDA to build topic models.
+\item we found that some features of Android contribute software fragmentation and some features contribute hardware fragmentation.
 \end{itemize}
 
 \begin{itemize}
-\item We empirically compare the performance of LDA and Labeled LDA on the bug reports of HTC and Motorola.
-\end{itemize}
-
-\begin{itemize}
-\item We analyze the topic evolution models in Android platform for HTC and Motorola by mining their bug reports.
-\end{itemize}
-
-\begin{itemize}
-\item Our findings support that Android community does have fragmentation issues.
+\item We provided a methodology which can be used to analyze other Android branches fragmentation issues to discover more hardware fragmentation. 
 \end{itemize}
 
 The paper is organized as follows: Section 2 describes the background; we discuss the related work in section 3; in section 4, we explicate our methodology about the mining approaches applied on this study; section 5 is to compare and evaluate the topic models generated by LDA and Labeled LDA; we introduce the analysis of topic evolution models in section 6; the paper concludes with a discussion of two research questions, threats to validity, conclusion and future work in section 7, 8 and 9 correspondingly. 
