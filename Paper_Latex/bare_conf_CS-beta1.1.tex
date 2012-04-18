@@ -644,29 +644,33 @@ consistent interpretation of the bug reports and their labels.
 % bug when labeling. 
 % Then we come up with the same labeling rules to process the data. 
 
+\subsection{Labelling the HTC and Motorola Bug Reports}
+
 Once the labelling rules were agreed upon each author (Zhang and Fan)
-seperately labeled HTC and Motorola bugs.
+seperately labeled HTC and Motorola bug reports, taking over 60 man
+hours of manual labelling effort.
 %After this, we tag the rest of bug reports separately for both HTC and
 %Motorola. 
-When there is a bug report that cannot be tagged by the labels we
-already have, we would create a new label together based on our
-definition of labels, i.e. the functionalities and applications on an
-Android mobile phone or the components of the handsets. 
-For example, the label ``calculator'' is created by this way. 
-At first we could not expect this basic application on mobile phones
-would have bugs. 
-However, there are several bugs that complained the correctness of the
+Using the previous methodology, labels were created as necessary.
+%When there is a bug report that cannot be tagged by the labels we
+%already have, we would create a new label together based on our
+%definition of labels, i.e. the functionalities and applications on an
+%Android mobile phone or the components of the handsets. 
+For example, the label ``calculator'' was created in order to label
+bug reports that occurred later that were relevant to this feature as
+were several bug reports regarding the correctness of the
 calculator's results. 
-So we added it to our labels. 
-The manual labeling took approximately 30 hours per person. 
-In the end, for HTC and Motorola there are 199 and 73 bug reports that
-cannot be labeled respectively. 
-We have tagged 1304 HTC and 985 Motorola bug reports, each with
-multiple labels. 
-In total, there are 72 labels for HTC and 57 labels for Motorola. 
+% So we added it to our labels. 
+%The manual labelling took approximately 30 hours per person. 
+
+
+1304 HTC and 985 Motorola bug reports were labelled with multiple
+labels, leaving 199 and 73 bug reports that cannot be clearly labeled.
+In total, there are 72 labels for HTC and 57 labels for Motorola.
 Table \ref{selected1} selects Manual labels from bug reports of HTC
-and Motorola. 
-There are at least 20 bug reports are assigned to these labels.
+and Motorola.  
+There are at least 20 bug reports are assigned to these
+labels.
 
 \subsection{Applying Labeled LDA}
 To apply Labeled LDA we preprocessed the labeled bug reports. We convert the title and description of each bug report to lowercase and remove stop words (words that are less than 3 characters and common English stop words such as ``all'', ``about'', ``the'', ``that'' and ``were'' ).
