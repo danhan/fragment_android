@@ -508,6 +508,11 @@ and Motorola.
 % e.g. '%[^0-9a-z]HTC[^0-9a-z]%' and '%[^0-9a-z]motorola[^0-9a-z]%'. We
 % also removed the declined and duplicated bug reports.
 
+% XXX: Make sure that the reason behind HTC and Motorola were already
+% made clear by this point
+
+Our first step was to extract the Android bug reports and then find
+those bug reports relevant to HTC and Motorola
 We use the Android bug reports provided by the MSR Mining
 Challenge~\cite{MSRChallenge2012}
 and parse store the bug reports, described as XML data, into a
@@ -516,8 +521,8 @@ Server.
 
 Then we selected bug reports that identified themselves as being
 relevant to HTC or Motorola through a mention of the words HTC or
-Motorola in the title text, description text of the bug report.  We
-used regular expressions to extract these relevant bug reports (e.g.,
+Motorola in the title text, description text of the bug report.  
+We used regular expressions to extract these relevant bug reports (e.g.,
 '\texttt{\%[^0-9a-z]HTC[^0-9a-z]\%}' and
 '\texttt{\%[^0-9a-z]motorola[^0-9a-z]\%}').
 % Using regexes, we extract bug reports highly related to
@@ -553,11 +558,115 @@ Motorola & app email audio browser display contact upgrade screen\\
 \end{table}
 
 
-\subsection{Multi-labeling}
-We manually tag bugs with multiple labels. The labels are defined as the functionalities 
-and applications on an Android mobile phone, such as SMS/MMS, browser and Wi-Fi or the components of the handsets mentioned in the bug reports, such as GPS, screen and keyboard. Most of the labels about functionalities and applications are based on the detailed introduction to the features, specifications and applications of Android operating system\footnote{\url{http://en.wikipedia.org/wiki/Android_operating_system}}. The labels about components of the handsets are mostly extracted from the description of comparison of Android devices\footnote{\url{http://en.wikipedia.org/wiki/Comparison_of_Android_devices}}.
+\subsection{Research Features as Potential Labels}
 
-First, two of us (Zhang and Fan) separately tag the HTC 248 bug reports in 2009 with the multiple labels. Then we train each author’s labeled data with STMT. By comparing each set of trained topics in the results and returning to the bug reports, we check to ensure the same interpretation of each bug when labeling. Then we come up with the same labeling rules to process the data. After this, we tag the rest of bug reports separately for both HTC and Motorola. When there is a bug report that cannot be tagged by the labels we already have, we would create a new label together based on our definition of labels, i.e. the functionalities and applications on an Android mobile phone or the components of the handsets. For example, the label ``calculator'' is created by this way. At first we could not expect this basic application on mobile phones would have bugs. However, there are several bugs that complained the correctness of the calculator's results. So we added it to our labels. The manual labeling took approximately 30 hours per person. In the end, for HTC and Motorola there are 199 and 73 bug reports that cannot be labeled respectively. We have tagged 1304 HTC and 985 Motorola bug reports, each with multiple labels. In total, there are 72 labels for HTC and 57 labels for Motorola. Table \ref{selected1} selects Manual labels from bug reports of HTC and Motorola. There are at least 20 bug reports are assigned to these labels.
+% 2. Where are the labels coming from: Before labeling all the bug
+% reports, we studied the Android operating system to get the features
+% of Android phones
+% [http://en.wikipedia.org/wiki/Android_operating_system] and popular
+% applications in Android Market
+% [https://play.google.com/store/apps]. We also studied the hardware
+% components of HTC and Motorola
+% [http://en.wikipedia.org/wiki/Comparison_of_Android_devices]. The
+% labels are based on these three aspects of Android phones.
+
+In order to investigate fragmentation from a feature-oriented
+perspective we decided we were going to label the bug reports by
+relevant features in order to look for feature-relevant bug reports
+for each manufacturer.
+To help seed the possible feature-oriented labels we 
+studied summary texts about the Android Operating
+System~\footnote{Android Operating System summary:
+\url{http://en.wikipedia.org/wiki/Android_operating_system} (retrieved
+March, 2012)}, 
+popular apps within the Android Market~\footnote{Android Market:
+  \url{https://play.google.com/store/apps} (retrieved March, 2012)}.
+As well we studied hardware comparisons of the popular Android handsets of 
+ of HTC and Motorola~\footnote{Android Comparison:
+  \url{http://en.wikipedia.org/wiki/Comparison_of_Android_devices}
+  (retrieved March, 2012)}.
+
+\subsection{Developing Labels}
+%Multi-labeling}
+
+
+Once we became familiar with the Android operating system and Android
+ecosystem we needed to agree and train ourselves to consistently label
+Android bug reports to study vendor relevant fragmentation of bug reports.
+
+% 3. Label the bug reports: Zhang and Fan labeled 248 HTC bug reports in
+% 2009 separately and then compared the results by each bug to ensure
+% the same interpretation of the labels from last step. Then Zhang and
+% Fan labeled the rest of the bug reports separately.
+
+%XXX we need a cite
+Following a grounded theory-like coding approach, similar to the
+approach taken in by Hindle et al.~\cite{Hindle2011}, authors Zhang
+and Fan selected a set of HTC 248 bug reports to label
+separately. 
+
+To label a bug report, the annotator (Zhang or Fan) reads the bug
+report text, both the title and the description, and  then based on their
+personal interpretation they related that bug report to the relevant
+features. This means that one bug report can receive multiple labels
+if it is relevant to multiple identified features. Labels were created
+as necessary, if a label regarding a feature did not already exist, it
+was created.
+These labels 
+consisted of the features and applications on an Android mobile
+phone, such as SMS/MMS, browser and Wi-Fi or the components of the
+handsets mentioned in the bug reports, such as GPS, screen and
+keyboard.
+
+
+To ensure consistency and agreement in labelling the authors executed a training
+methodology. This methodology also ensured a synchronization of labels.
+Each author, Zhang and Fan, separately labelled each of these 248 bug reports, 
+with labels inspired by the previous research on Android
+features. 
+After Zhang and Fan labelled these 248 bug reports seperately, the
+labels were compared and the authors discussed label agreement and
+disagreement in order to train themselves to consistently label bug
+report.
+To help the comparison each author’s labeled data was used as input to
+ STMT's implementation of Labelled-LDA which produced a set of topics.
+The topics and their relevant bug reports were compared to ensure
+consistent interpretation of the bug reports and their labels.
+
+
+
+
+%First, two of us (Zhang and Fan) separately tag the HTC 248 bug
+%reports in 2009 with the multiple labels. 
+% Then we train each author’s labeled data with STMT. 
+% By comparing each set of trained topics in the results and returning
+% to the bug reports, we check to ensure the same interpretation of each
+% bug when labeling. 
+% Then we come up with the same labeling rules to process the data. 
+
+Once the labelling rules were agreed upon each author (Zhang and Fan)
+seperately labeled HTC and Motorola bugs.
+%After this, we tag the rest of bug reports separately for both HTC and
+%Motorola. 
+When there is a bug report that cannot be tagged by the labels we
+already have, we would create a new label together based on our
+definition of labels, i.e. the functionalities and applications on an
+Android mobile phone or the components of the handsets. 
+For example, the label ``calculator'' is created by this way. 
+At first we could not expect this basic application on mobile phones
+would have bugs. 
+However, there are several bugs that complained the correctness of the
+calculator's results. 
+So we added it to our labels. 
+The manual labeling took approximately 30 hours per person. 
+In the end, for HTC and Motorola there are 199 and 73 bug reports that
+cannot be labeled respectively. 
+We have tagged 1304 HTC and 985 Motorola bug reports, each with
+multiple labels. 
+In total, there are 72 labels for HTC and 57 labels for Motorola. 
+Table \ref{selected1} selects Manual labels from bug reports of HTC
+and Motorola. 
+There are at least 20 bug reports are assigned to these labels.
 
 \subsection{Applying Labeled LDA}
 To apply Labeled LDA we preprocessed the labeled bug reports. We convert the title and description of each bug report to lowercase and remove stop words (words that are less than 3 characters and common English stop words such as ``all'', ``about'', ``the'', ``that'' and ``were'' ).
