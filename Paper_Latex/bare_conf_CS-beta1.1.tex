@@ -672,6 +672,7 @@ and Motorola.
 There are at least 20 bug reports are assigned to these
 labels.
 
+
 \subsection{Applying Labeled LDA}
 To apply Labeled LDA we preprocessed the labeled bug reports. We convert the title and description of each bug report to lowercase and remove stop words (words that are less than 3 characters and common English stop words such as ``all'', ``about'', ``the'', ``that'' and ``were'' ).
 By applying Labeled LDA to the bug reports of HTC and Motorola separately, we have the word distribution of each label and a matrix that provides the relationship between bug reports and the labels. The topic analysis is based on these results. In order to investigate the trend of each label by time, we grouped all the bug reports by month from 2009 to 2011 based on their open date for each of the two vendors. For each label, we computed the average relevance values of bug reports to this label in each month. The average relevance value of a label \begin{math} \l_i \end{math} in month \begin{math} m_j \end{math} is the sum of all the relevance values of this label over all bug reports in this month divided by the number of bug reports in this month,
