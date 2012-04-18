@@ -674,12 +674,25 @@ labels.
 
 
 \subsection{Applying Labeled LDA}
-To apply Labeled LDA we preprocessed the labeled bug reports. We convert the title and description of each bug report to lowercase and remove stop words (words that are less than 3 characters and common English stop words such as ``all'', ``about'', ``the'', ``that'' and ``were'' ).
-By applying Labeled LDA to the bug reports of HTC and Motorola separately, we have the word distribution of each label and a matrix that provides the relationship between bug reports and the labels. The topic analysis is based on these results. In order to investigate the trend of each label by time, we grouped all the bug reports by month from 2009 to 2011 based on their open date for each of the two vendors. For each label, we computed the average relevance values of bug reports to this label in each month. The average relevance value of a label \begin{math} \l_i \end{math} in month \begin{math} m_j \end{math} is the sum of all the relevance values of this label over all bug reports in this month divided by the number of bug reports in this month,
+To apply Labeled LDA we preprocessed the labeled bug reports. 
+We convert the title and description of each bug report to lowercase and remove stop words (words that are less than 3 characters and common English stop words such as ``all'', ``about'', ``the'', ``that'' and ``were'' ).
+By applying Labeled LDA to the bug reports of HTC and Motorola
+separately, we have the word distribution of each label and a matrix
+that provides the relationship between bug reports and the labels. 
+The topic analysis is based on these results. 
+In order to investigate the trend of each label by time, we grouped
+all the bug reports by month from 2009 to 2011 based on their open
+date for each of the two vendors. 
+For each label, we computed the average relevance values of bug
+reports to this label in each month. 
+The average relevance value of a label \begin{math} \l_i \end{math} in month \begin{math} m_j \end{math} is the sum of all the relevance values of this label over all bug reports in this month divided by the number of bug reports in this month,
 \begin{equation}
 A(\l_i,m_j) = \frac{\sum_{\substack{k=1}}^{|m_j|}r(\l_i,d_k)}{|m_j|}
 \end{equation}
-where $r(\l_i,d_k)$ is the relevance value of label $\l_i$ to bug report $d_k$, $|m_j|$ is the number of bug reports in this month. This metric is to sum all the relevance values. At last we generated a distribution of average relevance among 36 months for each label.
+where $r(\l_i,d_k)$ is the relevance value of label $\l_i$ to bug
+report $d_k$, $|m_j|$ is the number of bug reports in this month. 
+This metric is to sum all the relevance values. 
+At last we generated a distribution of average relevance among 36 months for each label.
 
 \subsection{Applying LDA}
 In order to compare the performance between LDA and Labeled LDA, we also apply LDA on the extracted bug reports of HTC and Motorola without our manual labels. We used the same preprocessing method on the HTC bug reports when applying LDA. 
