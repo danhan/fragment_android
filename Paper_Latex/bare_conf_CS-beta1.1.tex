@@ -539,8 +539,8 @@ Motorola & calling network setting gtalk calendar signal contact\\
 & alarm audio multimedia\_dock car SD\_card screen text lock\\
 & voicedialing battery upgrade dialing ringtone volume GPS\\
 & video time swype search exchange headset synchronize USB\\
-& facebook google\_wave download youtube uploadcalculator CPU\\
-& monkey flash touchscreen vibrate VPN\\
+& facebook google\_wave download youtube uploadcalculator\\
+& monkey flash VPN touchscreen vibrate CPU\\
 \hline
 \end{tabular}
 \end{table}
@@ -706,7 +706,7 @@ The average relevance value of a label \begin{math} \l_i \end{math} in month \be
 A(\l_i,m_j) = \frac{\sum_{\substack{k=1}}^{|m_j|}r(\l_i,d_k)}{|m_j|}
 \end{equation}
 where $r(\l_i,d_k)$ is the relevance value of label $\l_i$ to bug
-report $d_k$, $|m_j|$ is the number of bug reports in this month. 
+report $d_k$, $|m_j|$ is the number of bug reports in this month. We generated a distribution of average relevance among three years for each label, showed in Figure\ref{commontopic}, Figure \ref{fixtopic}, Figure \ref{uniquehtc} and Figure \ref{uniquemoto}.
 
 % XXX mention the topics
 % XXX VVV what is this stuff?
@@ -959,13 +959,21 @@ From Figure\ref{fixtopic}, we can see both HTC and Motorola have spikes in the e
 
 In summary, we can see that the same topics from both vendors have different correlation with Android versions. With Android evolution, these topics evolution do demonstrate the improved trends with Android evolution as we expect. These topics still have strong correlation with their typical model for both vendors.
 
-\subsubsection{Unique Topics}
 
-There are the two unique topics for HTC shown in Table\ref{topicslist}. And Figure\ref{uniquehtc} shows the average relevance of each topic.
+%\begin{figure*}[htb]
+%\centering
+%\includegraphics[width=1\textwidth]{uniquehtc.png}
+%\caption{Unique Topics relevance in HTC}
+%\label{uniquehtc}
+%\end{figure*}
 
-In Table\ref{topicslist}, only HTC has the Language (\textit{arabic, desire, language, 2.2, letters, characters, translation, character, read}) topic. The associated terms indicate that bugs related with language happened frequently in Android 2.2. This stems from the fact that the keyboard multiple language function is a new function introduced in Android 2.2. Moreover, most of HTC models have no physical keyboard, so this new function has been used frequently by HTC users. In contrast, for Motorola, most of models have the physical keyboard, so this function has been used seldom. This fact can also be the reason why HTC has “on-screen” and “virtual” terms for Keyboard, while Motorola does not have these terms at all.
+%\begin{figure*}[htb]
+%\centering
+%\includegraphics[width=1\textwidth]{uniquemoto.png}
+%\caption{Unique Topics relevance in Motorola}
+%\label{uniquemoto}
+%\end{figure*}
 
-In figure\ref{uniquehtc}, HTC keyboard turns to stay in its value, while Motorola has spikes and drops over time. HTC language has the relevance distribution, while there are too few bugs related with language to make language as a topic in Motorola.
 
 \begin{figure*}[htb]
 \centering
@@ -982,11 +990,19 @@ In figure\ref{uniquehtc}, HTC keyboard turns to stay in its value, while Motorol
 \end{figure*}
 
 
+\subsubsection{Unique Topics}
+
+There are the two unique topics for HTC shown in Table\ref{topicslist}. And Figure\ref{uniquehtc} shows the average relevance of each topic.
+
+In Table\ref{topicslist}, only HTC has the Language (\textit{arabic, desire, language, 2.2, letters, characters, translation, character, read}) topic. The associated terms indicate that bugs related with language happened frequently in Android 2.2. This stems from the fact that the keyboard multiple language function is a new function introduced in Android 2.2. Moreover, most of HTC models have no physical keyboard, so this new function has been used frequently by HTC users. In contrast, for Motorola, most of models have the physical keyboard, so this function has been used seldom. This fact can also be the reason why HTC has “on-screen” and “virtual” terms for Keyboard, while Motorola does not have these terms at all.
+
+In figure\ref{uniquehtc}, HTC keyboard turns to stay in its value, while Motorola has spikes and drops over time. HTC language has the relevance distribution, while there are too few bugs related with language to make language as a topic in Motorola.
+
 There are the two unique topics for Motorola shown in Table\ref{topicslist}. And Figure\ref{uniquemoto} shows the average relevance of each topic.
 
 In Table\ref{topicslist}, HTC and Motorola, on the one hand, share the identical terms for GPS (\textit{gps, data, position, location, maps, google, time, lock, wrong, icon, turn, home, latitude}) and browser (\textit{Browser, page, text, http, open, server}). On the other hand, they have special terms separately. For browser, Motorola has “droid”, “milestone” and “xoom” terms together. This indicates that the browser bugs happened frequently in three Motorola models. This indicates that Browser feature has portability issue within Motorola Android models.
 
-In figure\ref{uniquemoto}, comparing two vendors, we can see the relevance for GPS and Browser demonstrates different trends. For HTC, they have stripes and drops in the early stage, and then stay in their values. For Motorola, they stay in their values and then have stripes and drops afterwards.
+In Figure\ref{uniquemoto}, comparing two vendors, we can see the relevance for GPS and Browser demonstrates different trends. For HTC, they have stripes and drops in the early stage, and then stay in their values. For Motorola, they stay in their values and then have stripes and drops afterwards.
 
 In summary, for different vendors, the same topic show significantly different relevance as a result of the different model designs. Within the same vendor, the associated terms implicate that some features have portability issues across models.
 
@@ -1024,53 +1040,37 @@ When we refer to Android, we generally mean all Android versions existing in the
 %\end{figure}
 
 
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=1\textwidth]{bugovertime.png}
-\caption{Number of bugs with the major version of Android for HTC and Motorola}
-\label{bugovertime}
-\end{figure*}
+%\begin{figure*}[htb]
+%\centering
+%\includegraphics[width=1\textwidth]{bugovertime.png}
+%\caption{Number of bugs with the major version of Android for HTC and Motorola}
+%\label{bugovertime}
+%\end{figure*}
 
 
 
 
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=1\textwidth]{commontopic.png}
-\caption{Common Troubled Topics in HTC and Motorola}
-\label{commontopic}
-\end{figure*}
+%\begin{figure*}[htb]
+%\centering
+%\includegraphics[width=1\textwidth]{commontopic.png}
+%\caption{Common Troubled Topics in HTC and Motorola}
+%\label{commontopic}
+%\end{figure*}
 
 
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=1\textwidth]{fixtopic.png}
-\caption{Common Improved Topics in HTC and Motorola}
-\label{fixtopic}
-\end{figure*}
-
-
-
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=1\textwidth]{uniquehtc.png}
-\caption{Unique Topics relevance in HTC}
-\label{uniquehtc}
-\end{figure*}
-
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=1\textwidth]{uniquemoto.png}
-\caption{Unique Topics relevance in Motorola}
-\label{uniquemoto}
-\end{figure*}
+%\begin{figure*}[htb]
+%\centering
+%\includegraphics[width=1\textwidth]{fixtopic.png}
+%\caption{Common Improved Topics in HTC and Motorola}
+%\label{fixtopic}
+%\end{figure*}
 
 \section{Comparing of LDA and Labeled-LDA}
 In this section we investigate if LDA and Labeled-LDA would generate the similar results.
 
-Figure \ref{similarityhtc} and Figure \ref{similaritymoto} depict the pairwise Jaccard similarities of labels from LDA and Labeled-LDA. The brighter spots mean the pair of label have higher Jaccard similarity. These two labels in LDA and Labeled-LDA would be relevant to more similar set of bug reports. The darker spots mean the pair of labels have lower Jaccard similarity. They would share less bug reports in common. 
+Figure \ref{similarityhtc} and Figure \ref{similaritymoto} depict the pairwise Jaccard similarities of labels from LDA and Labeled-LDA. The brighter spots mean the pair of labels have higher Jaccard similarity. These two labels in LDA and Labeled-LDA would be relevant to more similar set of bug reports. The darker spots mean the pair of labels have lower Jaccard similarity and share less bug reports in common. 
 
-From these two Jaccard similarity plots (Figure \ref{similarityhtc} and Figure \ref{similaritymoto}) of labels between LDA and Labelel-LDA, we can observe that most of the Jaccard similarity values are quite small except the diagonal ones, especially in HTC. This observation is expected since most of the diagonal spots are the Jaccard similarities between the same labels from LDA and Labeled-LDA. 
+From these two Jaccard similarity plots (Figure \ref{similarityhtc} and Figure \ref{similaritymoto}) of labels between LDA and Labeled-LDA, we can observe that most of the Jaccard similarity values are quite small except a few diagonal ones, especially in HTC. This observation is expected since most of the diagonal spots are the Jaccard similarities between the same labels from LDA and Labeled-LDA. However, even the mean similarities of the diagonal spots are just about 0.2 for HTC and 0.08 for Motorola. The similarity plot for Motorola has much more noises than the plot for HTC.  
 
 Figure \ref{bughtc} shows the number of bug reports that related to the same labels in the bug reports of HTC and Figure \ref{bugmoto} illustrates the number of bug reports that related to the same labels in the bug reports of Motorola. The $ p $ values of the Chi-squared test on the two sets of distribution are both close to zero. Hence the number of bug reports related to same labels in LDA and Labeled-LDA are quite different.
 
@@ -1094,6 +1094,7 @@ Figure \ref{bughtc} shows the number of bug reports that related to the same lab
 \caption{Comparison of number of bug reports related to the same labels from LDA and Labeled LDA in HTC. The X axis is the same labels from LDA and Labeled LDA and the Y axis is the number of bug reports.}
 \label{bughtc}
 \end{figure}
+
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.5\textwidth]{motoldallda.png}
@@ -1105,7 +1106,7 @@ Figure \ref{bughtc} shows the number of bug reports that related to the same lab
 
 %The similarity values for these labels in Figure \ref{similaritymoto} are quite low compared with the ratio. Only about ten labels in HTC have similarity values that are larger than half of the ratio. For Motorola, the similarity values are all very low compared with the upper bound of the similarity values.
 
-We can conclude that only a few of the bug reports in HTC and Motorola are predicted by LDA and Labeled LDA to be related to the same labels. In other words, the relation between topics and each bug report modeled by LDA is quite different from the results generated by Labeled LDA. We think the manual efforts of labeling all the bug reports would help us gain the better topic models generated by Labeled LDA. 
+We can conclude that only few of the bug reports in HTC and Motorola are predicted by LDA and Labeled LDA to be related to the same labels. In other words, the relation between topics and each bug report modeled by LDA is quite different from the results generated by Labeled-LDA. We think the manual efforts of labeling all the bug reports would help us gain the better topic models generated by Labeled-LDA. 
 
 %\begin{figure}[htb]
 %\centering
@@ -1201,11 +1202,13 @@ Motorola Unique Topics & GPS &gps, data, position, location, maps, &maps, gps, g
 
 \section{Threats to validity}
 
-Data validity – Our data originated from MSR Mining Challenge \cite{MSRChallenge2012} and the dataset only ranges from January, 2009 to September, 2011. In addition, we extracted the bug report of HTC and Motorola with regular expression, which cannot ensure 100\% correctness extraction. 
+\textit{Construct validity} – Our data originated from MSR Mining Challenge \cite{MSRChallenge2012} and the dataset only ranges from 2009 to 2011. Furthermore we just took all the bug reports related to two vendors in this repository as the dataset to investigate. There may be other bug report repositories can be applied to increase the volume of our dataset. 
 
-Reliability – During labeling the bug reports, every annotator followed the same protocol and used the same labels. However, there were only two annotators working on the labeling work. The annotation could be biased considering the few number of annotators and the limited knowledge we would have.	
+\textit{Internal validity} – The explanations and theories we built are based on the actual distributions of all the  average relevance of labels. The trends in the distributions are just manual observations instead of doing statistical analysis. We argue that the differences are distinct enough for us to just do observations. Besides, we might suffer from our bias when choosing the terms generated by Labeled-LDA for each label to do analysis. 
 
-Analysis validity - The lack of information about the various devices for two vendors in bug reports makes it difficult to analyze the fragmentation of Android system on various devices for vendors. The analysis in this paper mainly focuses on the fragmentation of various Android systems and main fragmentation for each vendor.
+\textit{External validity} – This study focused on only one project since we cannot find an alternative project that was open source project like Android focusing on mobile platform.
+
+\textit{Reliability} – The labels were from the studying features of Android system by two authors (Zhang and Fan). They cannot hide their previous expertise about Android system and handsets. The labels we come up with might suffer from the biased understanding of the aspects in Android system as well as mobile devices. Furthermore, when labeling the bug reports, two annotators followed the same protocol and used the same labels. However, they labeled all the bug reports separately. This might affect the labeling consistency in the dataset. 
 
 
 \section{Conclusion and Future Work}
