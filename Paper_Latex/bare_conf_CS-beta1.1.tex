@@ -717,6 +717,19 @@ report $d_k$, $|m_j|$ is the number of bug reports in this month.
 
 \subsection{Applying LDA}
 
+% 4. Apply Labeled LDA:We applied the Labeled-LDA tool, Stanford Topic
+% Modeling Toobox [http://nlp.stanford.edu/software/tmt/tmt-0.4/], to
+% get the topic-document distribution on our labeled bug reports.
+
+% 5. Calculate the average relevance of each label: The average
+% relevance over time of each label is calculated for each vendor. For
+% each label the average relevance in one month is the the sum of bug
+% reports' relevance divided by the number of bug reports in this
+% month. The plot of the average relevance of each label between HTC
+% and Motorola is based on this calculation.
+
+
+
 In order to compare the performance between LDA and Labeled LDA, we
 also apply LDA on the extracted bug reports of HTC and Motorola
 without our manual labels. 
