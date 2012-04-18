@@ -635,7 +635,6 @@ consistent interpretation of the bug reports and their labels.
 
 
 
-
 %First, two of us (Zhang and Fan) separately tag the HTC 248 bug
 %reports in 2009 with the multiple labels. 
 % Then we train each author’s labeled data with STMT. 
@@ -651,7 +650,7 @@ seperately labeled HTC and Motorola bug reports, taking over 60 man
 hours of manual labelling effort.
 %After this, we tag the rest of bug reports separately for both HTC and
 %Motorola. 
-Using the previous methodology, labels were created as necessary.
+Using the previously stated labelling methodology, labels were created as necessary.
 %When there is a bug report that cannot be tagged by the labels we
 %already have, we would create a new label together based on our
 %definition of labels, i.e. the functionalities and applications on an
@@ -723,8 +722,8 @@ A(\l_i,m_j) = \frac{\sum_{\substack{k=1}}^{|m_j|}r(\l_i,d_k)}{|m_j|}
 where $r(\l_i,d_k)$ is the relevance value of label $\l_i$ to bug
 report $d_k$, $|m_j|$ is the number of bug reports in this month. 
 
-%XXX mention the topics
-
+% XXX mention the topics
+% XXX VVV what is this stuff?
 %This metric is to sum all the relevance values. 
 % Finally we generated a distribution of relevance among 36 months for each label.
 
@@ -736,11 +735,14 @@ report $d_k$, $|m_j|$ is the number of bug reports in this month.
 % labels.
 
 
-In order to compare the performance between LDA and Labeled LDA, we
-also apply LDA on the extracted bug reports of HTC and Motorola
-without our manual labels. 
-We used the same preprocessing method on the HTC bug reports when applying LDA. 
+In order to compare the performance between LDA and Labeled-LDA in
+order to see if Labeled-LDA is worth the effort, 
+we applied LDA to the extracted the same bug reports of HTC and Motorola
+but without our manual labels. 
+We used the same preprocessing method used on the bug-reports used in
+the Labeled-LDA analysis.
 
+Applying LDA had one complication
 To choose the number of topics $n$, we ran LDA using multiple values
 of $n$ that included: 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65
 and 70 on the bug reports of HTC. 
