@@ -913,7 +913,7 @@ Hence we chose to use the Labeled LDA to do topic analysis in the following sect
 
 \section{Topic Mining and Analysis}
 
-In order to investigate fragmentation within Android, we mined the bug report of Android System and analyzed the result from both quantity and quality views. 
+In order to investigate fragmentation within Android, we mined the bug report of Android and analyzed the result from both quantity and quality views. 
 
 We start by exploring the quantity of bug reports for HTC and Motorola. Then we compare and discuss the topic relevance over time for both vendors.
 
@@ -941,14 +941,6 @@ We start by exploring the quantity of bug reports for HTC and Motorola. Then we 
 %\caption{The comparison of ratio and similarity in Motorola. The result of the smaller number of bug reports related to this label in LDA or Labeled LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled LDA.}
 %\end{figure}
 
-\subsection{Overview of bug reports in HTC and Motorola}
-
-We group the bugs monthly based on their opened date and count the total number of bugs in each month for two vendors. Figure \ref{bugovertime} depicts a comparison of the quantity of bugs for HTC and Motorola.
-
-Figure\ref{bugovertime} shows the first HTC bug report was opened in January, 2009, and the first Motorola bug report was opened in November, 2009. According to the brief history of Android phone survey\cite{historyofandroid}, HTC released the first Android phone in October, 2008, while Motorola releases the first phone in October, 2009. The first bug reports of both vendors are in order of the first phone released by them. 
-
-In addition, we can see, in Figure1, the spike for HTC is in September, 2010, and that for Motorola is in December, 2009. By reading the bug subjects, we found that the HTC spike is because many people upgrade Android 2.1 to Android 2.2. The Motorola spike is mainly because the upgrade from Android 2.0 to Android 2.0.1. This suggests that bug activity increases are more relevant to Android version than hardware platform.  
-
 \begin{figure*}[htb]
 \centering
 \includegraphics[width=1\textwidth]{bugovertime.png}
@@ -956,21 +948,30 @@ In addition, we can see, in Figure1, the spike for HTC is in September, 2010, an
 \label{bugovertime}
 \end{figure*}
 
+\subsection{Overview of bug reports in HTC and Motorola}
+
+We group the bugs monthly based on their opened date and count the total number of bugs in each month for two vendors. Figure \ref{bugovertime} depicts a comparison of the quantity of bugs for HTC and Motorola.
+
+From Figure \ref{bugovertime}, we can see that the first HTC bug report was opened in January, 2009, and the first Motorola bug report was opened in November, 2009. According to the brief history of Android models survey\cite{historyofandroid}, HTC released the first Android model in October, 2008, while Motorola releases the first model in October, 2009. The first bug reports of both vendors are in order of the first model released by them. 
+
+In addition, we can see, in Figure\ref{bugovertime}, the spike for HTC happened in September, 2010, and for Motorola it happened in December, 2009. By reading the bug subjects, we found that the spike of HTC was caused by the fact that many people upgraded their model from Android 2.1 to Android 2.2 at that time, and some functions did not work well after upgrade. For example, users could not send message after the upgrade. The Motorola spike was mainly resulted from the upgrade from Android 2.0 to Android 2.0.1. This suggests that bug activity increases are more relevant to Android version than hardware platform.
+
+
+
 
 \subsection{Topics Analysis of HTC and Motorola}
 
 First, it should be mentioned that we extracted 72 topics for HTC and 58 topics for Motorola with Labeled LDA.
 
-By calculating the average of bug distributions associated with the
+By calculating the average of bug distributions associated with each
 topic, we got the average relevance for each topic by month. 
-Examining the average relevance trends for each topic and comparing
-them for both vendors, we categorize the topics into three types. 
+Examining the average relevance trends of each topic for the same vendor and comparison between both vendors, we categorize the topics into three types. 
 They are common troubled topics, common improved topics, and unique
 topics. 
-The Common Troubled Topics mean that the relevance of topic has
+The Common Troubled Topics mean that the relevance of the topic has
 fluctuations all the time for both HTC and Motorola. 
 The Common Improved Topics mean that the relevance of topic turns to
-be flat after several fluctuations over time for HTC and Motorola. 
+be flat over time after several fluctuations for HTC and Motorola. 
 The Unique Topics mean that the relevance of topic has significant differences between HTC and Motorola.
 
 A representative subset of top 18 topics, which are obtained by
@@ -981,9 +982,9 @@ TABLES].
 Table\ref{topicslist} shows Common Troubled Topics,
 Table\ref{topicslist} shows Common Improved Topics, and
 Table\ref{topicslist} shows Unique Topics. 
-Each topic is described by top 15 terms associated with the topic for
+Each topic is associated with top 15 terms for
 both HTC and Motorola. 
-These topics are associated with 85\% bugs of HTC, and 83\% bugs of Motorola. In Table\ref{topicslist}, Table\ref{topicslist} and Table\ref{topicslist}, the label column represents the features of Android as mentioned before.
+These topics are associated with 85\% bugs of HTC, and 83\% bugs of Motorola. As mentioned before, the label column in Table\ref{topicslist}, Table\ref{topicslist} and Table\ref{topicslist} represents the features of Android.
 
 \begin{figure*}[htb]
 \centering
@@ -994,15 +995,15 @@ These topics are associated with 85\% bugs of HTC, and 83\% bugs of Motorola. In
 
 \subsubsection{Common Troubled Topic} 
 
-A representative subset of eight Common Troubled Topics shared by two vendors is shown in Table1 and the average relevance of each topic is shown in Figure\ref{commontopic}. 
+A representative subset of eight Common Troubled Topics shared by two vendors is shown in Table \ref{topicslist} and the average relevance of each topic is shown in Figure\ref{commontopic}. 
 
-In Table\ref{topicslist}, HTC and Motorola share many identical terms for each label. That means they have the same issues for SMS(text, thread, send), Calendar(event, day, google,appointment,time), Email(gmail, send, thread), Contact (number, google,list), Display (screen,button,behavior), Bluetooth ( headset,connect, calling), Synchronization (contact, exchange, google) and Settings(turn,network,mode). 
+In Table\ref{topicslist}, HTC and Motorola share many identical terms for each label. That means they have the same issues about SMS(\textit{text, thread, send}), Calendar(\textit{event, day, google,appointment,time}), Email(\textit{gmail, send, thread}), Contact (\textit{number, google,list}), Display (\textit{screen,button,behavior}), Bluetooth (\textit{headset,connect, calling}), Synchronization (\textit{contact, exchange, google}) and Settings(\textit{turn,network,mode}). 
 
-We also found that multiple topics share some same terms for each vendor. For HTC, we can see, five topics including SMS/MMS, Contact, Display, Bluetooth and Settings share the same term “desire”. This indicates that these topics happened frequently for HTC Desire model. Calendar and Bluetooth share the same term “2.2” which means Android version 2.2. This indicates that these two topics happened frequently for Android 2.2 in HTC models. For Motorola, seven topics except Settings share the same term “droid” which means Motorola Droid model. In addition, Calendar and Synchronization in Motorola share “milestone” which indicates these two topics discussed mostly in Motorola Milestone model. “Xoom” shared by Display and Settings indicates that Motorola Xoom has more bugs related with these two topics. Furthermore, “Synchronization” topics include both “Xoom” and “milestone” terms. This indicates bugs related with synchronization happened frequently in both Motorola Xoom and Motorola Milestone. 
+We also found that multiple topics share some same terms for each vendor. For HTC, we can see, five topics including SMS/MMS, Contact, Display, Bluetooth and Settings share the same term “desire”. This indicates that these topics happened frequently in HTC Desire model. Calendar and Bluetooth share the same term “2.2” which means Android version 2.2. This indicates that these two topics happened frequently for Android 2.2 in HTC models. For Motorola, seven topics except Settings share the same term “droid” which means Motorola Droid model. In addition, Calendar and Synchronization in Motorola share “milestone” which indicates these two topics discussed mostly in Motorola Milestone model. “Xoom” shared by Display and Settings indicates that Motorola Xoom has more bugs related with these two topics. Furthermore, “Synchronization” associates with both “Xoom” and “milestone” terms. This indicates bugs related with synchronization happened frequently in both Motorola Xoom and Motorola Milestone. 
 
 In Figure\ref{commontopic}, HTC and Motorola share the same topic evolution trends. Both of them have continuous spikes and drops for each topic over time. That indicates bugs associated with these topics have no obvious decreasing trends with Android evolution.
 
-In summary, both of HTC and Motorola have some topics associated with their typical models. And both of HTC and Motorola have some topics associated with Android 2.1 and Android 2.2. As the topics represent features in Android, we can see there might be a compatibility issue for some topics for both vendors. 
+In summary, both of HTC and Motorola have some topics have strong correlation with Android 2.1 and Android 2.2. With Android evolution, these topics evolution do not demonstrate the decreasing trends with Android evolution as we expect. Both of vendors have some topics associated with their typical models. As the topics represent features in Android, we can see there might be a compatibility issue for some Android features.
 
 \begin{figure*}[htb]
 \centering
@@ -1013,21 +1014,21 @@ In summary, both of HTC and Motorola have some topics associated with their typi
 
 \subsubsection{Common Improved Topic}
 
-A representative subset of six Common Improved Topics shared by two vendors is shown in Table2 and the average relevance of each topic is shown in Figure\ref{fixtopic}.
+A representative subset of six Common Improved Topics shared by two vendors is shown in Table \ref{topicslist} and the average relevance of each topic is shown in Figure \ref{fixtopic}.
 
-In Table\ref{topicslist}, HTC and Motorola share many identical terms for WiFi (connection,ssid,network,etc), Upgrade (2.2,2.1,http), Image (gallery,picture,photo) and so on. For both of HTC and Motorola, bugs related with Upgrade happened in Android 2.1 to Android 2.2. This indicates Android 2.2 might have compatibility issue. 
+In Table \ref{topicslist}, HTC and Motorola share many identical terms for WiFi (\textit{connection,ssid,network}), Upgrade (\textit{2.2,2.1,http}), Image(\textit{gallery,picture,photo}) and so on. Bugs associated with Upgrade were result from upgrade from Android 2.1 to Android 2.2 in both vendors. This indicates Android 2.2 might have compatibility issue. 
 
-In the meanwhile, they also own some special terms. For HTC, bugs related with Calling happened frequently in Android 2.1, and bugs related with Image and Audio happened frequently in Android 2.2. For Motorola, bugs related with Calling happened frequently in Android 2.2 and bugs related with Keyboard happened frequently in Android 2.0.1.
+In the meanwhile, they also own some special terms. For HTC, bugs related with Calling happened frequently in Android 2.1, and bugs related with Image and Audio happened frequently in Android 2.2. For Motorola, bugs related with Calling happened frequently in Android 2.2 and bugs related with Keyboard happened frequently in Android 2.0.1. The topics also have strong correlation with the Android models for each vendor.
 
-From Figure\ref{fixtopic}, we can see both HTC and Motorola have spikes in the early stage, and then stay in their values. It indicates these features tend to be more robust over time with Android evolution during the whole observed period.
+From Figure\ref{fixtopic}, we can see both HTC and Motorola have spikes in the early stage, and then stay in their values. It indicates the corresponding features of Android tend to be more robust over time with Android evolution during the whole observed period.
 
-In summary, both of HTC and Motorola have some topics associated with their typical models. The same topics for both vendors happed frequently in the different Android versions.
+In summary, we can see that the same topics from both vendors have different correlation with Android versions. With Android evolution, these topics evolution do demonstrate the improved trends with Android evolution as we expect. These topics still have strong correlation with their typical model for both vendors.
 
 \subsubsection{Unique Topics}
 
 There are the two unique topics for HTC shown in Table\ref{topicslist}. And Figure\ref{uniquehtc} shows the average relevance of each topic.
 
-In Table\ref{topicslist}, only HTC has the Language (arabic, desire, language, 2.2, letters, characters, translation, character, read) topic. The associated terms indicate that bugs related with language happened frequently in Android 2.2. This stems from the fact that the keyboard multiple language function is a new function introduced in Android 2.2. Moreover, most of HTC models have no physical keyboard, so this new function has been used frequently by HTC users. In contrast, for Motorola, most of models have the physical keyboard, so this function has been used seldom. This fact can also be the reason why HTC has “on-screen” and “virtual” for keyboard, while Motorola has no these terms at all.
+In Table\ref{topicslist}, only HTC has the Language (\textit{arabic, desire, language, 2.2, letters, characters, translation, character, read}) topic. The associated terms indicate that bugs related with language happened frequently in Android 2.2. This stems from the fact that the keyboard multiple language function is a new function introduced in Android 2.2. Moreover, most of HTC models have no physical keyboard, so this new function has been used frequently by HTC users. In contrast, for Motorola, most of models have the physical keyboard, so this function has been used seldom. This fact can also be the reason why HTC has “on-screen” and “virtual” terms for Keyboard, while Motorola does not have these terms at all.
 
 In figure\ref{uniquehtc}, HTC keyboard turns to stay in its value, while Motorola has spikes and drops over time. HTC language has the relevance distribution, while there are too few bugs related with language to make language as a topic in Motorola.
 
@@ -1047,19 +1048,21 @@ In figure\ref{uniquehtc}, HTC keyboard turns to stay in its value, while Motorol
 
 
 There are the two unique topics for Motorola shown in Table\ref{topicslist}. And Figure\ref{uniquemoto} shows the average relevance of each topic.
-In Table\ref{topicslist}, HTC and Motorola, on the one hand, share the same terms for GPS (gps, data, position, location, maps, google, time, lock, wrong, icon, turn, home, latitude) and browser (Browser, page, text, http, open, server). On the other hand, they have special terms for their own. For browser, Motorola has “droid”, “milestone” and “xoom” terms together. This indicates that the browser bugs associates three Motorola models. This indicates that Browser feature has portability issue within Motorola Android models.
 
-In figure\ref{uniquemoto}, we can see the relevance for GPS and Browser demonstrates different. For HTC, they have stripes and drops in the early stage, and then stay in their values. For Motorola, they stay in their values and then have stripes and drops afterwards.
+In Table\ref{topicslist}, HTC and Motorola, on the one hand, share the identical terms for GPS (\textit{gps, data, position, location, maps, google, time, lock, wrong, icon, turn, home, latitude}) and browser (\textit{Browser, page, text, http, open, server}). On the other hand, they have special terms separately. For browser, Motorola has “droid”, “milestone” and “xoom” terms together. This indicates that the browser bugs happened frequently in three Motorola models. This indicates that Browser feature has portability issue within Motorola Android models.
 
+In figure\ref{uniquemoto}, comparing two vendors, we can see the relevance for GPS and Browser demonstrates different trends. For HTC, they have stripes and drops in the early stage, and then stay in their values. For Motorola, they stay in their values and then have stripes and drops afterwards.
 
-In summary, for different vendors, the same topic show significantly different relevance as a result of the different model designs.
-
+In summary, for different vendors, the same topic show significantly different relevance as a result of the different model designs. Within the same vendor, the associated terms implicate that some features have portability issues across models.
 
 \section{Discussion}
 
-[THIS PART SHOULD BE UPDATED LATER, BUT NOT FINISHED YET]
+According to the analysis about Common Troubled Topics, we can see that there is no strong correlation between the feature evolution and Android evolution. In addition, upgrade topic has strong correlation with Android 2.1 and Android 2.2. As there are some features evolution demonstrate stable trends with Android evolution implicated by the Common Improved Topics, we can conclude that Android has comparability issue in some features.
 
-In this section, we want to discuss this question and try to give a reasonable answer based on our analysis.
+From Common Improved Topics and Unique Topics, we can see the same topic from different vendor has different correlation, and they have strong correlation with some specific vendor's models. These observations reveal that Android has portability issue in some features.
+
+When we refer to Android, we generally mean all Android versions existing in the world which include both Android branches from Android community and that from vendors. In the sense of Android itself, we can see that Android has software fragmentation issue. We also discover that there are some features has strong correlation with vendor's model. In the sense of Android model from different vendor, we can conclude that Android has hardware fragmentation as well.
+
 
 \begin{table*}[!htb]
 \renewcommand{\arraystretch}{1.3}
@@ -1139,28 +1142,6 @@ Motorola Unique Topics & GPS &gps, data, position, location, maps, &maps, gps, g
 \end{tabular}
 \end{table*}
 
-
-
-
-\subsection{Does Android have fragmentation issues?}
-
-In this paper, the fragmentation of Android system involved in the bug reports are Android 1.x, 2.x and branches of Android systems on multiple devices in HTC and Motorola. 
-
-According to the analysis result, common troubled topics existing in both HTC and Motorola Android device indicates that no matter how different the Android system is and how different the device is, the topics turns to be up and down all the time. Common Improved topics of both HTC and Motorola indicate that the problems were caused by the fragmentation of Android system with different versions and that of Android system from branches of both vendors. Unique topics for HTC and Motorola indicate that the bugs were caused by the branches of Android system from vendors.
-
-Besides the three topics, upgrade bugs in both vendors can also be an evidence of fragmentation issues. Before upgrading Android system on devices, each vendor should evolve their own branch of Android system based on the combination of the original version on that device and the latest Android system. The bugs that some functions did not work after upgrade could be eliminate by one piece of maintenance of Android system. 
-
-Therefore, we can conclude that Android system has fragmentation issues.
-
-\subsection{Who can benefit from the Topic analysis?}
-
-In this paper, the topic analysis suggests the robust and evolution of functions in Android system on devices from different vendors. The analysis result can be used by different people.
-	
-For Android system community, the findings enable them to find out which functions have severe problems, which functions have fewer problems, and which functions correlated with each other have more problems. It can also make them to distinguish problems of vendors from others. In addition, the clear idea about the problems of vendors makes community to realize what should be documented and emphasized in corresponding documentations. The concrete and detailed documentation can help reduce the chance of fragmentation issues.
-
-For stakeholders, the findings make them have a whole picture about the function robust of their devices. In the meanwhile, they can also get information about other vendors. With the comparison of the same topics between two vendors, other vendors can easily get some lessons learn which guide them during design and customizing their own system.
-
-For developers, the findings make them know how robust these functions would be. Furthermore, combining correlation among different functions in the code level and the functions trends from bug reports, they can easily find out what functions have potential bugs.
 
 \section{Threats to validity}
 
