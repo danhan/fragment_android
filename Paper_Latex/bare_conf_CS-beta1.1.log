@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.12.15)  19 APR 2012 00:29
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.12.15)  19 APR 2012 17:17
 entering extended mode
 **bare_conf_CS-beta1.1.tex
-(D:\github\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.tex
+(D:\git\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,7 +13,7 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-(D:\github\fragment_android\Paper_Latex\IEEEtran.cls
+(D:\git\fragment_android\Paper_Latex\IEEEtran.cls
 Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -312,7 +312,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 ("D:\Program Files\miktex\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen132
 )
-(D:\github\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.aux)
+(D:\git\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 353.
 LaTeX Font Info:    ... okay on input line 353.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 353.
@@ -356,8 +356,8 @@ LaTeX Info: Redefining \ref on input line 353.
 LaTeX Info: Redefining \pageref on input line 353.
 LaTeX Info: Redefining \nameref on input line 353.
 
-(D:\github\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.out)
-(D:\github\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.out)
+(D:\git\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.out)
+(D:\git\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.out)
 \@outlinefile=\write3
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 405.
@@ -369,122 +369,207 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 405.
-LaTeX Font Info:    Try loading font information for U+msa on input line 432.
+LaTeX Font Info:    Try loading font information for U+msa on input line 434.
 
 ("D:\Program Files\miktex\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 432.
+LaTeX Font Info:    Try loading font information for U+msb on input line 434.
 
 ("D:\Program Files\miktex\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Overfull \hbox (1.25832pt too wide) in paragraph at lines 432--432
-[][][][][]$\OT1/ptm/m/n/8 http : / / asymco . com / 2011 / 11 / 17 / the-[]glob
-al-[]smartphone-[]market-[]landscape$[]| 
+Underfull \hbox (badness 4726) in paragraph at lines 434--434
+[][][][]\OT1/ptm/m/n/8 The Global Smart-phone Mar-ket Land-scape: []$http : / /
+ www . asymco .$
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--434
+$\OT1/ptm/m/n/8 com / 2011 / 11 / 17 / the-[]global-[]smartphone-[]market-[]lan
+dscape(retrievedMarch ,[]$
+ []
+
+
+LaTeX Warning: Citation `usmarket' on page 1 undefined on input line 434.
 
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
+
+LaTeX Warning: Citation `analysis' on page 1 undefined on input line 434.
+
+
+LaTeX Warning: Citation `analysis' on page 1 undefined on input line 434.
+
+
+LaTeX Warning: Citation `testing' on page 1 undefined on input line 437.
+
+
+LaTeX Warning: Citation `Marcus04aninformation' on page 1 undefined on input li
+ne 439.
+
+
+LaTeX Warning: Citation `Asuncion:2010' on page 1 undefined on input line 439.
+
+
+LaTeX Warning: Citation `Linstead:2009' on page 1 undefined on input line 439.
+
+
+LaTeX Warning: Citation `labeledlda' on page 1 undefined on input line 439.
+
 [1{C:/Users/Ray/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
-Overfull \hbox (19.03108pt too wide) in paragraph at lines 520--546
+
+LaTeX Warning: Citation `hindle9s' on page 2 undefined on input line 465.
+
+
+LaTeX Warning: Citation `li2003topic' on page 2 undefined on input line 465.
+
+
+LaTeX Warning: Citation `li2003topic' on page 2 undefined on input line 466.
+
+
+Underfull \hbox (badness 1365) in paragraph at lines 465--467
+\OT1/ptm/m/n/10 tems (SCS) is use-ful in a va-ri-ety of text pro-cess-ing
+ []
+
+
+LaTeX Warning: Citation `ldawiki' on page 2 undefined on input line 468.
+
+
+LaTeX Warning: Citation `labeledlda' on page 2 undefined on input line 470.
+
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+
+LaTeX Warning: Citation `stmt' on page 2 undefined on input line 470.
+
+
+LaTeX Warning: Citation `Marcus04aninformation' on page 2 undefined on input li
+ne 481.
+
+
+LaTeX Warning: Citation `Asuncion:2010' on page 2 undefined on input line 481.
+
+
+LaTeX Warning: Citation `Linstead:2009' on page 2 undefined on input line 481.
+
+
+LaTeX Warning: Citation `Thomas:2011' on page 2 undefined on input line 481.
+
+
+LaTeX Warning: Citation `Asuncion:2010' on page 2 undefined on input line 483.
+
+
+LaTeX Warning: Citation `Hindle' on page 2 undefined on input line 487.
+
+
+LaTeX Warning: Citation `MSRChallenge2012' on page 2 undefined on input line 50
+3.
+
+
+Overfull \hbox (19.03108pt too wide) in paragraph at lines 529--555
  [][] 
  []
 
 
-Underfull \hbox (badness 3417) in paragraph at lines 569--569
+Underfull \hbox (badness 3417) in paragraph at lines 578--578
 [][][][]\OT1/ptm/m/n/8 Android Op-er-at-ing Sys-tem sum-mary: []$http : / / en 
 . wikipedia . org / wiki /$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 575--575
+Underfull \hbox (badness 10000) in paragraph at lines 584--584
 [][][][]\OT1/ptm/m/n/8 Android Com-par-i-son: []$http : / / en . wikipedia . or
 g / wiki / Comparison[]of[]$
  []
 
 [2]
+
+LaTeX Warning: Citation `Hindle2011' on page 3 undefined on input line 601.
+
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
 
-
-LaTeX Warning: Command \l invalid in math mode on input line 704.
-
-
-LaTeX Warning: Command \l invalid in math mode on input line 706.
+LaTeX Warning: Command \l invalid in math mode on input line 713.
 
 
-LaTeX Warning: Command \l invalid in math mode on input line 706.
+LaTeX Warning: Command \l invalid in math mode on input line 715.
 
 
-LaTeX Warning: Command \l invalid in math mode on input line 709.
+LaTeX Warning: Command \l invalid in math mode on input line 715.
 
 
-LaTeX Warning: Command \l invalid in math mode on input line 709.
+LaTeX Warning: Command \l invalid in math mode on input line 718.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 718.
+
+
+LaTeX Warning: Citation `Thomas:2011' on page 3 undefined on input line 766.
+
+
+LaTeX Warning: Citation `Hindle2011' on page 3 undefined on input line 766.
+
+
+LaTeX Warning: Citation `Hindle' on page 3 undefined on input line 766.
 
 [3]
-Overfull \hbox (15.64706pt too wide) in paragraph at lines 830--849
+Overfull \hbox (15.64706pt too wide) in paragraph at lines 839--858
  [][] 
  []
 
-<bugovertime.png, id=172, 1430.34375pt x 643.40375pt>
+<bugovertime.png, id=140, 1430.34375pt x 643.40375pt>
 File: bugovertime.png Graphic file (type png)
  <use bugovertime.png>
-Package pdftex.def Info: bugovertime.png used on input line 884.
+Package pdftex.def Info: bugovertime.png used on input line 893.
 (pdftex.def)             Requested size: 505.89pt x 227.56071pt.
 
-[4] <commontopic.png, id=196, 270.01665pt x 135.71965pt>
+
+LaTeX Warning: Citation `historyofandroid' on page 4 undefined on input line 90
+2.
+
+[4] <commontopic.png, id=155, 270.01665pt x 135.71965pt>
 File: commontopic.png Graphic file (type png)
  <use commontopic.png>
-Package pdftex.def Info: commontopic.png used on input line 922.
+Package pdftex.def Info: commontopic.png used on input line 925.
 (pdftex.def)             Requested size: 505.89pt x 254.29144pt.
+
+Underfull \hbox (badness 1371) in paragraph at lines 933--936
+\OT1/ptm/m/n/10 ti-cal terms. That means they have the same bug re-
+ []
+
 
 Underfull \vbox (badness 1831) has occurred while \output is active []
 
-
-<fixtopic.png, id=202, 270.01665pt x 101.86087pt>
+ [5 <D:/git/fragment_android/Paper_Latex/bugovertime.png>]
+<fixtopic.png, id=166, 270.01665pt x 101.86087pt>
 File: fixtopic.png Graphic file (type png)
  <use fixtopic.png>
-Package pdftex.def Info: fixtopic.png used on input line 942.
+Package pdftex.def Info: fixtopic.png used on input line 945.
 (pdftex.def)             Requested size: 505.89pt x 190.85187pt.
 
-Underfull \vbox (badness 5022) has occurred while \output is active []
-
- [5 <D:/github/fragment_android/Paper_Latex/bugovertime.png>]
-Underfull \hbox (badness 5817) in paragraph at lines 951--952
-\OT1/ptm/m/n/10 and Mo-torola share many iden-ti-cal terms for wifi
+Underfull \hbox (badness 2970) in paragraph at lines 954--955
+[]\OT1/ptm/m/it/10 Common Im-proved Top-ics \OT1/ptm/m/n/10 shown in Ta-ble []I
+II[] for
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <D:/github/fragment_android/Paper_Latex/commontopic.png> <D:/github/fragmen
-t_android/Paper_Latex/fixtopic.png>] <uniquehtc.png, id=218, 265.17969pt x 36.7
-0406pt>
+[6 <D:/git/fragment_android/Paper_Latex/commontopic.png>]
+<uniquehtc.png, id=176, 265.17969pt x 36.70406pt>
 File: uniquehtc.png Graphic file (type png)
-
-<use uniquehtc.png>
-Package pdftex.def Info: uniquehtc.png used on input line 977.
+ <use uniquehtc.png>
+Package pdftex.def Info: uniquehtc.png used on input line 980.
 (pdftex.def)             Requested size: 505.89pt x 70.02682pt.
- <uniquemoto.png, id=219, 265.17969pt x 36.70406pt>
+
+<uniquemoto.png, id=177, 265.17969pt x 36.70406pt>
 File: uniquemoto.png Graphic file (type png)
-
-<use uniquemoto.png>
-Package pdftex.def Info: uniquemoto.png used on input line 984.
+ <use uniquemoto.png>
+Package pdftex.def Info: uniquemoto.png used on input line 987.
 (pdftex.def)             Requested size: 505.89pt x 70.02682pt.
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
@@ -504,105 +589,70 @@ Missing character: There is no ú in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
- [7] <htcsim.png, id=243, 1409.265pt x 548.0475pt>
+
+[7 <D:/git/fragment_android/Paper_Latex/fixtopic.png>]
+<htcsim.png, id=198, 1409.265pt x 548.0475pt>
 File: htcsim.png Graphic file (type png)
-
-<use htcsim.png>
-Package pdftex.def Info: htcsim.png used on input line 1076.
+ <use htcsim.png>
+Package pdftex.def Info: htcsim.png used on input line 1079.
 (pdftex.def)             Requested size: 505.89pt x 196.72829pt.
- <motosim.png, id=244, 1302.8675pt x 510.90875pt>
+
+<motosim.png, id=199, 1302.8675pt x 510.90875pt>
 File: motosim.png Graphic file (type png)
-
-<use motosim.png>
-Package pdftex.def Info: motosim.png used on input line 1083.
+ <use motosim.png>
+Package pdftex.def Info: motosim.png used on input line 1086.
 (pdftex.def)             Requested size: 505.89pt x 198.38048pt.
- <htcldallda.png, id=245, 597.23125pt x 424.58624pt>
-File: htcldallda.png Graphic file (type png)
 
-<use htcldallda.png>
-Package pdftex.def Info: htcldallda.png used on input line 1090.
+<htcldallda.png, id=200, 597.23125pt x 424.58624pt>
+File: htcldallda.png Graphic file (type png)
+ <use htcldallda.png>
+Package pdftex.def Info: htcldallda.png used on input line 1093.
 (pdftex.def)             Requested size: 252.94499pt x 179.82805pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 1090--1091
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 1093--1094
  [][] 
  []
 
-<motoldallda.png, id=246, 538.01pt x 363.3575pt>
+<motoldallda.png, id=201, 538.01pt x 363.3575pt>
 File: motoldallda.png Graphic file (type png)
  <use motoldallda.png>
-Package pdftex.def Info: motoldallda.png used on input line 1097.
+Package pdftex.def Info: motoldallda.png used on input line 1100.
 (pdftex.def)             Requested size: 252.94499pt x 170.83348pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 1097--1098
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 1100--1101
  [][] 
  []
 
+
+Overfull \hbox (3.45119pt too wide) in paragraph at lines 1132--1230
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 24.45648pt on input line 1230.
+
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+
+LaTeX Warning: Citation `MSRChallenge2012' on page 8 undefined on input line 12
+34.
+
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+[8 <D:/git/fragment_android/Paper_Latex/uniquehtc.png> <D:/git/fragment_android
+/Paper_Latex/uniquemoto.png> <D:/git/fragment_android/Paper_Latex/htcldallda.pn
+g>]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ì in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ì in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-[8 <D:/github/fragment_android/Paper_Latex/uniquehtc.png> <D:/github/fragment_a
-ndroid/Paper_Latex/uniquemoto.png> <D:/github/fragment_android/Paper_Latex/htcl
-dallda.png> <D:/github/fragment_android/Paper_Latex/motoldallda.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9 <D:/github/fragment_android/Paper_Latex/htcsim.png> <D:/github/fragment_and
-roid/Paper_Latex/motosim.png>]
-(D:\github\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 30--32
-[]\OT1/ptm/m/n/9 ``An Anal-y-sis of An-droid Frag-men-ta-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--32
-\OT1/ptm/m/n/9 tion,'' []$http : / / www . tech-[]thoughts . net / 2012 / 03 /$
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--36
-[]\OT1/ptm/m/n/9 ``Zipline CEO:Stop whin-ing about An-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--36
-\OT1/ptm/m/n/9 droid frag-men-ta-tion and do some damn
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--36
-\OT1/ptm/m/n/9 QA!'' []$http : / / thenextweb . com / google / 2012 / 04 / 02 /
-$
- []
-
-
-Overfull \hbox (68.26578pt too wide) in paragraph at lines 34--36
-$\OT1/ptm/m/n/9 zipline-[]ceo-[]stop-[]whining-[]about-[]android-[]fragmentatio
-n-[]and-[]do-[]some-[]damn-[]qa/$[]. 
- []
-
-
-Underfull \vbox (badness 1552) has occurred while \output is active []
-
- [10]
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
-[]\OT1/ptm/m/n/9 ``A breif his-tory of An-droid,'' []$http : / /$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
-$\OT1/ptm/m/n/9 reviews . cnet . com / 8301-[]19736[]7-[]20016542-[]251 /$
- []
-
-)
+ [9 <D:/git/fragment_android/Paper_Latex/htcsim.png> <D:/git/fragment_android/P
+aper_Latex/motosim.png>]
+No file bare_conf_CS-beta1.1.bbl.
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -614,30 +664,31 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1368.
-[11
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1401.
+[10
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1368.
- (D:\github\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1368.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1368.
+ <D:/git/fragment_android/Paper_Latex/motoldallda.png>] [11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1401.
+
+(D:\git\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1401.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1401.
 
 Package rerunfilecheck Info: File `bare_conf_CS-beta1.1.out' has not changed.
-(rerunfilecheck)             Checksum: 229DC3667C93D68FF7223FFCB19CE56C;1515.
+(rerunfilecheck)             Checksum: EC2F65B113282752CD367D8F08E7F8E3;1467.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6575 strings out of 494045
- 97240 string characters out of 3145974
- 208596 words of memory out of 3000000
- 9722 multiletter control sequences out of 15000+200000
- 45422 words of font info for 95 fonts, out of 3000000 for 9000
+ 6543 strings out of 494045
+ 96645 string characters out of 3145974
+ 214159 words of memory out of 3000000
+ 9711 multiletter control sequences out of 15000+200000
+ 42770 words of font info for 88 fonts, out of 3000000 for 9000
  718 hyphenation exceptions out of 8191
- 29i,8n,28p,1181b,457s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,8n,28p,1327b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/miktex/fonts/enc/dvips/fontname/8r.enc}<D:/Program Files/mi
 ktex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Program Files/miktex/fonts/t
 ype1/public/amsfonts/cm/cmmi10.pfb><D:/Program Files/miktex/fonts/type1/public/
@@ -649,9 +700,9 @@ miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/miktex/fonts
 mes/utmb8a.pfb><D:/Program Files/miktex/fonts/type1/urw/times/utmbi8a.pfb><D:/P
 rogram Files/miktex/fonts/type1/urw/times/utmr8a.pfb><D:/Program Files/miktex/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on bare_conf_CS-beta1.1.pdf (11 pages, 662577 bytes).
+Output written on bare_conf_CS-beta1.1.pdf (11 pages, 655680 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
- 65 named destinations out of 1000 (max. 500000)
- 222 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 280 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
+ 214 words of extra memory for PDF output out of 10000 (max. 10000000)
 
