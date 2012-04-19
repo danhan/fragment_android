@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.12.15)  19 APR 2012 15:02
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.12.15)  19 APR 2012 15:18
 entering extended mode
 **bare_conf_CS-beta1.1.tex
 (D:\github\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.tex
@@ -691,15 +691,12 @@ Package rerunfilecheck Info: File `bare_conf_CS-beta1.1.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 6565 strings out of 494045
- 97083 string characters out of 3145974
- 207290 words of memory out of 3000000
- 9722 multiletter control sequences out of 15000+200000
+ 6564 strings out of 494045
+ 97073 string characters out of 3145974
+ 207285 words of memory out of 3000000
+ 9721 multiletter control sequences out of 15000+200000
  45393 words of font info for 95 fonts, out of 3000000 for 9000
  718 hyphenation exceptions out of 8191
  29i,8n,28p,1258b,349s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -714,7 +711,7 @@ miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/miktex/fonts
 mes/utmb8a.pfb><D:/Program Files/miktex/fonts/type1/urw/times/utmbi8a.pfb><D:/P
 rogram Files/miktex/fonts/type1/urw/times/utmr8a.pfb><D:/Program Files/miktex/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on bare_conf_CS-beta1.1.pdf (10 pages, 656545 bytes).
+Output written on bare_conf_CS-beta1.1.pdf (10 pages, 656550 bytes).
 PDF statistics:
  309 PDF objects out of 1000 (max. 8388607)
  55 named destinations out of 1000 (max. 500000)
