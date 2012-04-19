@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.12.15)  19 APR 2012 15:18
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.12.15)  19 APR 2012 15:58
 entering extended mode
 **bare_conf_CS-beta1.1.tex
 (D:\github\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.tex
@@ -409,19 +409,19 @@ LaTeX Warning: Citation `labeledlda' on page 1 undefined on input line 438.
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
+[1{C:/Users/Ray/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-LaTeX Warning: Citation `labeledlda' on page 1 undefined on input line 464.
+
+]
+
+LaTeX Warning: Citation `labeledlda' on page 2 undefined on input line 464.
 
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
 
-LaTeX Warning: Citation `stmt' on page 1 undefined on input line 464.
+LaTeX Warning: Citation `stmt' on page 2 undefined on input line 464.
 
-[1{C:/Users/Ray/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-
-]
 
 LaTeX Warning: Citation `Marcus04aninformation' on page 2 undefined on input li
 ne 476.
@@ -514,73 +514,71 @@ Package pdftex.def Info: commontopic.png used on input line 926.
 Underfull \vbox (badness 1831) has occurred while \output is active []
 
 
-<fixtopic.png, id=181, 270.01665pt x 101.86087pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <D:/github/fragment_android/Paper_Latex/bugovertime.png>]
+<fixtopic.png, id=186, 270.01665pt x 101.86087pt>
 File: fixtopic.png Graphic file (type png)
  <use fixtopic.png>
 Package pdftex.def Info: fixtopic.png used on input line 946.
 (pdftex.def)             Requested size: 505.89pt x 190.85187pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <D:/github/fragment_android/Paper_Latex/bugovertime.png>]
 Underfull \hbox (badness 5817) in paragraph at lines 955--956
 \OT1/ptm/m/n/10 and Mo-torola share many iden-ti-cal terms for wifi
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <D:/github/fragment_android/Paper_Latex/commontopic.png> <D:/github/fragmen
-t_android/Paper_Latex/fixtopic.png>] <uniquehtc.png, id=197, 265.17969pt x 36.7
-0406pt>
+<uniquehtc.png, id=191, 265.17969pt x 36.70406pt>
 File: uniquehtc.png Graphic file (type png)
-
-<use uniquehtc.png>
+ <use uniquehtc.png>
 Package pdftex.def Info: uniquehtc.png used on input line 981.
 (pdftex.def)             Requested size: 505.89pt x 70.02682pt.
- <uniquemoto.png, id=198, 265.17969pt x 36.70406pt>
-File: uniquemoto.png Graphic file (type png)
 
-<use uniquemoto.png>
+<uniquemoto.png, id=192, 265.17969pt x 36.70406pt>
+File: uniquemoto.png Graphic file (type png)
+ <use uniquemoto.png>
 Package pdftex.def Info: uniquemoto.png used on input line 988.
 (pdftex.def)             Requested size: 505.89pt x 70.02682pt.
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
- [7] <htcsim.png, id=221, 1409.265pt x 548.0475pt>
-File: htcsim.png Graphic file (type png)
 
-<use htcsim.png>
+[6 <D:/github/fragment_android/Paper_Latex/commontopic.png>]
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
+
+Underfull \vbox (badness 4341) has occurred while \output is active []
+
+ [7 <D:/github/fragment_android/Paper_Latex/fixtopic.png> <D:/github/fragment_a
+ndroid/Paper_Latex/uniquehtc.png> <D:/github/fragment_android/Paper_Latex/uniqu
+emoto.png>]
+<htcsim.png, id=220, 1409.265pt x 548.0475pt>
+File: htcsim.png Graphic file (type png)
+ <use htcsim.png>
 Package pdftex.def Info: htcsim.png used on input line 1080.
 (pdftex.def)             Requested size: 505.89pt x 196.72829pt.
- <motosim.png, id=222, 1302.8675pt x 510.90875pt>
-File: motosim.png Graphic file (type png)
 
-<use motosim.png>
+<motosim.png, id=221, 1302.8675pt x 510.90875pt>
+File: motosim.png Graphic file (type png)
+ <use motosim.png>
 Package pdftex.def Info: motosim.png used on input line 1087.
 (pdftex.def)             Requested size: 505.89pt x 198.38048pt.
- <htcldallda.png, id=223, 597.23125pt x 424.58624pt>
-File: htcldallda.png Graphic file (type png)
 
-<use htcldallda.png>
+<htcldallda.png, id=222, 597.23125pt x 424.58624pt>
+File: htcldallda.png Graphic file (type png)
+ <use htcldallda.png>
 Package pdftex.def Info: htcldallda.png used on input line 1094.
 (pdftex.def)             Requested size: 252.94499pt x 179.82805pt.
 
@@ -588,7 +586,7 @@ Overfull \hbox (9.03374pt too wide) in paragraph at lines 1094--1095
  [][] 
  []
 
-<motoldallda.png, id=224, 538.01pt x 363.3575pt>
+<motoldallda.png, id=223, 538.01pt x 363.3575pt>
 File: motoldallda.png Graphic file (type png)
  <use motoldallda.png>
 Package pdftex.def Info: motoldallda.png used on input line 1101.
@@ -611,16 +609,16 @@ Missing character: There is no ì in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ì in font ptmr7t!
+[8 <D:/github/fragment_android/Paper_Latex/htcldallda.png> <D:/github/fragment_
+android/Paper_Latex/motoldallda.png>]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ì in font ptmr7t!
-[8 <D:/github/fragment_android/Paper_Latex/uniquehtc.png> <D:/github/fragment_a
-ndroid/Paper_Latex/uniquemoto.png> <D:/github/fragment_android/Paper_Latex/htcl
-dallda.png> <D:/github/fragment_android/Paper_Latex/motoldallda.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [9 <D:/github/fragment_android/Paper_Latex/htcsim.png> <D:/github/fragment_and
 roid/Paper_Latex/motosim.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 (D:\github\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 25--29
 $\OT1/ptm/m/n/9 08 / 30 / android-[]apple-[]70-[]percent-[]smartphone ,[] retri
@@ -656,7 +654,7 @@ $\OT1/ptm/m/n/9 zipline-[]ceo-[]stop-[]whining-[]about-[]android-[]fragmentatio
 n-[]and-[]do-[]some-[]damn-[]qa ,[]$
  []
 
-
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 41--44
 []\OT1/ptm/m/n/9 ``A breif his-tory of An-droid,'' []$http : / /$
  []
@@ -678,42 +676,22 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1372.
-[10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1372.
- (D:\github\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1372.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1372.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1374.
+[11
+! pdfTeX error (ext4): \pdfendlink ended up in different nesting level than \pd
+fstartlink.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1374 \end{document}
+                     
 
-Package rerunfilecheck Info: File `bare_conf_CS-beta1.1.out' has not changed.
-(rerunfilecheck)             Checksum: 21B2B938988C1A200E338925B330BC2C;1514.
-
-
-LaTeX Warning: There were undefined references.
-
- ) 
+ 
 Here is how much of TeX's memory you used:
- 6564 strings out of 494045
- 97073 string characters out of 3145974
- 207285 words of memory out of 3000000
- 9721 multiletter control sequences out of 15000+200000
+ 6560 strings out of 494045
+ 96936 string characters out of 3145974
+ 208285 words of memory out of 3000000
+ 9718 multiletter control sequences out of 15000+200000
  45393 words of font info for 95 fonts, out of 3000000 for 9000
  718 hyphenation exceptions out of 8191
- 29i,8n,28p,1258b,349s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/Program Files/miktex/fonts/enc/dvips/fontname/8r.enc}<D:/Program Files/mi
-ktex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Program Files/miktex/fonts/t
-ype1/public/amsfonts/cm/cmmi10.pfb><D:/Program Files/miktex/fonts/type1/public/
-amsfonts/cm/cmmi5.pfb><D:/Program Files/miktex/fonts/type1/public/amsfonts/cm/c
-mmi7.pfb><D:/Program Files/miktex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/
-Program Files/miktex/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Program Files/
-miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/miktex/fonts
-/type1/public/amsfonts/cm/cmsy7.pfb><D:/Program Files/miktex/fonts/type1/urw/ti
-mes/utmb8a.pfb><D:/Program Files/miktex/fonts/type1/urw/times/utmbi8a.pfb><D:/P
-rogram Files/miktex/fonts/type1/urw/times/utmr8a.pfb><D:/Program Files/miktex/f
-onts/type1/urw/times/utmri8a.pfb>
-Output written on bare_conf_CS-beta1.1.pdf (10 pages, 656550 bytes).
-PDF statistics:
- 309 PDF objects out of 1000 (max. 8388607)
- 55 named destinations out of 1000 (max. 500000)
- 222 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 29i,8n,28p,1285b,451s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
