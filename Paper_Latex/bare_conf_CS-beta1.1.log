@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.12.15)  19 APR 2012 17:10
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.12.15)  19 APR 2012 17:17
 entering extended mode
 **bare_conf_CS-beta1.1.tex
 (D:\git\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.tex
@@ -418,9 +418,6 @@ LaTeX Warning: Citation `Linstead:2009' on page 1 undefined on input line 439.
 
 LaTeX Warning: Citation `labeledlda' on page 1 undefined on input line 439.
 
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
 [1{C:/Users/Ray/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
@@ -683,9 +680,6 @@ Package rerunfilecheck Info: File `bare_conf_CS-beta1.1.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  6543 strings out of 494045
@@ -706,7 +700,7 @@ miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/miktex/fonts
 mes/utmb8a.pfb><D:/Program Files/miktex/fonts/type1/urw/times/utmbi8a.pfb><D:/P
 rogram Files/miktex/fonts/type1/urw/times/utmr8a.pfb><D:/Program Files/miktex/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on bare_conf_CS-beta1.1.pdf (11 pages, 655652 bytes).
+Output written on bare_conf_CS-beta1.1.pdf (11 pages, 655680 bytes).
 PDF statistics:
  280 PDF objects out of 1000 (max. 8388607)
  51 named destinations out of 1000 (max. 500000)
