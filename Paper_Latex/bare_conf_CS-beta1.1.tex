@@ -822,7 +822,7 @@ the Jaccard similarity coefficients. We eventually chose $0.2$ as the similariti
 We plotted these pairwise tests in order to explore the match between
 LDA and Labeled-LDA.
 
-Then we counted the number of bugs that are related to labels which are both shared by LDA and Labeled-LDA in HTC and Motorola. We applied the Chi-squared test on the two sets of distribution to study if each of the two distributions match.
+Then we counted the number of bug reports that are related to labels which are both shared by LDA and Labeled-LDA in HTC and Motorola. We applied the Chi-squared test on the two sets of distribution to study if each of the two distributions match.
 
 
 \begin{table}[!t]
@@ -887,13 +887,13 @@ We started by exploring the distribution of number of bug reports for HTC and Mo
 \begin{figure*}[htb]
 \centering
 \includegraphics[width=1\textwidth]{bugovertime.png}
-\caption{Number of bugs with the major version of Android for HTC and Motorola}
+\caption{Number of bug reports with the major version of Android for HTC and Motorola}
 \label{bugovertime}
 \end{figure*}
 
 \subsection{Overview of bug reports in HTC and Motorola}
-%we can use bugs to stand for bug reports. They are totally different.
-We grouped the bug reports monthly based on their opened date and counted the total number of bugs in each month for two vendors. Figure \ref{bugovertime} depicts a comparison of the number of bug reports for HTC and Motorola.
+
+We grouped the bug reports monthly based on their opened date and counted the total number of bug reports in each month for two vendors. Figure \ref{bugovertime} depicts a comparison of the number of bug reports for HTC and Motorola.
 % xxx what can we conclued for the following analysis?
 From Figure \ref{bugovertime}, we can observe that the first HTC bug report was opened in January, 2009, and the first Motorola bug report was opened in October, 2009. According to the brief history of Android devices survey \cite{historyofandroid}, HTC released the first Android device in October, 2008, while Motorola released its first device in October, 2009. The first bug reports of both vendors are in order of the first device released by them. 
 
@@ -928,11 +928,11 @@ As mentioned before, the label column in Table \ref{topicslist} represents the f
 %relevance shoule be written as the distribution of the average relevance
 Eight \textit{Common Troubled Topics} shared by two vendors are shown in Table \ref{topicslist} and the distribution of average relevance of each topic is shown in Figure \ref{commontopic}. 
 %all the labels should be consistent with all the labels in table I.
-\textit{Common Troubled Topics} shown in Table \ref{topicslist} for HTC and Motorola share many identical terms. That means they have the same bugs about sms\/mms(\textit{text, thread, send}), calendar(\textit{event, day, google,appointment,time}), email(\textit{gmail, send, thread}), contact (\textit{number, google,list}), display (\textit{screen,button,behavior}), bluetooth (\textit{headset,connect, calling}), synchronize (\textit{contact, exchange, google}) and setting(\textit{turn,network,mode}). 
+\textit{Common Troubled Topics} shown in Table \ref{topicslist} for HTC and Motorola share many identical terms. That means they have the same bug reports about sms\/mms(\textit{text, thread, send}), calendar(\textit{event, day, google,appointment,time}), email(\textit{gmail, send, thread}), contact (\textit{number, google,list}), display (\textit{screen,button,behavior}), bluetooth (\textit{headset,connect, calling}), synchronize (\textit{contact, exchange, google}) and setting(\textit{turn,network,mode}). 
 
-We also found that multiple topics share some same terms for each vendor. For HTC, we can see, five topics including sms/mms, contact, display, bluetooth and setting share the same term ``desire". This indicates that these topics happened frequently in HTC Desire device. Calendar and bluetooth share the same term ``2.2" and ``2.2" means Android version 2.2. This indicates that these two topics happened frequently for Android 2.2 in HTC devices. For Motorola, seven topics except setting share the same term ``droid" and it means Motorola Droid device. In addition, calendar and synchronize in Motorola share ``milestone" which indicates these two topics discussed mostly in Motorola Milestone device. ``Xoom" shared by display and setting indicate that Motorola Xoom has more bug reports related with these two topics. Furthermore, synchronize associates with both ``Xoom" and ``milestone" terms. This indicates bugs related with synchronization happened frequently in both Motorola Xoom and Motorola Milestone. 
+We also found that multiple topics share some same terms for each vendor. For HTC, we can see, five topics including sms\/mms, contact, display, bluetooth and setting share the same term ``desire". This indicates that these topics happened frequently in HTC Desire device. Calendar and bluetooth share the same term ``2.2" and ``2.2" means Android version 2.2. This indicates that these two topics happened frequently for Android 2.2 in HTC devices. For Motorola, seven topics except setting share the same term ``droid" and it means Motorola Droid device. In addition, calendar and synchronize in Motorola share ``milestone" which indicates these two topics discussed mostly in Motorola Milestone device. ``Xoom" shared by display and setting indicate that Motorola Xoom has more bug reports related with these two topics. Furthermore, synchronize associates with both ``Xoom" and ``milestone" terms. This indicates bug reports related with synchronize happened frequently in both Motorola Xoom and Motorola Milestone. 
 
-In Figure \ref{commontopic}, HTC and Motorola share the same trends of the distribution of average relevance of topics. Both of them have continuous spikes and drops for each topic over time. That indicates bugs associated with these topics have no obvious decreasing trends with Android evolution.
+In Figure \ref{commontopic}, HTC and Motorola share the same trends of the distribution of average relevance of topics. Both of them have continuous spikes and drops for each topic over time. That indicates bug reports associated with these topics have no obvious decreasing trends with Android evolution.
 %more explain why android version should make the trend of topics decrease in the ideal case.
 In summary, calendar in HTC and display in Motorola are strongly correlated with different Android versions. Bluetooth in both of HTC and Motorola have strong correlation with Android 2.1 and Android 2.2. With Android evolution, these distribution of average relevance of each topic for both vendors do not demonstrate the decreasing trend with Android evolution as we expect. Both of vendors have some topics associated with their typical devices. For HTC, five out of eight topics have correlation with HTC Desire device. For Motorola, seven out of eight topics have correlation with Motorola Droid device. As the topics corresponds to the features in Android, we can see these eight features demonstrate the compatibility issues.
 
@@ -949,7 +949,7 @@ Six \textit{Common Improved Topics} shared by two vendors are shown in Table \re
 
 \textit{Common Improved Topics} shown in Table \ref{topicslist} for HTC and Motorola share many identical terms for wifi (\textit{connection,ssid,network}), upgrade (\textit{2.2,2.1,http}), and image(\textit{gallery,picture,photo}). Bug reports associated with upgrade were result from upgrading from Android 2.1 to Android 2.2 in both vendors. This indicates Android 2.2 might have compatibility issue. 
 
-Meanwhile, the \textit{Common Improved Topics} also own some special terms. For HTC, bug reports related with Calling happened frequently in Android 2.1, and bugs related with Image and Audio happened frequently in Android 2.2. For Motorola, bug reports related to calling happened frequently in Android 2.2. In addition, four out of six topics have correlation with HTC Desire device. For Motorola, seven out of eight topics have correlation with Motorola Droid device and the other one have correlation with Motorola MileStone device. Therefore, we can see these six topics have strong correlation with the Android hardware devices for each vendor.
+Meanwhile, the \textit{Common Improved Topics} also own some special terms. For HTC, bug reports related with Calling happened frequently in Android 2.1, and bug reports related with Image and Audio happened frequently in Android 2.2. For Motorola, bug reports related to calling happened frequently in Android 2.2. In addition, four out of six topics have correlation with HTC Desire device. For Motorola, seven out of eight topics have correlation with Motorola Droid device and the other one have correlation with Motorola MileStone device. Therefore, we can see these six topics have strong correlation with the Android hardware devices for each vendor.
 
 From Figure \ref{fixtopic}, we can see both HTC and Motorola have spikes in the early stage, and then stay in their values. It indicates the corresponding features of Android tend to be more robust over time with Android evolution during the whole observed period.
 
@@ -990,13 +990,13 @@ In summary, we can see that Calling from both vendors have different correlation
 
 There are the two unique topics for HTC shown in Table \ref{topicslist}. Figure \ref{uniquehtc} shows the distribution of the average relevance of each topic.
 
-\textit{HTC Unique Topics} in Table \ref{topicslist} indicates that HTC has the topic of language (\textit{arabic, desire, language, 2.2, letters, characters, translation, character, read}) topic. The associated terms indicate that bugs related with language happened frequently in Android 2.2. This stems from the fact that the keyboard multiple language function is a new function introduced in Android 2.2. Moreover, most of HTC devices have no physical keyboard, so this new function has been used frequently by HTC users. In contrast, for Motorola, most of devices have the physical keyboard, so this function has seldom been used. This fact can also be the reason why HTC has ``on-screen" and ``virtual" terms for Keyboard, while Motorola does not have these terms at all.
+\textit{HTC Unique Topics} in Table \ref{topicslist} indicates that HTC has the topic of language (\textit{arabic, desire, language, 2.2, letters, characters, translation, character, read}) topic. The associated terms indicate that bug reports related with language happened frequently in Android 2.2. This stems from the fact that the keyboard multiple language function is a new function introduced in Android 2.2. Moreover, most of HTC devices have no physical keyboard, so this new function has been used frequently by HTC users. In contrast, for Motorola, most of devices have the physical keyboard, so this function has seldom been used. This fact can also be the reason why HTC has ``on-screen" and ``virtual" terms for Keyboard, while Motorola does not have these terms at all.
 
 In Figure \ref{uniquehtc}, HTC keyboard turns to stay steady, while Motorola has spikes and drops over time. HTC language has the relevance distribution, while there are few bug reports related with language to make language as a topic in Motorola.
 
 There are two unique topics for Motorola shown in Table \ref{topicslist}. Figure \ref{uniquemoto} shows the distribution of the average relevance of each topic.
 
-\textit{Motorola Unique Topics} in Table \ref{topicslist} represents HTC and Motorola share the identical terms for GPS (\textit{gps, data, position, location, maps, google, time, lock, wrong, icon, turn, home, latitude}) and browser (\textit{Browser, page, text, http, open, server}). Furthmore, they have special terms separately. For browser, Motorola has “droid”, “milestone” and “xoom” terms together. This indicates that the browser bugs happened frequently in three Motorola devices. This indicates that browser has portability issue within Motorola Android devices.
+\textit{Motorola Unique Topics} in Table \ref{topicslist} represents HTC and Motorola share the identical terms for GPS (\textit{gps, data, position, location, maps, google, time, lock, wrong, icon, turn, home, latitude}) and browser (\textit{Browser, page, text, http, open, server}). Furthmore, they have special terms separately. For browser, Motorola has “droid”, “milestone” and “xoom” terms together. This indicates that the browser bug reports happened frequently in three Motorola devices. This indicates that browser has portability issue within Motorola Android devices.
 
 In Figure \ref{uniquemoto}, comparing two vendors, we can see the distribution of the average relevance for GPS and browser demonstrate different trends. For HTC, they have strikes and drops in the early stage, and then stay steady. For Motorola, they stay steady and then have strikes and drops afterwards.
 % I am not clear about your summary here.
@@ -1129,75 +1129,75 @@ We can conclude that only few of the bug reports in HTC and Motorola are predict
 \hline
 Topic Type & Label & HTC & Motorola\\ 
 \hline
-Common Troubled Topics & SMS\//MMS &message,	sms,	text, thread, time,  & message, text, sms, droid, send,	\\
+Common Troubled Topics & sms\//mms &message,	sms,	text, thread, time,  & message, text, sms, droid, send,	\\
 && sent, desire, contact, new, number, &	thread, messaging, sent,user, version,\\ 
 &&conversation, send, version, app, screen &version, person, threads, number, http\\ \cline{2-4}
 
-  & Email & email, mail, gmail, app, message,   &email, droid, account,	gmail, mail, \\
+  & email & email, mail, gmail, app, message,   &email, droid, account,	gmail, mail, \\
 &&inbox, messages,client,emails, account,  &server, message,user,emails, exchange, \\ 
 &&send, interface, thread, time, new & file, version, open, device, app\\ \cline{2-4}
             
-& Calendar&calendar, event, day, events, google,  &calendar,	event, droid, google, appointment, \\
+& calendar&calendar, event, day, events, google,  &calendar,	event, droid, google, appointment, \\
 &&view, 2.2,time,month, date, &events, day, field, date, appointments, \\ 
 &&version, reminder, appointment,  edit, running &outlook, milestone, data, app, version\\ \cline{2-4}
             
-& Contact & contact, contacts, number, freed, activity,  &contact, contacts, droid, number, numbers, \\
+& contact & contact, contacts, number, freed, activity,  &contact, contacts, droid, number, numbers, \\
 &&displayed, list, group, google, numbers,   &address, version, google, menu, correct, \\
 &&starting,desire, user, version, field & behavior, different,list, option, gmail\\ \cline{2-4}
             
-  & Display&screen, version, desire,behavior, app, &droid, screen, button, correct, home, \\
+  & display&screen, version, desire,behavior, app, &droid, screen, button, correct, home, \\
 && home, number,code, final, press,  &display, behavior,  landscape, 2.1,  menu, \\
 &&sure, user, black, new, power  &bar, xoom,device, user, status\\ \cline{2-4}
    
-& Bluetooth & bluetooth,headset, car, connect, device,  &bluetooth,	headset, droid, device,connected, \\
+& bluetooth & bluetooth,headset, car, connect, device,  &bluetooth,	headset, droid, device,connected, \\
  &&connection, version, data, app, desire, & connect, devices, calls,car,issue,	\\
 &&desire,	2.2, work, connects, behavior,2.1 & connection, 2.2, car,pair, time\\ \cline{2-4}
             
-  & Synchronization&contacts, account, sync, exchange, contact, &sync, google, account, contacts, device, \\
+  & synchronize&contacts, account, sync, exchange, contact, &sync, google, account, contacts, device, \\
 &&google, ears, device, group, server, &contact, group, time, exchange, contacts, \\
 &&Gmail, policy, new, list, display&display, groups,  list,  droid, milestone\\ \cline{2-4}
             
-  & Settings&volume, sound,	set, pattern,  default,&settings, device, menu, turn,	network, \\
+  & settings&volume, sound,	set, pattern,  default,&settings, device, menu, turn,	network, \\
  && turn, desire, static, control, apps,&vpn, honeycomb, button, xoom,  settings, \\
   && change, settings, media, dns, screen &behavior,	right, wireless, headset, mode\\
 \hline
 
 Common Improved Topics 
-&WiFi & wifi, access, network, connection, connect, &wifi, xoom, connect, hotspot, turn, \\
+&wifi & wifi, access, network, connection, connect, &wifi, xoom, connect, hotspot, turn, \\
 &&router, ssid, desire, http, wi-fi,&connection, ssid, radio, error,signal, \\
 
 &&device, connected, scan, point, app &state, user, time, feature,hotspots\\ \cline{2-4}
 
-&Upgrade & update, 2.2, file, 2.1, google  & update, droid, 2.1,2.2, home, \\
+&upgrade & update, 2.2, file, 2.1, google  & update, droid, 2.1,2.2, home, \\
 
  &&version, error, upgrade, froyo, install, & http, version, user, issue, device,\\           
  
  &&work, desire, ota, card, ssl & longer, settings, performance, issues, updated\\            \cline{2-4}
           
-&Audio& music, audio, player, file, play, &music, droid, player, media, audio,  \\
+&audio& music, audio, player, file, play, &music, droid, player, media, audio,  \\
 
 &&2.2,sound, version, time, playing, & files, volume, play, playing, version,\\
 
 &&playback, app, start, reproduce, mp3 &app, issue, mode, running, genre, sound, user\\ \cline{2-4}
            
-&Calling& number, calls, calling, 2.1, receive, &droid, calls, number, end, button, \\
+&calling& number, calls, calling, 2.1, receive, &droid, calls, number, end, button, \\
 && called, button, answer, bluetooth, desire,  &answer, incoming, screen, voice, speaker, \\ 
 
 && screen, incoming, works, time, magic & speaker, 2.2, device, place, headphones\\ \cline{2-4}
            
-&Android Market& market, app, google, account, download, &market, apps, app, device, application,  \\
+&android market& market, app, google, account, download, &market, apps, app, device, application,  \\
 
 &&update, application, user, device, version, &update, open, user, version, time, \\ 
            
 &&apps, paid, desire, installed, application & reporoduce, download, purchase, google, milestone\\ \cline{2-4}   
         
-&Image & image, gallery, picture, matrix, photo,  &image, droid, wallpaper, gallery, photo,\\
+&image & image, gallery, picture, matrix, photo,  &image, droid, wallpaper, gallery, photo,\\
 &&null, camera, pictures, version, steps,& picture, device,	file, select,video,\\
 
 &&2.2, photos, code, display, view & folder, load, live, stock, size, screen\\
 
 \hline
-HTC Unique Topics & Language 
+HTC Unique Topics & language 
 &arabic, desire, language, 2.2, letters, & NONE\\
 
 &&character, translation, character, read, support,& \\
@@ -1205,7 +1205,7 @@ HTC Unique Topics & Language
 &&sms, write, hebrew, devices,2.3 & \\ \cline{2-4}
 
 
-& Keyboard &keyboard, input,text, key, version,& keyboard, droid, keys,text, press, \\
+& keyboard &keyboard, input,text, key, version,& keyboard, droid, keys,text, press, \\
 && number, typing, on-screen, mode, field, & space, box, open, device, key, \\
 &&landscape, virtual, keys, type, message & app, software, 2.0.1, landscape \\
            
@@ -1218,7 +1218,7 @@ Motorola Unique Topics
 
 &&home, latitude, unit, tag, available & traffic, time, upgrade, turn, route\\ \cline{2-4}
 
-    &Browser& browser, page, text, http, open, & browser, droid, page, web, http, open, \\
+    &browser& browser, page, text, http, open, & browser, droid, page, web, http, open, \\
     &&server,verion, desire, client, web, & xoom, html, behavior, running, links, \\
 && application,2.1, device, button, user  & issue, milestone, 3.1,text \\
 \hline
