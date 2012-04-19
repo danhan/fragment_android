@@ -476,7 +476,9 @@ In our research, we apply Labeled LDA to perform topic analysis. Labeled LDA is 
 \section{Related Work}
 Topic models have been used to help understand software systems. Marcus et al.\cite{Marcus04aninformation} used Latent Semantic Indexing (LSI) on both source code and user queries and then identified the most relevant source code documents with similarity measurements. Asuncion et al.\cite{Asuncion:2010} applied a coherence measurement on topics learned by LDA to model the quality of bug reports. Linstead et al.\cite{Linstead:2009} performed LDA to generate traceability links for artifacts in software projects automatically. Topic modeling is also utilized by Thomas et al.\cite{Thomas:2011} to study the evolution of topics in software projects.
 
-Compared with all these approaches, our work differs from them in two aspects. We manually labeled bug reports with multiple labels. And we applied labeled LDA in our work to overcome the disadvantages of these unsupervised algorithms by pre-defining the number of topics and interpreting the extracted topics \cite{Asuncion:2010}.
+Compared with all these approaches, the most important difference is the topic models. They used LDA to extract topics, while we used Labeled LDA to obtain the topics. With LDA, they prefined the number of topics and interpreted the extracted topics to get the extracted topics\cite{Asuncion:2010}. In our work, we first manually labeled bug reports with multiple labels. Then we employed labeled LDA to get the topics. Another difference is that there is some manual work in our study.
+
+to overcome the disadvantages of these unsupervised algorithms by pre-defining the number of topics and interpreting the extracted topics 
 
 \section{Methodology}
 
