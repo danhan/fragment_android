@@ -361,11 +361,11 @@
 % use a multiple column layout for up to two different
 % affiliations
 
-\author{\IEEEauthorblockN{Dan Han, Chenlei Zhang, Xiaochao Fan, Abram Hindle, Kenny Wong, Eleni Stroulia}
+\author{\IEEEauthorblockN{Dan Han, Chenlei Zhang, Xiaochao Fan, Abram Hindle, Kenny Wong and Eleni Stroulia}
 \IEEEauthorblockA{Department of Computing Science\\
 University of Alberta \\
 Edmonton, Canada\\
-\{dhan3, chenlei1, xf2, hindle1, kenw, stroulia\}@ualberta.ca}
+\{dhan3, chenlei1, xf2, hindle1, kenw, stroulia\}@cs.ualberta.ca}
 
 }
 
@@ -405,12 +405,14 @@ Edmonton, Canada\\
 
 
 \begin{abstract}
-Android fragmentation has been a controversial topic, but both proponents and opponents cannot provide strong evidences to support their statements. In order to make the debate more clear, we mined and analyzed the Android bug reports related to two popular Android vendors, HTC and Motorola. We manually annotated bug reports with labels and applied Labeled Latent Dirichlet Allocation (LDA) to the datasets to produce bug topics. By comparing the average relevance of top 20 bug topics over time for both vendors, we categorized the topics into two types which are common topics and unique topics. We investigated and discussed these two types of bug topics relevance tendency over time. Our analysis results lead to the conclusion that Android fragments into multiple incompatible and brand-specific versions. Our findings can be used by Android system community, stakeholders, Android device vendors and developers to make project dashboards, process investigation and feature analysis.
+Android fragmentation has been a controversial topic. In this study, we investigated the fragmentation of Android by a comparison of Android vendor's bug reports via topic analysis. We mined and analyzed the Android bug reports related to two popular Android vendors, HTC and Motorola. We manually annotated bug reports with labels and applied Labeled Latent Dirichlet Allocation (Labeled-LDA) to the datasets to produce bug topics. By comparing the distribution of average relevance of top 18 bug topics over time for both vendors, we categorized the topics into three types which are \textit{Common Troubled Topics}, \textit{Common Improved Topics} and \textit{Unique Topics}. The \textit{Common Troubled Topics} show that there is no correlation between the troubled features of Android and Android evolution. The \textit{Common Improved Topics} show that some features within the same vendors have portability issues across their multiple devices. The \textit{Unique Topics} show that different vendors have specific bug topics which imply there may be the portability problem on the different vendors. Our findings can be used by Android system community, stakeholders, Android device vendors and developers to make project dashboards, process investigation and feature analysis.
+
+
 
 \end{abstract}
 
 \begin{IEEEkeywords}
-Bug reports; Topic mining; Labeled LDA
+Bug reports; Topic mining; Labeled-LDA
 \end{IEEEkeywords}
 
 
@@ -429,22 +431,25 @@ Bug reports; Topic mining; Labeled LDA
 \section{Introduction}
 % no \IEEEPARstart
 
-The market share of mobile phones is always increasing and getting more and more competitive among various mobile model vendors\footnote{\url{http://asymco.com/2011/11/17/the-global-smartphone-market-landscape}}. iPhone and Android phone share almost 70\% of US mobile phone market \cite{usmarket}. Compared to Apple’s closed ecosystem for iOS, in general, Android has both software fragmentation and hardware fragmentation\cite{analysis}. Android Software fragmentation includes (1) Customized device-specific Android and UI-specific Android from vendors (2) Customized carrier-specific  Android from vendors. Hardware fragmentation means that at any given point in time, devices based on the same Android are running on different types of hardware, related to Processors, Graphics Processors, screen size  and so on \cite{analysis}.  These fragmentation leads to the additional testing work for Android application across multiple devices; it causes Android users are left out of some new feature because of the low upgrade, and it also makes someone lose confidence in Android.  
+The market share of mobile phones is always changing and getting more and more competitive among various mobile device vendors\footnote{The Global Smartphone Market Landscape: \url{http://www.asymco.com/2011/11/17/the-global-smartphone-market-landscape (retrieved March, 2012)}}. The iPhone and Android phones share almost 70\% of US mobile phone market \cite{usmarket}. Compared to Apple’s closed ecosystem for iOS, in general, Android has both software fragmentation and hardware fragmentation \cite{analysis}. Android software fragmentation includes (1)multiple Android versions (2)customized device-specific Android and UI-specific Android from vendors (3) customized carrier-specific Android from vendors. Hardware fragmentation means that at any given point in time, devices based on the same Android are running on different types of hardware, related to processors, graphics processors, and screen size \cite{analysis}. The fragmentation leads to the additional testing work for Android application across multiple devices; it stops Android users experiencing some new features of Android because of the upgrading delay; and it also makes people lose confidence in Android.
 
-Android fragmentation has been a controversial topic which swells up now and again regrading its provenance and its impacts.  However, no one can provide strong evidences to support their statements. Someone from industry performed experiments of Android on different devices and found that the root cause of fragmentation is the classical software engineering issues\cite{testing}.
 
-In our study, we want to explore this problem by mining and analyzing Android user bug reports. We applied Labeled LDA\cite{labeledlda}. on bug reports of different vendors to analyze the bug topics. We then did the analysis on the bug topics and based on the topics analysis, and we discussed what features of Android contributed much on Android fragmentation in the end. In terms of bug reports,   We chose the bug reports of HTC and Motorola in this study. HTC’s first Android phone was the HTC Dream manufactured in Oct. 2008. HTC has made more than thirty different Android phones since then. Motorola made their first Android phone in Oct. 2009 and has released more than twenty different Android phones since then. Their Android products have gained widespread popularity.  
+Android fragmentation has been a controversial topic which swells up now and again regrading its provenance and its impacts.  However, no one can provide strong evidences to support their statements. Someone from industry performed experiments of Android on different devices, and they found that the root cause of fragmentation is the classical software engineering issues \cite{testing}.
+
+In this study, we want to explore the fragmentation of Android by mining and analyzing Android user bug reports. We applied topic analysis on the Android bug reports. A topic of the document (e.g. bug reports, source code changes and commits) is generated by topic models which has been used to help understand software systems. There are a few topic models utilized by researchers in software engineering, e.g. Latent Dirichlet Allocation (LDA), Latent Semantic Index (LSI) and Labeled Latent Dirichlet Allocation (Labeled-LDA) \cite{Marcus04aninformation} \cite{Asuncion:2010} \cite{Linstead:2009}. We applied labeled-LDA\cite{labeledlda} on bug reports of different vendors and analyzed topics in bug reports. We then did the analysis on the bug topics and based on the topics analysis, we discussed what features of Android contribute much on Android fragmentation in the end. 
+	
+In terms of bug reports, we chose the bug reports of HTC and Motorola in this study. HTC's first Android phone was the HTC Dream manufactured in Oct. 2008. HTC has made more than thirty different Android phones since then. Motorola made their first Android phone in Oct. 2009 and has released more than twenty different Android phones since then. Their Android products have gained widespread popularity. 
  
-This paper makes the following contribution:
+This paper makes the following contributions:
 \begin{itemize}
-\item we found that some features of Android contribute software fragmentation and some features contribute hardware fragmentation.
+\item we found that some features of Android contribute to both software fragmentation and hardware fragmentation.
 \end{itemize}
 
 \begin{itemize}
-\item We provided a methodology which can be used to analyze other Android branches fragmentation issues to discover more hardware fragmentation. 
+\item We provided a methodology which can be used to analyze other Android branches' fragmentation.
 \end{itemize}
 
-The paper is organized as follows: Section 2 describes the background; we discuss the related work in section 3; in section 4, we explicate our methodology about the mining approaches applied on this study; section 5 is to compare and evaluate the topic models generated by LDA and Labeled LDA; we introduce the analysis of topic evolution models in section 6; the paper concludes with a discussion of two research questions, threats to validity, conclusion and future work in section 7, 8 and 9 correspondingly. 
+The paper is organized as follows: Section 2 describes the background; we discuss the related work in section 3; in section 4, we introduce our methodology; we apply the analysis of topic evolution models in section 5; section 6 compares and evaluates the topic models generated by LDA and labeled-LDA;  the paper concludes with a discussion of two research questions, threats to validity, conclusion and future work in section 7, 8 and 9 correspondingly.
 
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
@@ -457,8 +462,12 @@ The paper is organized as follows: Section 2 describes the background; we discus
 %Subsubsection text here.
 
 \section{Background}
-In our research, we apply Labeled LDA to perform topic analysis. Labeled LDA is a supervised topic model for credit attribution in multi-labeled corpora\cite{labeledlda}. It defines a one-to-one mapping between LDA’s latent topics and tags labeled by users. In other words, Labeled LDA incorporates the multiple tags into the topics learning process and only builds topics around these tags, which is quite different from LDA. LDA, as a totally unsupervised algorithm, automatically learns a set of terms for each topic on a corpus without any constraints. To apply Labeled LDA, we utilize the Stanford Topic Modeling Toolbox (STMT)\cite{stmt}. Specifically, this tool outputs a set of topics, each one consisting of a list of terms, and the relevance distribution between each bug report and all the topics.
+Topic analysis, with respect to Software Control Systems (SCS) is extremely useful in a variety of text processing applications \cite{hindle9s}. It includes two main steps: topic identification and text segmentation \cite{li2003topic}. It can be used in indexing the texts automatically to retrieve information.
+With it, we can understand what the main topics and sets of associated words with these topics, and where those associated words lie within the text \cite{li2003topic}. Recent topic analysis technologies include Latent Dirichlet Allocation (LDA) and Labeled-LDA.
 
+LDA is an unsupervised topic model to credit text documents as mixtures of latent topics, where topics correspond to key word lists presented in the corpus \cite{ldawiki}. It has been successfully used in the software engineering area for mining and retrievng informations from large text corpora.
+
+In our research, we apply Labeled-LDA to perform topic analysis. Labeled-LDA is a supervised topic model for credit attribution in multi-labeled corpora \cite{labeledlda}. It defines a one-to-one mapping between LDA’s latent topics and tags labeled by users. In other words, Labeled-LDA incorporates the multiple tags into the topics learning process and only builds topics around these tags, which is quite different from LDA. LDA, as a totally unsupervised algorithm, automatically learns a set of terms for each topic on a corpus without any constraints. To apply Labeled-LDA, we utilize the Stanford Topic Modeling Toolbox (STMT) \cite{stmt}. 
 
 %\begin{figure*}[htb]
 %\centering
@@ -471,11 +480,11 @@ In our research, we apply Labeled LDA to perform topic analysis. Labeled LDA is 
 \section{Related Work}
 Topic models have been used to help understand software systems. Marcus et al.\cite{Marcus04aninformation} used Latent Semantic Indexing (LSI) on both source code and user queries and then identified the most relevant source code documents with similarity measurements. Asuncion et al.\cite{Asuncion:2010} applied a coherence measurement on topics learned by LDA to model the quality of bug reports. Linstead et al.\cite{Linstead:2009} performed LDA to generate traceability links for artifacts in software projects automatically. Topic modeling is also utilized by Thomas et al.\cite{Thomas:2011} to study the evolution of topics in software projects.
 
-Compared with all these approaches, our work differs from them in two aspects. We manually labeled bug reports with multiple labels. And we applied labeled LDA in our work to overcome the disadvantages of these unsupervised algorithms by pre-defining the number of topics and interpreting the extracted topics \cite{Asuncion:2010}.
+Compared with all these approaches, the most important difference is the topic models. They used LDA to extract topics, while we used Labeled-LDA to obtain the topics. With LDA, they prefined the number of topics and interpreted the extracted topics to get the extracted topics\cite{Asuncion:2010}. In our work, we first manually labeled bug reports with multiple labels. Then we employed labeled-LDA to get the topics. Another difference is that there is some manual work in our study to overcome the disadvantages of these unsupervised algorithms by pre-defining the number of topics and interpreting the extracted topics. 
 
 \section{Methodology}
 
-Our methodology is to extract bug reports, assign multiple labels to each of them and then apply Labeled LDA on the labeled data. After that we calculate the average relevance of bug reports to each label over time\cite{Hindle} and compare them between two Android vendors, HTC and Motorola. In order to compare the performance between LDA and Labeled LDA, we also apply LDA on the extracted bug reports of HTC and Motorola without our manual labels. We label all the topics generated by LDA. For each vendor, we calculate the similarity of each pair of labels from LDA and Labeled LDA to evaluate their performance.
+Our methodology is to extract bug reports, assign multiple labels to each of them and then apply Labeled-LDA on the labeled data. After that we calculate the average relevance of bug reports to each label over time\cite{Hindle} and compare them between two Android vendors, HTC and Motorola. In order to compare the performance between LDA and Labeled-LDA, we also apply LDA on the extracted bug reports of HTC and Motorola without our manual labels. We label all the topics generated by LDA. For each vendor, we calculate the similarity of each pair of labels from LDA and Labeled-LDA to evaluate their performance.
 
 \subsection{Generating the data}
 
@@ -609,15 +618,15 @@ keyboard.
 
 To ensure consistency and agreement in labelling the authors executed a training
 methodology. This methodology also ensured a synchronization of labels.
-Each author, Zhang and Fan, separately labelled each of these 248 bug reports, 
+Each author, Zhang and Fan, separately labeled each of these 248 bug reports, 
 with labels inspired by the previous research on Android
 features. 
-After Zhang and Fan labelled these 248 bug reports seperately, the
+After Zhang and Fan labeled these 248 bug reports seperately, the
 labels were compared and the authors discussed label agreement and
 disagreement in order to train themselves to consistently label bug
 report.
 To help the comparison each author’s labeled data was used as input to
- STMT's implementation of Labelled-LDA which produced a set of topics.
+ STMT's implementation of Labeled-LDA which produced a set of topics.
 The topics and their relevant bug reports were compared to ensure
 consistent interpretation of the bug reports and their labels.
 
@@ -651,17 +660,17 @@ calculator's results.
 %The manual labelling took approximately 30 hours per person. 
 
 
-1304 HTC and 985 Motorola bug reports were labelled with multiple
+1304 HTC and 985 Motorola bug reports were labeled with multiple
 labels, leaving 199 and 73 bug reports that cannot be clearly labeled.
 In total, there are 72 labels for HTC and 57 labels for Motorola.
 Table \ref{selected1} lists all the manual labels from bug reports of HTC
 and Motorola.
 
-% XXX TODO Labeled LDA to Labeled-LDA
+% XXX TODO Labeled-LDA to Labeled-LDA
 \subsection{Applying Labeled-LDA}
 
 
-% 4. Apply Labeled LDA:We applied the Labeled-LDA tool, Stanford Topic
+% 4. Apply Labeled-LDA:We applied the Labeled-LDA tool, Stanford Topic
 % Modeling Toobox [http://nlp.stanford.edu/software/tmt/tmt-0.4/], to
 % get the topic-document distribution on our labeled bug reports.
 
@@ -688,7 +697,7 @@ Labeled-LDA then outputs the topic, a word distribution, associated
 with our label, as well as a document-topic matrix which links our
 labels to the documents in the each bug report corpus (HTC and
 Motorola).
-%By applying Labeled LDA to the bug reports of HTC and Motorola
+%By applying Labeled-LDA to the bug reports of HTC and Motorola
 %separately, we have the word distribution of each label and a matrix
 %that provides the relationship between bug reports and the labels. 
 
@@ -704,6 +713,7 @@ reports to this label in each month.
 The average relevance value of a label \begin{math} \l_i \end{math} in month \begin{math} m_j \end{math} is the sum of all the relevance values of this label over all bug reports in this month divided by the number of bug reports in this month,
 \begin{equation}
 A(\l_i,m_j) = \frac{\sum_{\substack{k=1}}^{|m_j|}r(\l_i,d_k)}{|m_j|}
+\label{equation1}
 \end{equation}
 where $r(\l_i,d_k)$ is the relevance value of label $\l_i$ to bug
 report $d_k$, $|m_j|$ is the number of bug reports in this month. We generated a distribution of average relevance among three years for each label, showed in Figure\ref{commontopic}, Figure \ref{fixtopic}, Figure \ref{uniquehtc} and Figure \ref{uniquemoto}.
@@ -766,10 +776,10 @@ Table \ref{seleted2} lists a few selected topics from LDA with manual labels.
 
 \subsection{Comparing the Effort to Use LDA and Labeled-LDA}
 
-% 8. Comparison of LDA and Labeled LDA: For each pair of topics in LDA
-% and Labeled LDA, we computed the their similarity based on the
+% 8. Comparison of LDA and Labeled-LDA: For each pair of topics in LDA
+% and Labeled-LDA, we computed the their similarity based on the
 % topic-document distribution. That is the Jaccard similarity of the two
-% sets. One is from LDA and the other one is from Labeled LDA. Each set
+% sets. One is from LDA and the other one is from Labeled-LDA. Each set
 % is the bug reports that have relevance to that label. We chose several
 % thresholds on the relevance. That is if the relevance is under the
 % threshold, this bug report is not related to that label. At last we
@@ -780,11 +790,11 @@ In order to determine if LDA would generate the similar results to
 Labeled-LDA we had to compare the results.
 % Thus nce LDA and Labelled-LDA were applied to the bug reports of HTC and
 % Motorola we had to compare the topics that were extracted.
-Both LDA and Labeled LDA produce matrices of
+Both LDA and Labeled-LDA produce matrices of
  the relationship between bug reports of two vendors and the
 label or topics. 
 That is if the topics generated by LDA that were labeled as the same
-ones in Labeled LDA would be related to similar bug reports.
+ones in Labeled-LDA would be related to similar bug reports.
 
 We determined topic similarity by comparing the sets of documents
 relevant to a LDA topic and those relevant to a Labeled-LDA
@@ -792,9 +802,9 @@ topic. Because the LDA topic might be different from the Labeled-LDA
 topic we did pair-wise similarity comparisons.
 
 We applied the Jaccard similarity coefficient to compute the
-similarity between each topic in LDA and each label in Labeled LDA. 
+similarity between each topic in LDA and each label in Labeled-LDA. 
 That is, the Jaccard similarity coefficient between label A in LDA and
-label B in Labeled LDA is the ratio of the intersection of bug reports
+label B in Labeled-LDA is the ratio of the intersection of bug reports
 related to label A and label B to the union of the bug reports related
 to label A and label B,
 \begin{equation}
@@ -816,7 +826,7 @@ the Jaccard similarity coefficients. We eventually chose $0.2$ as the similariti
 We plotted these pairwise tests in order to explore the match between
 LDA and Labeled-LDA.
 
-Then we counted the number of bugs that are related to labels which are both shared by LDA and Labeled-LDA in HTC and Motorola. We applied the Chi-squared test on the two sets of distribution to study if each of the two distributions match.
+Then we counted the number of bug reports that are related to labels which are both shared by LDA and Labeled-LDA in HTC and Motorola. We applied the Chi-squared test on the two sets of distribution to study if each of the two distributions match.
 
 
 \begin{table}[!t]
@@ -850,76 +860,65 @@ Motorola & wifi &connect, xoom, hotspot, netbook, wifi, ssid, \\
 
 \section{Topic Mining and Analysis}
 
-In order to investigate fragmentation within Android, we mined the bug report of Android and analyzed the result from both quantity and quality views. 
+In order to investigate fragmentation within Android, we mined the bug reports of Android and analyzed the results from both quantitative and qualitative aspects.
 
-We start by exploring the quantity of bug reports for HTC and Motorola. Then we compare and discuss the topic relevance over time for both vendors.
+We started by exploring the distribution of the number of bug reports over time for HTC and Motorola. Then we compared and discussed the distribution of average relevance for each topic over time for both vendors.
 
 %\begin{figure}[!htb]
 %\centering
 %\includegraphics[width=0.4\textwidth]{htcldallda.png}
-%\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled LDA in HTC. The X axis is the same labels from LDA and Labeled LDA and the Y axis is the number of bug reports.}
+%\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled-LDA in HTC. The X axis is the same labels from LDA and Labeled-LDA and the Y axis is the number of bug reports.}
 %\end{figure}
 %
 %\begin{figure}[!htb]
 %\centering
 %\includegraphics[width=0.4\textwidth]{motoldallda.png}
-%\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled LDA in Motorola. The X axis is the same labels from LDA and Labeled LDA and the Y axis is the number of bug reports.}
+%\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled-LDA in Motorola. The X axis is the same labels from LDA and Labeled-LDA and the Y axis is the number of bug reports.}
 %\end{figure}
 %
 %\begin{figure}[htb]
 %\centering
 %\includegraphics[width=0.4\textwidth]{htcratiosim.png}
-%\caption{The comparison of ratio and similarity in HTC. The result of the smaller number of bug reports related to this label in LDA or Labeled LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled LDA.}
+%\caption{The comparison of ratio and similarity in HTC. The result of the smaller number of bug reports related to this label in LDA or Labeled-LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled-LDA.}
 %\end{figure}
 %
 %\begin{figure}[htb]
 %\centering
 %\includegraphics[width=0.4\textwidth]{motoratiosim.png}
-%\caption{The comparison of ratio and similarity in Motorola. The result of the smaller number of bug reports related to this label in LDA or Labeled LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled LDA.}
+%\caption{The comparison of ratio and similarity in Motorola. The result of the smaller number of bug reports related to this label in LDA or Labeled-LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled-LDA.}
 %\end{figure}
 
 \begin{figure*}[htb]
 \centering
 \includegraphics[width=1\textwidth]{bugovertime.png}
-\caption{Number of bugs with the major version of Android for HTC and Motorola}
+\caption{Number of bug reports with the major version of Android for HTC and Motorola}
 \label{bugovertime}
 \end{figure*}
 
 \subsection{Overview of bug reports in HTC and Motorola}
 
-We group the bugs monthly based on their opened date and count the total number of bugs in each month for two vendors. Figure \ref{bugovertime} depicts a comparison of the quantity of bugs for HTC and Motorola.
+We grouped the bug reports monthly based on their opened date and counted the total number of bug reports in each month for two vendors. Figure \ref{bugovertime} depicts a comparison of the number of bug reports for HTC and Motorola.
 
-From Figure \ref{bugovertime}, we can see that the first HTC bug report was opened in January, 2009, and the first Motorola bug report was opened in November, 2009. According to the brief history of Android models survey\cite{historyofandroid}, HTC released the first Android model in October, 2008, while Motorola releases the first model in October, 2009. The first bug reports of both vendors are in order of the first model released by them. 
+From Figure \ref{bugovertime}, we can observe that the first HTC bug report was opened in January, 2009, and the first Motorola bug report was opened in October, 2009. According to the brief history of Android devices survey \cite{historyofandroid}, HTC released the first Android device in October, 2008, while Motorola released its first device in October, 2009. The first bug reports of both vendors are in order of the first device released by them. There is a strong time correlation between the first opened bug report and the first released Android device of both vendors.
 
-In addition, we can see, in Figure\ref{bugovertime}, the spike for HTC happened in September, 2010, and for Motorola it happened in December, 2009. By reading the bug subjects, we found that the spike of HTC was caused by the fact that many people upgraded their model from Android 2.1 to Android 2.2 at that time, and some functions did not work well after upgrade. For example, users could not send message after the upgrade. The Motorola spike was mainly resulted from the upgrade from Android 2.0 to Android 2.0.1. This suggests that bug activity increases are more relevant to Android version than hardware platform.
+In addition, Figure \ref{bugovertime} shows the first spike for HTC happened in September, 2010, and for Motorola it happened in December, 2009. By reading the bug reports, we found that the spike of HTC was caused by the fact that many people upgraded Android version from 2.1 to 2.2, and some features did not work well after upgrade. For example, users could not send message after the upgrade. The spike of Motorola mainly contributed to the Android upgrade from 2.0 to 2.0.2. This suggests that the bug reports activities have strong correlation with Android upgrade. It reveals that there might be incompatibility problem among Android versions.
+% xxx You didn't compare the hardware platforms. How can you have this conclision?
 
 
 \subsection{Topics Analysis of HTC and Motorola}
 
-First, it should be mentioned that we extracted 72 topics for HTC and 58 topics for Motorola with Labeled LDA.
+As shown in Table \ref{selected1} we extracted 72 topics for HTC and 57 topics for Motorola with Labeled-LDA.
 
-By calculating the average of bug distributions associated with each
-topic, we got the average relevance for each topic by month. 
-Examining the average relevance trends of each topic for the same vendor and comparison between both vendors, we categorize the topics into three types. 
-They are common troubled topics, common improved topics, and unique
-topics. 
-The Common Troubled Topics mean that the relevance of the topic has
-fluctuations all the time for both HTC and Motorola. 
-The Common Improved Topics mean that the relevance of topic turns to
-be flat over time after several fluctuations for HTC and Motorola. 
-The Unique Topics mean that the relevance of topic has significant differences between HTC and Motorola.
+Based on Equation \ref{equation1} each topic has a distribution of average relevance over time. According to the comparison of each topic's distribution in both vendors, we categorized the topics into three types, which are \textit{Common Troubled Topics}, \textit{Common Improved Topics}, and \textit{Unique Topics}. 
+The \textit{Common Troubled Topics} mean that the distribution of the average relevance of the topics have fluctuations all the time for both HTC and Motorola. The \textit{Common Improved Topics} mean that the distribution of the average relevance of topics turn to be flat over time after several fluctuations for HTC and Motorola. The \textit{Unique Topics} mean that the distribution of average relevance of topics have significant differences between HTC and Motorola.
 
 A representative subset of top 18 topics, which are obtained by
 sorting the number of related bug reports for HTC and Motorola
-respectively, is given in Table\ref{topicslist}, Table\ref{topicslist}
-and Table\ref{topicslist} [THE TABLEIII SHOULD BE SPLIETED INTO THREE
-TABLES]. 
-Table\ref{topicslist} shows Common Troubled Topics,
-Table\ref{topicslist} shows Common Improved Topics, and
-Table\ref{topicslist} shows Unique Topics. 
-Each topic is associated with top 15 terms for
+respectively, is given in Table \ref{topicslist}.
+Each topic is associated with top 15 terms generated by Labeled-LDA for
 both HTC and Motorola. 
-These topics are associated with 85\% bugs of HTC, and 83\% bugs of Motorola. As mentioned before, the label column in Table\ref{topicslist}, Table\ref{topicslist} and Table\ref{topicslist} represents the features of Android.
+%These topics are associated with 85\% bugs of HTC, and 83\% bugs of Motorola. 
+As mentioned before, the label column in Table \ref{topicslist} represents the feature of Android. %Please refer to the resarch features as potential labels to have a better understanding of all the labels.
 
 \begin{figure*}[htb]
 \centering
@@ -929,16 +928,17 @@ These topics are associated with 85\% bugs of HTC, and 83\% bugs of Motorola. As
 \end{figure*}
 
 \subsubsection{Common Troubled Topic} 
+%space after Table, Figure
+%relevance shoule be written as the distribution of the average relevance
+Eight \textit{Common Troubled Topics} shared by two vendors are shown in Table \ref{topicslist} and the distribution of average relevance of each topic is shown in Figure \ref{commontopic}. 
+%all the labels should be consistent with all the labels in table I.
+\textit{Common Troubled Topics} shown in Table \ref{topicslist} for HTC and Motorola share many identical terms. That means they have the same bug reports about sms\//mms(\textit{text, thread, send}), calendar(\textit{event, day, google,appointment,time}), email(\textit{gmail, send, thread}), contact (\textit{number, google,list}), display (\textit{screen,button,behavior}), bluetooth (\textit{headset,connect, calling}), synchronize (\textit{contact, exchange, google}) and setting(\textit{turn,network,mode}). 
 
-A representative subset of eight Common Troubled Topics shared by two vendors is shown in Table \ref{topicslist} and the average relevance of each topic is shown in Figure\ref{commontopic}. 
+We found that multiple topics share some same terms for each vendor. For HTC, five topics including \textit{sms\//mms, contact, display, bluetooth} and \textit{setting} share the same term ``desire". This indicates that these topics happened frequently in HTC Desire device. \textit{Calendar} and \textit{bluetooth} share the same term ``2.2" and ``2.2" means Android version 2.2. This indicates that these two topics happened frequently for Android 2.2 in HTC devices. For Motorola, seven topics except \textit{setting} share the same term ``droid" and it means Motorola Droid device. In addition, \textit{calendar} and \textit{synchronize} in Motorola share ``milestone" which indicates these two topics discussed mostly in Motorola Milestone device. ``Xoom" shared by \textit{display} and \textit{setting} indicates that Motorola Xoom has more bug reports related with these two topics. Furthermore, \textit{synchronize} associates with both ``Xoom" and ``milestone" terms. This indicates bug reports related with \textit{synchronize} happened frequently in both Motorola Xoom and Motorola Milestone. 
 
-In Table\ref{topicslist}, HTC and Motorola share many identical terms for each label. That means they have the same issues about SMS(\textit{text, thread, send}), Calendar(\textit{event, day, google,appointment,time}), Email(\textit{gmail, send, thread}), Contact (\textit{number, google,list}), Display (\textit{screen,button,behavior}), Bluetooth (\textit{headset,connect, calling}), Synchronization (\textit{contact, exchange, google}) and Settings(\textit{turn,network,mode}). 
-
-We also found that multiple topics share some same terms for each vendor. For HTC, we can see, five topics including SMS/MMS, Contact, Display, Bluetooth and Settings share the same term “desire”. This indicates that these topics happened frequently in HTC Desire model. Calendar and Bluetooth share the same term “2.2” which means Android version 2.2. This indicates that these two topics happened frequently for Android 2.2 in HTC models. For Motorola, seven topics except Settings share the same term “droid” which means Motorola Droid model. In addition, Calendar and Synchronization in Motorola share “milestone” which indicates these two topics discussed mostly in Motorola Milestone model. “Xoom” shared by Display and Settings indicates that Motorola Xoom has more bugs related with these two topics. Furthermore, “Synchronization” associates with both “Xoom” and “milestone” terms. This indicates bugs related with synchronization happened frequently in both Motorola Xoom and Motorola Milestone. 
-
-In Figure\ref{commontopic}, HTC and Motorola share the same topic evolution trends. Both of them have continuous spikes and drops for each topic over time. That indicates bugs associated with these topics have no obvious decreasing trends with Android evolution.
-
-In summary, Calendar in HTC and Display in Motorola have strong correlation with differnet Android versions. Bluetooth in both of HTC and Motorola have strong correlation with Android 2.1 and Android 2.2. With Android evolution, these topics evolution for both vendors do not demonstrate the decreasing trends with Android evolution as we expect. Both of vendors have some topics associated with their typical models. For HTC, five out of eight topics have correlation with HTC Desire model. For Motorola, seven out of eight topics have correlation with Motorola Droid model. As the topics corresponds to the features in Android, we can see these eight features demonstrate the compatibility issues.
+In Figure \ref{commontopic}, HTC and Motorola share the same trend of the distribution of average relevance of topics. Both of them have continuous spikes and drops for each topic over time. There is no obvious decreasing trends of bug reports with Android evolution.
+%more explain why android version should make the trend of topics decrease in the ideal case.
+In summary, \textit{calendar} in HTC and display in Motorola are strongly correlated with different Android versions. \textit{Bluetooth} in both of HTC and Motorola have strong correlation with Android 2.1 and Android 2.2. With Android evolution, these distribution of average relevance of each topic for both vendors do not demonstrate the decreasing trend with Android evolution as we expect. Both of vendors have some topics associated with their typical devices. For HTC, five out of eight topics have correlation with HTC Desire device. For Motorola, seven out of eight topics have correlation with Motorola Droid device. These eight features which correspond to these topics demonstrate the compatibility issues.
 
 \begin{figure*}[htb]
 \centering
@@ -949,16 +949,17 @@ In summary, Calendar in HTC and Display in Motorola have strong correlation with
 
 \subsubsection{Common Improved Topic}
 
-A representative subset of six Common Improved Topics shared by two vendors is shown in Table \ref{topicslist} and the average relevance of each topic is shown in Figure \ref{fixtopic}.
+Six \textit{Common Improved Topics} shared by two vendors are shown in Table \ref{topicslist} and the distribution of the average relevance of each topic is shown in Figure \ref{fixtopic}.
 
-In Table \ref{topicslist}, HTC and Motorola share many identical terms for WiFi (\textit{connection,ssid,network}), Upgrade (\textit{2.2,2.1,http}), Image(\textit{gallery,picture,photo}) and so on. Bugs associated with Upgrade were result from upgrade from Android 2.1 to Android 2.2 in both vendors. This indicates Android 2.2 might have compatibility issue. 
+\textit{Common Improved Topics} shown in Table \ref{topicslist} for HTC and Motorola share many identical terms for wifi (\textit{connection,ssid,network}), upgrade (\textit{2.2,2.1,http}), and image(\textit{gallery,picture,photo}). Both vendors have the issues in upgrading from Android 2.1 to Android 2.2. This indicates Android 2.2 might have compatibility issue with the upgrading devices. 
 
-In the meanwhile, they also own some special terms. For HTC, bugs related with Calling happened frequently in Android 2.1, and bugs related with Image and Audio happened frequently in Android 2.2. For Motorola, bugs related with Calling happened frequently in Android 2.2. In addition, four out of six topics have correlation with HTC Desire model. For Motorola, seven out of eight topics have correlation with Motorola Droid model and the other one have correlation with Motorola MileStone model. Therefore, we can see these six topics also have strong correlation with the Android models for each vendor.
+Meanwhile, the \textit{Common Improved Topics} also own some special terms. For HTC, bug reports related with \textit{calling} happened frequently in Android 2.1, and bug reports related with \textit{image} and \textit{audio} happened frequently in Android 2.2. For Motorola, bug reports related to \textit{calling} happened frequently in Android 2.2. In addition, four out of six topics have correlation with HTC Desire device. For Motorola, seven out of eight topics have correlation with Motorola Droid device and the other one have correlation with Motorola MileStone device. Therefore, these six topics have strong correlation with the Android hardware devices for each vendor.
 
-From Figure\ref{fixtopic}, we can see both HTC and Motorola have spikes in the early stage, and then stay in their values. It indicates the corresponding features of Android tend to be more robust over time with Android evolution during the whole observed period.
+In Figure \ref{fixtopic}, both HTC and Motorola have spikes in the early stage, and then stay in their values. It indicates the corresponding features of Android tend to be more robust over time with Android evolution during the whole observed period.
 
-In summary, we can see that Calling from both vendors have different correlation with Android versions. With Android evolution, these topics evolution do demonstrate the improved trends with Android evolution as we expect. These topics still have strong correlation with their typical model for both vendors. Therefore, we can see these six topics demonstrate that the features which have the positive correlation with Android evolution still have strong correlation with their typical model for both vendors.
+In summary,\textit{calling} from both vendors has different correlation with Android versions. With the evolution of Android, these distributions of average relevance of topics demonstrate the improved trends with Android evolution as expected. However, these topics still have strong correlation with their typical devices for both vendors. This indicates these topics contribute to the hardware fragmentation.
 
+% The above summary is not clear to me.
 
 %\begin{figure*}[htb]
 %\centering
@@ -992,51 +993,51 @@ In summary, we can see that Calling from both vendors have different correlation
 
 \subsubsection{Unique Topics}
 
-There are the two unique topics for HTC shown in Table\ref{topicslist}. And Figure\ref{uniquehtc} shows the average relevance of each topic.
+There are the two unique topics for HTC shown in Table \ref{topicslist}. Figure \ref{uniquehtc} shows the distribution of the average relevance of each topic.
 
-In Table\ref{topicslist}, only HTC has the Language (\textit{arabic, desire, language, 2.2, letters, characters, translation, character, read}) topic. The associated terms indicate that bugs related with language happened frequently in Android 2.2. This stems from the fact that the keyboard multiple language function is a new function introduced in Android 2.2. Moreover, most of HTC models have no physical keyboard, so this new function has been used frequently by HTC users. In contrast, for Motorola, most of models have the physical keyboard, so this function has been used seldom. This fact can also be the reason why HTC has “on-screen” and “virtual” terms for Keyboard, while Motorola does not have these terms at all.
+\textit{HTC Unique Topics} in Table \ref{topicslist} indicates that HTC has an unique topic which is language (\textit{arabic, desire, language, 2.2, letters, characters, translation, character, read}). The associated terms indicate that bug reports related with language happened frequently in Android 2.2. This stems from the fact that the feature of ``keyboard multiple language" is a new feature introduced in Android 2.2. Moreover, most of HTC devices have no physical keyboard, so this new feature has been used frequently by HTC users. In contrast, for Motorola, most of devices have the physical keyboard, so this feature has seldom been used. This fact can also be the reason why HTC has ``on-screen" and ``virtual" terms for \textit{keyboard}, while Motorola does not have these terms at all.
 
-In figure\ref{uniquehtc}, HTC keyboard turns to stay in its value, while Motorola has spikes and drops over time. HTC language has the relevance distribution, while there are too few bugs related with language to make language as a topic in Motorola.
+In Figure \ref{uniquehtc}, HTC \textit{keyboard} turns to stay steady, while Motorola has spikes and drops over time. HTC \textit{language} has the relevance distribution, while there are few bug reports related with \textit{language} to make \textit{language} as a topic in Motorola.
 
-There are the two unique topics for Motorola shown in Table\ref{topicslist}. And Figure\ref{uniquemoto} shows the average relevance of each topic.
+There are two unique topics for Motorola shown in Table \ref{topicslist}. Figure \ref{uniquemoto} shows the distribution of the average relevance of each topic.
 
-In Table\ref{topicslist}, HTC and Motorola, on the one hand, share the identical terms for GPS (\textit{gps, data, position, location, maps, google, time, lock, wrong, icon, turn, home, latitude}) and browser (\textit{Browser, page, text, http, open, server}). On the other hand, they have special terms separately. For browser, Motorola has “droid”, “milestone” and “xoom” terms together. This indicates that the browser bugs happened frequently in three Motorola models. This indicates that Browser feature has portability issue within Motorola Android models.
+\textit{Motorola Unique Topics} in Table \ref{topicslist} represents HTC and Motorola share the identical terms for GPS (\textit{gps, data, position, location, maps, google, time, lock, wrong, icon, turn, home, latitude}) and browser (\textit{browser, page, text, http, open, server}). Furthmore, both vendors have special terms for topics separately. For browser, Motorola has \textit{droid}, \textit{milestone} and \textit{xoom} terms together. This indicates that the \textit{browser} bug reports happened frequently in three Motorola devices and \textit{browser} has portability issue within Motorola Android devices.
 
-In Figure\ref{uniquemoto}, comparing two vendors, we can see the relevance for GPS and Browser demonstrates different trends. For HTC, they have stripes and drops in the early stage, and then stay in their values. For Motorola, they stay in their values and then have stripes and drops afterwards.
-
-In summary, for different vendors, these unique topics show significantly different relevance as a result of the different models. Within the same vendor, the associated terms implicate that some features have portability issues across models.For example, browser in Motorola.
+In Figure \ref{uniquemoto}, comparing two vendors, we can see the distribution of the average relevance for GPS and browser demonstrate different trends. For HTC, they have strikes and drops in the early stage, and then stay steady. For Motorola, they stay steady and then have strikes and drops afterwards.
+% I am not clear about your summary here.
+In summary, for different vendors, they have specific topics which imply there may be portability problems. For a specific vendor, the associated terms of topics implicate that the corresponding features have portability issues across its devices.
 
 \section{Discussion of Fragmentation}
+%What is feature evolution?
+According to the analysis about \textit{Common Troubled Topics}, we can see that there is no strong correlation between the feature evolution and Android evolution. In addition, The topic - upgrade has strong correlation with Android 2.1 and Android 2.2. As there are some features evolution demonstrate stable trends with Android evolution implicated by the \textit{Common Improved Topics}, we can conclude that Android has compatibility issue in some features.
 
-According to the analysis about Common Troubled Topics, we can see that there is no strong correlation between the feature evolution and Android evolution. In addition, The topic - upgrade has strong correlation with Android 2.1 and Android 2.2. As there are some features evolution demonstrate stable trends with Android evolution implicated by the Common Improved Topics, we can conclude that Android has comparability issue in some features.
+From \textit{Common Improved Topics} and \textit{Unique Topics}, we can see the same topic from different vendors have different correlation, and they have strong correlation with some specific vendors' devices. These observations reveal that Android has portability issue in some features.
 
-From Common Improved Topics and Unique Topics, we can see the same topic from different vendor has different correlation, and they have strong correlation with some specific vendor's models. These observations reveal that Android has portability issue in some features.
-
-When we refer to Android, we generally mean all Android versions existing in the world which include both Android branches from Android community and that from vendors. In the sense of Android itself, we can see that Android has software fragmentation issue. We also discover that there are some features has strong correlation with vendor's model. In the sense of Android model from different vendor, we can conclude that Android has hardware fragmentation as well.
+When we refer to Android, we generally mean all Android versions existing in the world which include both Android branches from Android community and that from vendors. In the sense of Android itself, we can see that Android has software fragmentation issue. We also discover that there are some features has strong correlation with vendors' devices. In the sense of Android devices from different vendor, we can conclude that Android has hardware fragmentation as well.
 
 
 %\begin{figure}[!htb]
 %\centering
 %\includegraphics[width=0.4\textwidth]{htcldallda.png}
-%\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled LDA in HTC. The X axis is the same labels from LDA and Labeled LDA and the Y axis is the number of bug reports.}
+%\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled-LDA in HTC. The X axis is the same labels from LDA and Labeled-LDA and the Y axis is the number of bug reports.}
 %\end{figure}
 %
 %\begin{figure}[!htb]
 %\centering
 %\includegraphics[width=0.4\textwidth]{motoldallda.png}
-%\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled LDA in Motorola. The X axis is the same labels from LDA and Labeled LDA and the Y axis is the number of bug reports.}
+%\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled-LDA in Motorola. The X axis is the same labels from LDA and Labeled-LDA and the Y axis is the number of bug reports.}
 %\end{figure}
 %
 %\begin{figure}[htb]
 %\centering
 %\includegraphics[width=0.4\textwidth]{htcratiosim.png}
-%\caption{The comparison of ratio and similarity in HTC. The result of the smaller number of bug reports related to this label in LDA or Labeled LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled LDA.}
+%\caption{The comparison of ratio and similarity in HTC. The result of the smaller number of bug reports related to this label in LDA or Labeled-LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled-LDA.}
 %\end{figure}
 %
 %\begin{figure}[htb]
 %\centering
 %\includegraphics[width=0.4\textwidth]{motoratiosim.png}
-%\caption{The comparison of ratio and similarity in Motorola. The result of the smaller number of bug reports related to this label in LDA or Labeled LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled LDA.}
+%\caption{The comparison of ratio and similarity in Motorola. The result of the smaller number of bug reports related to this label in LDA or Labeled-LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled-LDA.}
 %\end{figure}
 
 
@@ -1077,47 +1078,47 @@ Figure \ref{bughtc} shows the number of bug reports that related to the same lab
 \begin{figure*}[htb]
 \centering
 \includegraphics[width=1\textwidth]{htcsim.png}
-\caption{Jaccard similarity of labels between LDA and Labeled-LDA in HTC. X axis is the labels in Labeled LDA and Y axis is the labels of topics generated by LDA. The label ``null" in the Y axis means that topic cannot be labeled. The result is based on the HTC bug reports under the threshold of document relevance of 0.2. Brighter means higher Jaccard similarity.}
+\caption{Jaccard similarity of labels between LDA and Labeled-LDA in HTC. X axis is the labels in Labeled-LDA and Y axis is the labels of topics generated by LDA. The label ``null" in the Y axis means that topic cannot be labeled. The result is based on the HTC bug reports under the threshold of document relevance of 0.2. Brighter means higher Jaccard similarity.}
 \label{similarityhtc}
 \end{figure*}
 
 \begin{figure*}[htb]
 \centering
 \includegraphics[width=1\textwidth]{motosim.png}
-\caption{Jaccard similarity of labels between LDA and Labeled-LDA in Motorola. X axis is the labels in Labeled LDA and Y axis is the labels of topics generated by LDA. The label ``null" in the Y axis means that topic cannot be labeled. The result is based on the Motorola bug reports under the threshold of document relevance of 0.2. Brighter means higher Jaccard similarity.}
+\caption{Jaccard similarity of labels between LDA and Labeled-LDA in Motorola. X axis is the labels in Labeled-LDA and Y axis is the labels of topics generated by LDA. The label ``null" in the Y axis means that topic cannot be labeled. The result is based on the Motorola bug reports under the threshold of document relevance of 0.2. Brighter means higher Jaccard similarity.}
 \label{similaritymoto}
 \end{figure*}
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.5\textwidth]{htcldallda.png}
-\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled LDA in HTC. The X axis is the same labels from LDA and Labeled LDA and the Y axis is the number of bug reports.}
+\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled-LDA in HTC. The X axis is the same labels from LDA and Labeled-LDA and the Y axis is the number of bug reports.}
 \label{bughtc}
 \end{figure}
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.5\textwidth]{motoldallda.png}
-\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled LDA in Motorola. The X axis is the same labels from LDA and Labeled LDA and the Y axis is the number of bug reports.}
+\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled-LDA in Motorola. The X axis is the same labels from LDA and Labeled-LDA and the Y axis is the number of bug reports.}
 \label{bugmoto}
 \end{figure}
 
-%Most of the same labels from LDA and Labeled LDA have the comparable amount of bug reports. For example, the label ``calling'' from the HTC bug reports has exactly the same number of bugs related to for both results of LDA and Labeled LDA. However, the similarity of these related bug reports in terms of this label ``calling'' is very low which means LDA and Labeled LDA related quite different bug reports to this label. When doing this comparison, we cannot ignore the number of bugs that related to each label from both two techniques. That is, for one label, the ratio (the smaller number is divided by the bigger number so the ratio is always less or equal to one) of the number of bug reports related to this label predicted by LDA to that of Labeled LDA would be the upper bound of the similarity value. From Figure \ref{bughtc} and Figure \ref{bugmoto} that the relation between topics and each bug report modeled by LDA is quite different from the results generated by Labeled LDA.
+%Most of the same labels from LDA and Labeled-LDA have the comparable amount of bug reports. For example, the label ``calling'' from the HTC bug reports has exactly the same number of bugs related to for both results of LDA and Labeled-LDA. However, the similarity of these related bug reports in terms of this label ``calling'' is very low which means LDA and Labeled-LDA related quite different bug reports to this label. When doing this comparison, we cannot ignore the number of bugs that related to each label from both two techniques. That is, for one label, the ratio (the smaller number is divided by the bigger number so the ratio is always less or equal to one) of the number of bug reports related to this label predicted by LDA to that of Labeled-LDA would be the upper bound of the similarity value. From Figure \ref{bughtc} and Figure \ref{bugmoto} that the relation between topics and each bug report modeled by LDA is quite different from the results generated by Labeled-LDA.
 
 %The similarity values for these labels in Figure \ref{similaritymoto} are quite low compared with the ratio. Only about ten labels in HTC have similarity values that are larger than half of the ratio. For Motorola, the similarity values are all very low compared with the upper bound of the similarity values.
 
-We can conclude that only few of the bug reports in HTC and Motorola are predicted by LDA and Labeled LDA to be related to the same labels. In other words, the relation between topics and each bug report modeled by LDA is quite different from the results generated by Labeled-LDA. We think the manual efforts of labeling all the bug reports would help us gain the better topic models generated by Labeled-LDA. 
+We can conclude that only few of the bug reports in HTC and Motorola are predicted by LDA and Labeled-LDA to be related to the same labels. In other words, the relation between topics and each bug report modeled by LDA is quite different from the results generated by Labeled-LDA. We think the manual efforts of labeling all the bug reports would help us gain the better topic models generated by Labeled-LDA. 
 
 %\begin{figure}[htb]
 %\centering
 %\includegraphics[width=0.5\textwidth]{htcratiosim.png}
-%\caption{The comparison of ratio and similarity in HTC. The result of the smaller number of bug reports related to this label in LDA or Labeled LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled LDA.}
+%\caption{The comparison of ratio and similarity in HTC. The result of the smaller number of bug reports related to this label in LDA or Labeled-LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled-LDA.}
 %\end{figure}
 
 %\begin{figure}[htb]
 %\centering
 %\includegraphics[width=0.5\textwidth]{motoratiosim.png}
-%\caption{The comparison of ratio and similarity in Motorola. The result of the smaller number of bug reports related to this label in LDA or Labeled LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled LDA.}
+%\caption{The comparison of ratio and similarity in Motorola. The result of the smaller number of bug reports related to this label in LDA or Labeled-LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled-LDA.}
 %\end{figure}
 
 
@@ -1126,76 +1127,105 @@ We can conclude that only few of the bug reports in HTC and Motorola are predict
 \renewcommand{\arraystretch}{1.3}
 % if using array.sty, it might be a good idea to tweak the value of
 % \extrarowheight as needed to properly center the text within the cells
-\caption{Common Topics and associated Word List with Related Top 10 Terms}
+\caption{Topics and associated Word List with Related Top 15 Terms}
 \label{topicslist}
 \centering
 \begin{tabular}{|c||c||c||c|}
 \hline
 Topic Type & Label & HTC & Motorola\\ 
 \hline
-Common Troubled Topics & SMS\//MMS &message,	sms,	text, thread, time,  & message, text, sms, droid, send,	\\
-%&& sent, desire, contact, new, number, &	thread, messaging, sent,user, version, issue, \\ 
-&&conversation, send, version, app, screen &thread, person, threads, number, http\\ \cline{2-4}
+Common Troubled Topics & sms\//mms &message,	sms,	text, thread, time,  & message, text, sms, droid, send,	\\
+&& sent, desire, contact, new, number, &	thread, messaging, sent,user, version,\\ 
+&&conversation, send, version, app, screen &version, person, threads, number, http\\ \cline{2-4}
 
-  & Email & email	, mail, gmail, app, message,   &email, droid, account,	gmail, mail, \\
-            %&&inbox, messages,client,emails, account,  &server, message,	user,	emails, exchange, \\ 
-            &&send, interface, thread, time, new & file, version, open, device, app\\ \cline{2-4}
+  & email & email, mail, gmail, app, message,   &email, droid, account,	gmail, mail, \\
+&&inbox, messages,client,emails, account,  &server, message,user,emails, exchange, \\ 
+&&send, interface, thread, time, new & file, version, open, device, app\\ \cline{2-4}
             
-  & Calendar&calendar, event, day, events, google,  &calendar,	event, droid, google, appointment, \\
-%            &&view, 2.2,time,month, date, version, &events, day, field, date, appointments, \\ 
-            &&reminder, appointment,  edit, running &outlook, milestone, data, app, version\\ \cline{2-4}
+& calendar&calendar, event, day, events, google,  &calendar,	event, droid, google, appointment, \\
+&&view, 2.2,time,month, date, &events, day, field, date, appointments, \\ 
+&&version, reminder, appointment,  edit, running &outlook, milestone, data, app, version\\ \cline{2-4}
             
-  & Contact & contact, contacts, number, freed, activity,  &contact, contacts, droid, number, numbers, \\
-%            &&displayed, list, group, google, numbers,   &address, version, google, menu, correct, \\
-            &&starting,desire, user, version, field & behavior, different,list, option, gmail\\ \cline{2-4}
+& contact & contact, contacts, number, freed, activity,  &contact, contacts, droid, number, numbers, \\
+&&displayed, list, group, google, numbers,   &address, version, google, menu, correct, \\
+&&starting,desire, user, version, field & behavior, different,list, option, gmail\\ \cline{2-4}
             
-  & Display\//Screen&screen, version, desire,	behavior, app, &droid, screen, button, correct, home, \\
-%   && number,code, final, press, sure, &display, behavior,  landscape, 2.1,  menu	, \\
-   &&home,user, black, new,	power  &bar, xoom	,device, user, status\\ \cline{2-4}
+  & display&screen, version, desire,behavior, app, &droid, screen, button, correct, home, \\
+&& home, number,code, final, press,  &display, behavior,  landscape, 2.1,  menu, \\
+&&sure, user, black, new, power  &bar, xoom,device, user, status\\ \cline{2-4}
    
-  & Bluetooth & bluetooth,headset, car, connect, device,  &bluetooth,	headset, droid, device,connected, \\
-%            &&connection, version, data, app, desire &connect, devices, calls,car,	issue, \\
-            &&desire,	2.2, work, connects, behavior,2.1 &connection, 2.2, car,pair, time\\ \cline{2-4}
+& bluetooth & bluetooth,headset, car, connect, device,  &bluetooth,	headset, droid, device,connected, \\
+ &&connection, version, data, app, desire, & connect, devices, calls,car,issue,	\\
+&&desire,	2.2, work, connects, behavior,2.1 & connection, 2.2, car,pair, time\\ \cline{2-4}
             
-  & Synchronization&contacts, account, sync, exchange, contact, &sync, google, account, contacts, device, \\
-%            &&Google, ears, device, group, server, &contact, group, time, exchange, contactsq"e, \\
-            &&Gmail, policy, new, list, display&display, groups,  list,  droid, milestone\\ \cline{2-4}
+  & synchronize&contacts, account, sync, exchange, contact, &sync, google, account, contacts, device, \\
+&&google, ears, device, group, server, &contact, group, time, exchange, contacts, \\
+&&Gmail, policy, new, list, display&display, groups,  list,  droid, milestone\\ \cline{2-4}
             
-  & Setting&Volume, sound,	set, pattern,  default,&Settings, device, menu, turn,	network, \\
-%            && Turn, desire, static, control, apps,&vpn, honeycomb, button, xoom,  settings-q, \\
-            && change, settings, media, dns, screen &behavior,	right, wireless, headset, mode\\
+  & settings&volume, sound,	set, pattern,  default,&settings, device, menu, turn,	network, \\
+ && turn, desire, static, control, apps,&vpn, honeycomb, button, xoom,  settings, \\
+  && change, settings, media, dns, screen &behavior,	right, wireless, headset, mode\\
 \hline
 
-Common Improved Topics & Keyboard &keyboard, input,	text, key,number,&keyboard, droid, keys,text, press, \\
-           && on-screen, mode, field,
-landscape,virtual &space, box, open, device,landscape\\ \cline{2-4}
+Common Improved Topics 
+&wifi & wifi, access, network, connection, connect, &wifi, xoom, connect, hotspot, turn, \\
+&&router, ssid, desire, http, wi-fi,&connection, ssid, radio, error,signal, \\
+
+&&device, connected, scan, point, app &state, user, time, feature,hotspots\\ \cline{2-4}
+
+&upgrade & update, 2.2, file, 2.1, google  & update, droid, 2.1,2.2, home, \\
+
+ &&version, error, upgrade, froyo, install, & http, version, user, issue, device,\\           
+ 
+ &&work, desire, ota, card, ssl & longer, settings, performance, issues, updated\\            \cline{2-4}
+          
+&audio& music, audio, player, file, play, &music, droid, player, media, audio,  \\
+
+&&2.2,sound, version, time, playing, & files, volume, play, playing, version,\\
+
+&&playback, app, start, reproduce, mp3 &app, issue, mode, running, genre, sound, user\\ \cline{2-4}
            
-    &Browser& page, text, http, open, server,&droid, page, web, http, open, \\
-           && version, desire, client, 2.1, button  &xoom, html, behavior, milestone, 3.1 \\ \cline{2-4}
+&calling& number, calls, calling, 2.1, receive, &droid, calls, number, end, button, \\
+&& called, button, answer, bluetooth, desire,  &answer, incoming, screen, voice, speaker, \\ 
+
+&& screen, incoming, works, time, magic & speaker, 2.2, device, place, headphones\\ \cline{2-4}
            
-               &Audio& music, audio, player, file, play, &music, droid, player, media, audio,  \\
-           &&2.2,sound, playback,reproduce, mp3 &files, volume, play, running, genre\\ \cline{2-4}
+&android market& market, app, google, account, download, &market, apps, app, device, application,  \\
+
+&&update, application, user, device, version, &update, open, user, version, time, \\ 
            
-               &Calling& number, calls, calling, 2.1, receive, &droid, calls, number, button, answer,  \\
-           && called, button, answer, bluetooth, desire,  &incoming, screen, voice, speaker, 2.2 \\ \cline{2-4}
-           
-               &Android Market& market, app, google, account, download, &market, apps, app, device, application,  \\
-           &&update, application, user, apps,	paid &update, download, purchase, google,  milestone \\ \cline{2-4}
-           
-    &Image & image, gallery, picture, matrix, photo,  &image, droid, wallpaper, gallery, photo,\\
-           &&camera, pictures, version, 2.2, photo& picture, device,	file, select,video\\
+&&apps, paid, desire, installed, application & reporoduce, download, purchase, google, milestone\\ \cline{2-4}   
+        
+&image & image, gallery, picture, matrix, photo,  &image, droid, wallpaper, gallery, photo,\\
+&&null, camera, pictures, version, steps,& picture, device,	file, select,video,\\
+
+&&2.2, photos, code, display, view & folder, load, live, stock, size, screen\\
 
 \hline
-HTC Unique Topics & Language &arabic, desire, letters, characters, translation, & NONE\\
-           &&rcharacter, read, support, sms, hebrew & \\ \cline{2-4}
-    &WiFi & wifi, access, network, connection, connect, &wifi, xoom, connect, hotspot, turn, \\
-           &&router, ssid, desire, http, scan&connection, ssid, radio, signal, hotspots\\
-\hline
-Motorola Unique Topics & GPS &gps, data, position, location, maps, &maps, gps, google, app, droid, \\
-           &&google, time,lock, latitude, unit &location, navigation, map,traffic,update,\\ \cline{2-4}
+HTC Unique Topics & language 
+&arabic, desire, language, 2.2, letters, & NONE\\
 
-    &Upgrade & gps, data, position, location, maps, &update, droid, 2.1,2.2, home, \\
-           &&google, time, lock, wrong,tag&http,longer, settings, performance\\
+&&character, translation, character, read, support,& \\
+
+&&sms, write, hebrew, devices,2.3 & \\ \cline{2-4}
+
+
+& keyboard &keyboard, input,text, key, version,& keyboard, droid, keys,text, press, \\
+&& number, typing, on-screen, mode, field, & space, box, open, device, key, \\
+&&landscape, virtual, keys, type, message & app, software, 2.0.1, landscape \\
+           
+           
+\hline
+Motorola Unique Topics 
+& GPS &gps, data, position, location, maps, & maps, gps, google, app, droid, \\
+
+&&google, time,lock, wrong, icon, turn, & location, application, navigation, map,device, \\
+
+&&home, latitude, unit, tag, available & traffic, time, upgrade, turn, route\\ \cline{2-4}
+
+    &browser& browser, page, text, http, open, & browser, droid, page, web, http, open, \\
+    &&server,verion, desire, client, web, & xoom, html, behavior, running, links, \\
+&& application,2.1, device, button, user  & issue, milestone, 3.1,text \\
 \hline
 \end{tabular}
 \end{table*}
@@ -1213,8 +1243,9 @@ Motorola Unique Topics & GPS &gps, data, position, location, maps, &maps, gps, g
 
 \section{Conclusion and Future Work}
 
- In this paper we studied the Android bug reports for two Android vendors, HTC and Motorola. Based on topic analysis using Labeled LDA on a corpus of manually tagged bug reports with multiple labels, we extracted top 18 topics and categorized them into common troubled topics, common improved topics for both vendors and unique topics for each vendor. The common troubled topics tell us that the evolution of some features in Android have no positive correlation with Android evolution. The Common Improved Topics uncover that some features within the same vendor have portability issues across multiple models. All these topics show that the corresponding Android features have high correlation with the models from different vendors. After the discussion with the topics analysis, we made a conclusion that Android has both software fragmentation and hardware fragmentation. Compared with other features in Android, these 18 features implicated by these topics have more impact on its fragmentation.
+In this paper we studied Android bug reports for two vendors, HTC and Motorola. Based on topic analysis using Labeled-LDA on a corpus of manually tagged bug reports with multiple labels, we extracted the top 18 topics and categorized them into \textit{Common Troubled Topics}, \textit{Common Improved Topics} and \textit{Unique Topics} for both vendors. The \textit{Common Troubled Topics} show that there is no correlation between the troubled features of Android and Android evolution. In other words, there may be the incompatibility problem existing to the specific features of Android. The \textit{Common Improved Topics} show that some features within the same vendors have portability issues across their multiple devices. The \textit{Unique Topics} show that different vendor has specific bug topics which imply there may be the portability problem on the different vendors. Furthermore, we found that the manual efforts of labeling all the bug reports would help us gain the better topic models generated by Labeled-LDA after comparing LDA and Label-LDA. 
 
+For our future work, we will use the name of each hardware model as a label to do topic analysis while applying our methodology in order to discover the effects of different Android versions with respect to compatibility and stability. We will plan to investigate more vendors in order to reveal vendor specific bug topics.
 
 %\subsubsection{Multi-labeling}
 %Subsubsection text here.
@@ -1223,25 +1254,25 @@ Motorola Unique Topics & GPS &gps, data, position, location, maps, &maps, gps, g
 %\begin{figure}[htb]
 %\centering
 %\includegraphics[width=0.4\textwidth]{htcldallda.png}
-%\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled LDA in HTC. The X axis is the same labels from LDA and Labeled LDA and the Y axis is the number of bug reports.}
+%\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled-LDA in HTC. The X axis is the same labels from LDA and Labeled-LDA and the Y axis is the number of bug reports.}
 %\end{figure}
 %
 %\begin{figure}[htb]
 %\centering
 %\includegraphics[width=0.4\textwidth]{motoldallda.png}
-%\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled LDA in Motorola. The X axis is the same labels from LDA and Labeled LDA and the Y axis is the number of bug reports.}
+%\caption{Comparison of number of bug reports related to the same labels from LDA and Labeled-LDA in Motorola. The X axis is the same labels from LDA and Labeled-LDA and the Y axis is the number of bug reports.}
 %\end{figure}
 %
 %\begin{figure}[htb]
 %\centering
 %\includegraphics[width=0.4\textwidth]{htcratiosim.png}
-%\caption{The comparison of ratio and similarity in HTC. The result of the smaller number of bug reports related to this label in LDA or Labeled LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled LDA.}
+%\caption{The comparison of ratio and similarity in HTC. The result of the smaller number of bug reports related to this label in LDA or Labeled-LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled-LDA.}
 %\end{figure}
 %
 %\begin{figure}[htb]
 %\centering
 %\includegraphics[width=0.4\textwidth]{motoratiosim.png}
-%\caption{The comparison of ratio and similarity in Motorola. The result of the smaller number of bug reports related to this label in LDA or Labeled LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled LDA.}
+%\caption{The comparison of ratio and similarity in Motorola. The result of the smaller number of bug reports related to this label in LDA or Labeled-LDA divided by the larger one is the ratio of this label. The X axis is the same labels from LDA and Labeled-LDA.}
 %\end{figure}
 
 % An example of a floating figure using the graphicx package.
