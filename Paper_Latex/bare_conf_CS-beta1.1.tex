@@ -421,16 +421,16 @@ Edmonton, Canada\\
   % means
   Finally, by examining the relevance of the top 18 bug topics over
   time for the bugs reported by each of the vendors, we categorized the
-  topics into three types: \textit{Common Troubled Topics},
-  % ES: I propose to make "Common Troubled Topics" into "common problems"
-  \textit{Common Improved Topics} 
+  topics into three types: \textit{Common Erratic Topics},
+  % ES: I propose to make "Common Erratic Topics" into "common problems"
+  \textit{Common Inerratic Topics} 
   % ES: I propose to make "Common Impoved Topics" into "common desired
   % improvements  
   % XXX: Fix this. The whole common troubled thing is infuriating
   % wrongly labelled
-  and \textit{Unique Topics}. The \textit{Common Troubled Topics} show
+  and \textit{Unique Topics}. The \textit{Common Erratic Topics} show
   that there is no correlation between the troubled features of
-  Android and Android evolution. The \textit{Common Improved Topics}
+  Android and Android evolution. The \textit{Common Inerratic Topics}
   show that some features within the same vendors have portability
   issues across their multiple devices. The existence of
   \textit{Unique Topics}, exclusive to each vendor, shows that different vendors have specific bug
@@ -1056,8 +1056,8 @@ In addition, Figure \ref{bugovertime} shows the first spike for HTC happened in 
 
 As shown in Table \ref{selected1} we extracted 72 topics for HTC and 57 topics for Motorola with Labeled-LDA.
 
-Based on Equation \ref{equation1} each topic has a distribution of average relevance over time. According to the comparison of each topic's distribution in both vendors, we categorized the topics into three types, which are \textit{Common Troubled Topics}, \textit{Common Improved Topics}, and \textit{Unique Topics}. 
-The \textit{Common Troubled Topics} mean that the distribution of the average relevance of the topics have fluctuations all the time for both HTC and Motorola. The \textit{Common Improved Topics} mean that the distribution of the average relevance of topics turn to be flat over time after several fluctuations for HTC and Motorola. The \textit{Unique Topics} mean that the distribution of average relevance of topics have significant differences between HTC and Motorola.
+Based on Equation \ref{equation1} each topic has a distribution of average relevance over time. According to the comparison of each topic's distribution in both vendors, we categorized the topics into three types, which are \textit{Common Erratic Topics}, \textit{Common Inerratic Topics}, and \textit{Unique Topics}. 
+The \textit{Common Erratic Topics} mean that the distribution of the average relevance of the topics have fluctuations all the time for both HTC and Motorola. The \textit{Common Inerratic Topics} mean that the distribution of the average relevance of topics turn to be flat over time after several fluctuations for HTC and Motorola. The \textit{Unique Topics} mean that the distribution of average relevance of topics have significant differences between HTC and Motorola.
 
 A representative subset of top 18 topics, which are obtained by
 sorting the number of related bug reports for HTC and Motorola
@@ -1070,16 +1070,16 @@ As mentioned before, the label column in Table \ref{topicslist} represents the f
 \begin{figure*}[htb]
 \centering
 \includegraphics[width=1\textwidth]{commontopic.png}
-\caption{Common Troubled Topics in HTC and Motorola}
+\caption{Common Erratic Topics in HTC and Motorola}
 \label{commontopic}
 \end{figure*}
 
 \subsubsection{Common Troubled Topic} 
 %space after Table, Figure
 %relevance shoule be written as the distribution of the average relevance
-Eight \textit{Common Troubled Topics} shared by two vendors are shown in Table \ref{topicslist} and the distribution of average relevance of each topic is shown in Figure \ref{commontopic}. 
+Eight \textit{Common Erratic Topics} shared by two vendors are shown in Table \ref{topicslist} and the distribution of average relevance of each topic is shown in Figure \ref{commontopic}. 
 %all the labels should be consistent with all the labels in table I.
-\textit{Common Troubled Topics} shown in Table \ref{topicslist} for HTC and Motorola share many identical terms. That means they have the same bug reports about sms\//mms(\textit{text, thread, send}), calendar(\textit{event, day, google,appointment,time}), email(\textit{gmail, send, thread}), contact (\textit{number, google,list}), display (\textit{screen,button,behavior}), bluetooth (\textit{headset,connect, calling}), synchronize (\textit{contact, exchange, google}) and settings(\textit{turn,network,mode}). 
+\textit{Common Erratic Topics} shown in Table \ref{topicslist} for HTC and Motorola share many identical terms. That means they have the same bug reports about sms\//mms(\textit{text, thread, send}), calendar(\textit{event, day, google,appointment,time}), email(\textit{gmail, send, thread}), contact (\textit{number, google,list}), display (\textit{screen,button,behavior}), bluetooth (\textit{headset,connect, calling}), synchronize (\textit{contact, exchange, google}) and settings(\textit{turn,network,mode}). 
 
 We found that multiple topics share some same terms for each vendor. For HTC, five topics including \textit{sms\//mms, contact, display, bluetooth} and \textit{settings} share the same term ``desire". This indicates that these topics happened frequently in HTC Desire device. \textit{Calendar} and \textit{bluetooth} share the same term ``2.2" and ``2.2" means Android version 2.2. This indicates that these two topics happened frequently for Android 2.2 in HTC devices. For Motorola, seven topics except \textit{settings} share the same term ``droid" and it means Motorola Droid device. In addition, \textit{calendar} and \textit{synchronize} in Motorola share ``milestone" which indicates these two topics discussed mostly in Motorola Milestone device. ``Xoom" shared by \textit{display} and \textit{settings} indicates that Motorola Xoom has more bug reports related with these two topics. Furthermore, \textit{synchronize} associates with both ``Xoom" and ``milestone" terms. This indicates bug reports related with \textit{synchronize} happened frequently in both Motorola Xoom and Motorola Milestone. 
 
@@ -1090,17 +1090,17 @@ In summary, \textit{calendar} in HTC and display in Motorola are strongly correl
 \begin{figure*}[htb]
 \centering
 \includegraphics[width=1\textwidth]{fixtopic.png}
-\caption{Common Improved Topics in HTC and Motorola}
+\caption{Common Inerratic Topics in HTC and Motorola}
 \label{fixtopic}
 \end{figure*}
 
 \subsubsection{Common Improved Topic}
 
-Six \textit{Common Improved Topics} shared by two vendors are shown in Table \ref{topicslist} and the distribution of the average relevance of each topic is shown in Figure \ref{fixtopic}.
+Six \textit{Common Inerratic Topics} shared by two vendors are shown in Table \ref{topicslist} and the distribution of the average relevance of each topic is shown in Figure \ref{fixtopic}.
 
-\textit{Common Improved Topics} shown in Table \ref{topicslist} for HTC and Motorola share many identical terms for wifi (\textit{connection,ssid,network}), upgrade (\textit{2.2,2.1,http}), and image(\textit{gallery,picture,photo}). Both vendors have the issues in upgrading from Android 2.1 to Android 2.2. This indicates Android 2.2 might have compatibility issue with the upgrading devices. 
+\textit{Common Inerratic Topics} shown in Table \ref{topicslist} for HTC and Motorola share many identical terms for wifi (\textit{connection,ssid,network}), upgrade (\textit{2.2,2.1,http}), and image(\textit{gallery,picture,photo}). Both vendors have the issues in upgrading from Android 2.1 to Android 2.2. This indicates Android 2.2 might have compatibility issue with the upgrading devices. 
 
-Meanwhile, the \textit{Common Improved Topics} also own some special terms. For HTC, bug reports related with \textit{calling} happened frequently in Android 2.1, and bug reports related with \textit{image} and \textit{audio} happened frequently in Android 2.2. For Motorola, bug reports related to \textit{calling} happened frequently in Android 2.2. In addition, four out of six topics have correlation with HTC Desire device. For Motorola, seven out of eight topics have correlation with Motorola Droid device and the other one have correlation with Motorola MileStone device. Therefore, these six topics have strong correlation with the Android hardware devices for each vendor.
+Meanwhile, the \textit{Common Inerratic Topics} also own some special terms. For HTC, bug reports related with \textit{calling} happened frequently in Android 2.1, and bug reports related with \textit{image} and \textit{audio} happened frequently in Android 2.2. For Motorola, bug reports related to \textit{calling} happened frequently in Android 2.2. In addition, four out of six topics have correlation with HTC Desire device. For Motorola, seven out of eight topics have correlation with Motorola Droid device and the other one have correlation with Motorola MileStone device. Therefore, these six topics have strong correlation with the Android hardware devices for each vendor.
 
 In Figure \ref{fixtopic}, both HTC and Motorola have spikes in the early stage, and then stay in their values. It indicates the corresponding features of Android tend to be more robust over time with Android evolution during the whole observed period.
 
@@ -1158,9 +1158,9 @@ In summary, for different vendors, they have specific topics which imply there m
 \label{sec:fragmentation}
 
 %What is feature evolution?
-According to the analysis about \textit{Common Troubled Topics}, we can see that there is no strong correlation between the feature evolution and Android evolution. In addition, The topic, upgrade has strong correlation with Android 2.1 and Android 2.2. As there are some features evolution demonstrate stable trends with Android evolution implicated by the \textit{Common Improved Topics}, we can conclude that Android has compatibility issue in some features.
+According to the analysis about \textit{Common Erratic Topics}, we can see that there is no strong correlation between the feature evolution and Android evolution. In addition, The topic, upgrade has strong correlation with Android 2.1 and Android 2.2. As there are some features evolution demonstrate stable trends with Android evolution implicated by the \textit{Common Inerratic Topics}, we can conclude that Android has compatibility issue in some features.
 
-From \textit{Common Improved Topics} and \textit{Unique Topics}, we can see the same topic from different vendors have different correlation, and they have strong correlation with some specific vendors' devices. These observations reveal that Android has portability issue in some features.
+From \textit{Common Inerratic Topics} and \textit{Unique Topics}, we can see the same topic from different vendors have different correlation, and they have strong correlation with some specific vendors' devices. These observations reveal that Android has portability issue in some features.
 
 When we refer to Android, we generally mean all Android versions existing in the world which include both Android branches from Android community and that from vendors. In the sense of Android itself, we can see that Android has software fragmentation issue. We also discover that there are some features has strong correlation with vendors' devices. In the sense of Android devices from different vendor, we can conclude that Android has hardware fragmentation as well.
 
@@ -1222,7 +1222,7 @@ We can conclude that only few of the bug reports in HTC and Motorola are predict
 \hline
 Topic Type & Label & HTC & Motorola\\ 
 \hline
-Common Troubled Topics & sms\//mms &message,	sms,	text, thread, time,  & message, text, sms, droid, send,	\\
+Common Erratic Topics & sms\//mms &message,	sms,	text, thread, time,  & message, text, sms, droid, send,	\\
 && sent, desire, contact, new, number, &	thread, messaging, sent,user, version,\\ 
 &&conversation, send, version, app, screen &version, person, threads, number, http\\ \cline{2-4}
 
@@ -1255,7 +1255,7 @@ Common Troubled Topics & sms\//mms &message,	sms,	text, thread, time,  & message
   && change, settings, media, dns, screen &behavior,	right, wireless, headset, mode\\
 \hline
 
-Common Improved Topics 
+Common Inerratic Topics 
 &wifi & wifi, access, network, connection, connect, &wifi, xoom, connect, hotspot, turn, \\
 &&router, ssid, desire, http, wi-fi,&connection, ssid, radio, error,signal, \\
 
@@ -1333,7 +1333,7 @@ Motorola Unique Topics
 \section{Conclusion and Future Work}
 \label{sec:conclusions}
 
-In this paper we studied Android bug reports for two vendors, HTC and Motorola. Based on topic analysis using Labeled-LDA on a corpus of manually tagged bug reports with multiple labels, we extracted the top 18 topics and categorized them into \textit{Common Troubled Topics}, \textit{Common Improved Topics} and \textit{Unique Topics} for both vendors. The \textit{Common Troubled Topics} show that there is no correlation between the troubled features of Android and Android evolution. In other words, there may be the incompatibility problem existing to the specific features of Android. The \textit{Common Improved Topics} show that some features within the same vendors have portability issues across their multiple devices. The \textit{Unique Topics} show that different vendor has specific bug topics which imply there may be the portability problem on the different vendors. Furthermore, we found that the manual efforts of labeling all the bug reports would help us gain the better topic models generated by Labeled-LDA after comparing LDA and Label-LDA. 
+In this paper we studied Android bug reports for two vendors, HTC and Motorola. Based on topic analysis using Labeled-LDA on a corpus of manually tagged bug reports with multiple labels, we extracted the top 18 topics and categorized them into \textit{Common Erratic Topics}, \textit{Common Inerratic Topics} and \textit{Unique Topics} for both vendors. The \textit{Common Erratic Topics} show that there is no correlation between the troubled features of Android and Android evolution. In other words, there may be the incompatibility problem existing to the specific features of Android. The \textit{Common Inerratic Topics} show that some features within the same vendors have portability issues across their multiple devices. The \textit{Unique Topics} show that different vendor has specific bug topics which imply there may be the portability problem on the different vendors. Furthermore, we found that the manual efforts of labeling all the bug reports would help us gain the better topic models generated by Labeled-LDA after comparing LDA and Label-LDA. 
 
 For our future work, we will use the name of each hardware model as a label to do topic analysis while applying our methodology in order to discover the effects of different Android versions with respect to compatibility and stability. We will plan to investigate more vendors in order to reveal vendor specific bug topics.
 
