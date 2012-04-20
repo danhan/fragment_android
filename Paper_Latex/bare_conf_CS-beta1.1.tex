@@ -405,14 +405,51 @@ Edmonton, Canada\\
 
 
 \begin{abstract}
-Android fragmentation has been a controversial topic. In this study, we investigated the fragmentation of Android by a comparison of Android vendor's bug reports via topic analysis. We mined and analyzed the Android bug reports related to two popular Android vendors, HTC and Motorola. We manually annotated bug reports with labels and applied Labeled Latent Dirichlet Allocation (Labeled-LDA) to the datasets to produce bug topics. By comparing the distribution of average relevance of top 18 bug topics over time for both vendors, we categorized the topics into three types which are \textit{Common Troubled Topics}, \textit{Common Improved Topics} and \textit{Unique Topics}. The \textit{Common Troubled Topics} show that there is no correlation between the troubled features of Android and Android evolution. The \textit{Common Improved Topics} show that some features within the same vendors have portability issues across their multiple devices. The \textit{Unique Topics} show that different vendors have specific bug topics which imply there may be the portability problem on the different vendors. Our findings can be used by Android system community, stakeholders, Android device vendors and developers to make project dashboards, process investigation and feature analysis.
 
+  The fragmentation of the Android ecosystem is a topic of substantial
+  debate, and pundits claim (without much actual evidence) that it is
+  worsening. In this study, we search for evidence of fragmentation in
+  the topics of vendor-specific bug reports. 
+
+  More specifically, we have mined and analyzed the Android bug
+  reports related to two popular vendors, HTC and Motorola. First, we
+  manually annotated the bug reports with labels. Next, we used
+  Labeled LDA (Latent Dirichlet Allocation) and LDA on the labeled data to
+  infer their topics. 
+  % ES: I have no idea what "By comparing the distribution of average
+  % relevance of the top 18 bug topics over time for both vendors"
+  % means
+  Finally, by examining the relevance of the top 18 bug topics over
+  time for the bugs reported by each of the vendors, we categorized the
+  topics into three types: \textit{Common Troubled Topics},
+  % ES: I propose to make "Common Troubled Topics" into "common problems"
+  \textit{Common Improved Topics} 
+  % ES: I propose to make "Common Impoved Topics" into "common desired
+  % improvements  
+  % XXX: Fix this. The whole common troubled thing is infuriating
+  % wrongly labelled
+  and \textit{Unique Topics}. The \textit{Common Troubled Topics} show
+  that there is no correlation between the troubled features of
+  Android and Android evolution. The \textit{Common Improved Topics}
+  show that some features within the same vendors have portability
+  issues across their multiple devices. The existence of
+  \textit{Unique Topics}, exclusive to each vendor, shows that different vendors have specific bug
+  topics which imply there may be the portability problem on the
+  different vendors.
+  % ES: we need a better statement below
+  Our findings can be used by Android system community, stakeholders,
+  Android device vendors and developers to make project dashboards,
+  process investigation and feature analysis.
+  In this study we show that there is evidence with Android's bug
+  repository of fragmentation across
+  Android handsets of multiple vendors.\
+  % XXX show we mention the labeled lda results
 
 
 \end{abstract}
 
 \begin{IEEEkeywords}
-Bug reports; Topic mining; Labeled-LDA
+Bug reports; Topic mining; LDA; Labeled-LDA; Fragmentation
 \end{IEEEkeywords}
 
 
@@ -431,25 +468,106 @@ Bug reports; Topic mining; Labeled-LDA
 \section{Introduction}
 % no \IEEEPARstart
 
-The market share of mobile phones is always changing and getting more and more competitive among various mobile device vendors\footnote{The Global Smartphone Market Landscape: \url{http://www.asymco.com/2011/11/17/the-global-smartphone-market-landscape (retrieved March, 2012)}}. The iPhone and Android phones share almost 70\% of US mobile phone market \cite{usmarket}. Compared to Apple’s closed ecosystem for iOS, in general, Android has both software fragmentation and hardware fragmentation \cite{analysis}. Android software fragmentation includes (1)multiple Android versions (2)customized device-specific Android and UI-specific Android from vendors (3) customized carrier-specific Android from vendors. Hardware fragmentation means that at any given point in time, devices based on the same Android are running on different types of hardware, related to processors, graphics processors, and screen size \cite{analysis}. The fragmentation leads to the additional testing work for Android application across multiple devices; it stops Android users experiencing some new features of Android because of the upgrading delay; and it also makes people lose confidence in Android.
+Mobile-device vendors continuously compete against each other for
+increased market share, and the maket landscape is extremely
+volatile\footnote{The Global Smartphone Market Landscape:
+  \url{http://www.asymco.com/2011/11/17/the-global-smartphone-market-landscape}
+  (retrieved March, 2012)}. Together, iPhone and Android phones
+constitute almost 70\% of the US mobile-phone market
+\cite{usmarket}. These two very successful platforms are very
+different from each other: where Apple tightly controls the software
+(iOS) and the hardware (iPhone) platform and its evolution, there
+exist a variety of Android phones produced by different vendors, which
+often come with custom software, thus giving rise to hardware and
+software fragmentation in the Android ecosystem~\cite{analysis}. The
+term {\em hardware fragmentation} refers to the fact that at any point
+in time, devices based on the same Android operating system run on
+different processors, graphics cards, and screen sizes
+\cite{analysis}. The term {\em software fragmentation} refers to three
+related problems. First, there exist multiple versions of the Android
+operating system. Second, vendors offer customized device-specific
+Android versions. Finally, carriers also offer software
+customizations.
 
+This fragmentation implies an opportunity for personalization and
+increased usability, since it enables users to choose the device and
+software that best meets their needs. On the flip side, it also
+implies that, due to insufficient cross-platform
+testing\cite{testing}, Android applications may not behave
+consistently across devices and software.  
+Fragmentation tends to delay some users from updating their apps
+and Android operating system until their specific device is fully supported.
+% Furthermore, it tends to
+% prevent some Android users from experiencing new features, when these
+% features are slow to appear on their chosen devices. 
+These problems
+may cause users to lose confidence in the Android platform and cost
+the brand market-share. Given its potential impact, Android
+fragmentation is the topic of much discussion and
+controversy. However, there has been little empirical evidence on how
+fragmentation impacts consumer opinion.
+% Someone from industry performed experiments of Android on different
+% devices, and they found that the root cause of fragmentation is the
+% classical software engineering issues \cite{testing}.
 
-Android fragmentation has been a controversial topic which swells up now and again regrading its provenance and its impacts.  However, no one can provide strong evidences to support their statements. Someone from industry performed experiments of Android on different devices, and they found that the root cause of fragmentation is the classical software engineering issues \cite{testing}.
+Our objective in this study is to search for evidence of
+Android
+fragmentation within the bug reports submitted by users of Android devices
+from different vendors. To help explore these bug reports, we applied topic analysis on the
+Android bug reports. 
+%A topic of the document (e.g. bug reports, source code changes and
+%commits) is generated by topic models which has been used to help
+%understand software systems. 
+%[38] P. Flaherty, G. Giaever, J. Kumm, M. I. Jordan, and
+% A. P. Arkin. A latent variable model for chemogenomic
+% profiling. Bioinformatics, 21(15):3286, 2005.
 
-In this study, we want to explore the fragmentation of Android by mining and analyzing Android user bug reports. We applied topic analysis on the Android bug reports. A topic of the document (e.g. bug reports, source code changes and commits) is generated by topic models which has been used to help understand software systems. There are a few topic models utilized by researchers in software engineering, e.g. Latent Dirichlet Allocation (LDA), Latent Semantic Index (LSI) and Labeled Latent Dirichlet Allocation (Labeled-LDA) \cite{Marcus04aninformation} \cite{Asuncion:2010} \cite{Linstead:2009}. We applied labeled-LDA\cite{labeledlda} on bug reports of different vendors and analyzed topics in bug reports. We then did the analysis on the bug topics and based on the topics analysis, we discussed what features of Android contribute much on Android fragmentation in the end. 
-	
-In terms of bug reports, we chose the bug reports of HTC and Motorola in this study. HTC's first Android phone was the HTC Dream manufactured in Oct. 2008. HTC has made more than thirty different Android phones since then. Motorola made their first Android phone in Oct. 2009 and has released more than twenty different Android phones since then. Their Android products have gained widespread popularity. 
+% [111] D. Ramage, D. Hall, R. Nallapati, and C. D. Manning. Labeled LDA: a supervised topic model for
+% credit attribution in multi-labeled corpora. In Proceedings of the 2009 Conference on Empirical Methods
+% in Natural Language Processing: Volume 1-Volume 1, pages 248–256, 2009.
+Several topic-analysis methods have been used by researchers in
+software engineering, including Latent Dirichlet Allocation (LDA)\cite{Asuncion:2010,Linstead:2009}
+, Latent Semantic Indexing (LSI)\cite{Marcus04aninformation}
+, and Labeled Latent Dirichlet Allocation
+(Labeled-LDA)\cite{labeledlda}. We applied both
+labeled-LDA and LDA topic-analysis on the bug reports
+of different vendors, and identified several recurring topics in these
+bugs. 
+We also compared the results of labeled-LDA and LDA to see if they
+produce similar results even though require very different amounts of
+manual effort to use.
+Next, we examined the bug topics to gain some intuition on the
+causes of Android fragmentation.	
+
+Our study focused on the bug reports of HTC and Motorola, two of the
+most prominent Android phone vendors. The first HTC Android phone was
+the ``HTC Dream'', manufactured in Oct. 2008. HTC has made more than
+thirty different Android phones since then. Motorola produced their
+first Android phone in Oct. 2009 and has released more than twenty
+different and very popular Android phones since then. 
  
-This paper makes the following contributions:
-\begin{itemize}
-\item we found that some features of Android contribute to both software fragmentation and hardware fragmentation.
-\end{itemize}
+This paper makes three important contributions. First, it provides
+empirical evidence about Android features that contribute to both software
+and hardware fragmentation. Second, and equally importantly, it lays
+out a methodology, that can be used to examine fragmentation within
+systems, such as Android, with numerous hardware platforms. Finally,
+by applying both Labeled-LDA and LDA we evaluated if the extra effort
+to label bug reports for Labeled-LDA is worth the effort compared with
+labelling LDA topics.
+%Android manufacturers, beyond the two we have already studied. 
 
-\begin{itemize}
-\item We provided a methodology which can be used to analyze other Android branches' fragmentation.
-\end{itemize}
-
-The paper is organized as follows: Section 2 describes the background; we discuss the related work in section 3; in section 4, we introduce our methodology; we apply the analysis of topic evolution models in section 5; section 6 compares and evaluates the topic models generated by LDA and labeled-LDA;  the paper concludes with a discussion of two research questions, threats to validity, conclusion and future work in section 7, 8 and 9 correspondingly.
+The rest of the paper is organized as follows. Section \ref{sec:background} reviews the
+background of our work and Section \ref{sec:relatedwork} discusses related work. Section \ref{sec:methodology}
+introduces our methodology, which is applied to our data set in
+Section \ref{sec:topicanalysis}. Section \ref{sec:fragmentation}
+discusses the evidence for fragmentation within Android. Section \ref{sec:comparinglda} compares and evaluates the topic models generated
+by LDA and labeled-LDA. 
+%XXX No research questions?
+%The paper concludes with a discussion of two
+%research questions, 
+We conclude with threats to validity in Section \ref{sec:threats},
+and conclusion and future work in
+Section \ref{sec:conclusions}.
 
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
@@ -462,6 +580,9 @@ The paper is organized as follows: Section 2 describes the background; we discus
 %Subsubsection text here.
 
 \section{Background}
+\label{sec:background}
+
+
 Topic analysis, with respect to Software Control Systems (SCS) is extremely useful in a variety of text processing applications \cite{hindle9s}. It includes two main steps: topic identification and text segmentation \cite{li2003topic}. It can be used in indexing the texts automatically to retrieve information.
 With it, we can understand what the main topics and sets of associated words with these topics, and where those associated words lie within the text \cite{li2003topic}. Recent topic analysis technologies include Latent Dirichlet Allocation (LDA) and Labeled-LDA.
 
@@ -478,13 +599,27 @@ In our research, we apply Labeled-LDA to perform topic analysis. Labeled-LDA is 
 
 
 \section{Related Work}
+\label{sec:relatedwork}
 Topic models have been used to help understand software systems. Marcus et al.\cite{Marcus04aninformation} used Latent Semantic Indexing (LSI) on both source code and user queries and then identified the most relevant source code documents with similarity measurements. Asuncion et al.\cite{Asuncion:2010} applied a coherence measurement on topics learned by LDA to model the quality of bug reports. Linstead et al.\cite{Linstead:2009} performed LDA to generate traceability links for artifacts in software projects automatically. Topic modeling is also utilized by Thomas et al.\cite{Thomas:2011} to study the evolution of topics in software projects.
 
 Compared with all these approaches, the most important difference is the topic models. They used LDA to extract topics, while we used Labeled-LDA to obtain the topics. With LDA, they prefined the number of topics and interpreted the extracted topics to get the extracted topics\cite{Asuncion:2010}. In our work, we first manually labeled bug reports with multiple labels. Then we employed labeled-LDA to get the topics. Another difference is that there is some manual work in our study to overcome the disadvantages of these unsupervised algorithms by pre-defining the number of topics and interpreting the extracted topics. 
 
 \section{Methodology}
+\label{sec:methodology}
 
-Our methodology is to extract bug reports, assign multiple labels to each of them and then apply Labeled-LDA on the labeled data. After that we calculate the average relevance of bug reports to each label over time\cite{Hindle} and compare them between two Android vendors, HTC and Motorola. In order to compare the performance between LDA and Labeled-LDA, we also apply LDA on the extracted bug reports of HTC and Motorola without our manual labels. We label all the topics generated by LDA. For each vendor, we calculate the similarity of each pair of labels from LDA and Labeled-LDA to evaluate their performance.
+% Do not make this one-line again. reading wide is not fun and it
+% messes up the git log where I can't tell what the edits actually were!
+Our methodology for investigating Android fragmentation starts with extracting
+bug reports, labelling the bug reports and then applying
+Labeled-LDA on the labeled bug reports.
+Then 
+ we calculate the average relevance of bug reports to each label
+over time\cite{Hindle} and compare them between two Android vendors,
+HTC and Motorola in order to look for fragmentation.
+We also compare the performance LDA topics compared with
+Labeled-LDA topics by comparing the 
+the similarity of each pair of
+topics from LDA and Labeled-LDA.
 
 \subsection{Generating the data}
 
@@ -498,17 +633,17 @@ Our methodology is to extract bug reports, assign multiple labels to each of the
 % made clear by this point
 
 Our first step was to extract the Android bug reports and then find
-those bug reports relevant to HTC and Motorola
-We use the Android bug reports provided by the MSR Mining
-Challenge~\cite{MSRChallenge2012}
-and parse store the bug reports, described as XML data, into a
-database using SQL
-Server. 
+the bug reports relevant to HTC and Motorola.  We parse and store the
+Android bug reports provided by the MSR Mining
+Challenge~\cite{MSRChallenge2012} as table in a SQL Server database.
+
 
 Then we selected bug reports that identified themselves as being
-relevant to HTC or Motorola through a mention of the words HTC or
-Motorola in the title text, description text of the bug report.  
-We used regular expressions to extract these relevant bug reports (e.g.,$'\%[\hat{ }0-9a-z]htc[ \hat{ }0-9a-z]\%'$ and $'\%[ \hat{ }0-9a-z]motorola[ \hat{ }0-9a-z]\%'$).
+relevant to HTC or Motorola that mentioned HTC or
+Motorola in the title text or the description text of the bug report.  
+% We used regular expressions to extract these relevant bug reports
+% (e.g.,$'\%[\hat{ }0-9a-z]htc[ \hat{ }0-9a-z]\%'$ and $'\%[ \hat{
+% }0-9a-z]motorola[ \hat{ }0-9a-z]\%'$).
 %`\texttt{[\^0-9a-z]HTC[\^0-9a-z]}' and
 %`\texttt{[\^0-9a-z]motorola[\^0-9a-z]}').
 % Using regexes, we extract bug reports highly related to
@@ -555,7 +690,7 @@ Motorola & calling network setting gtalk calendar signal contact\\
 \end{table}
 
 
-\subsection{Research Features as Potential Labels}
+\subsection{Creating Labels and Training Annotators}
 
 % 2. Where are the labels coming from: Before labeling all the bug
 % reports, we studied the Android operating system to get the features
@@ -568,28 +703,27 @@ Motorola & calling network setting gtalk calendar signal contact\\
 % labels are based on these three aspects of Android phones.
 
 In order to investigate fragmentation from a feature-oriented
-perspective we decided we were going to label the bug reports by
-relevant features in order to look for feature-relevant bug reports
+perspective we needed to label the bug reports by their
+relevant features. This would allow us to find feature-relevant bug reports
 for each manufacturer.
-To help seed the possible feature-oriented labels we 
-studied summary texts about the Android Operating
-System~\footnote{Android Operating System summary:
-\url{http://en.wikipedia.org/wiki/Android_operating_system} (retrieved
-March, 2012)}, 
-popular apps within the Android Market~\footnote{Android Market:
-  \url{https://play.google.com/store/apps} (retrieved March, 2012)}.
-As well we studied hardware comparisons of the popular Android handsets of 
- of HTC and Motorola~\footnote{Android Comparison:
-  \url{http://en.wikipedia.org/wiki/Comparison_of_Android_devices}
-  (retrieved March, 2012)}.
+To ensure our feature-oriented labels would agree with actual
+Android features we studied various descriptions~\footnote{Android Operating System summary:
+\url{http://en.wikipedia.org/wiki/Android_operating_system};
+Android Market: \url{https://play.google.com/store/apps};
+Android Comparison:
+\url{http://en.wikipedia.org/wiki/Comparison_of_Android_devices}
+(retrieved March, 2012).}
+ of Android's
+operating system, popular apps, and the Android offerings of HTC and
+Motorola.
 
-\subsection{Developing Labels}
+%\subsection{Developing Labels}
 %Multi-labeling}
 
 
 Once we became familiar with the Android operating system and Android
 ecosystem we needed to agree and train ourselves to consistently label
-Android bug reports to study vendor relevant fragmentation of bug reports.
+Android bug reports.
 
 % 3. Label the bug reports: Zhang and Fan labeled 248 HTC bug reports in
 % 2009 separately and then compared the results by each bug to ensure
@@ -612,22 +746,24 @@ was created.
 These labels 
 consisted of the features and applications on an Android mobile
 phone, such as SMS/MMS, browser and Wi-Fi or the components of the
-handsets mentioned in the bug reports, such as GPS, screen and
-keyboard.
+handsets mentioned in the bug reports, such as GPS, screens and
+keyboards.
 
 
-To ensure consistency and agreement in labelling the authors executed a training
-methodology. This methodology also ensured a synchronization of labels.
-Each author, Zhang and Fan, separately labeled each of these 248 bug reports, 
+To ensure consistency and agreement in labelling the authors trained
+themselves in consistent labeling.
+Each annotator, authors Zhang and Fan, separately labeled each of these 248 bug reports, 
 with labels inspired by the previous research on Android
 features. 
-After Zhang and Fan labeled these 248 bug reports seperately, the
-labels were compared and the authors discussed label agreement and
+Upon completion of labelling, 
+ Zhang and Fan compared the labels
+and discussed label agreement and
 disagreement in order to train themselves to consistently label bug
-report.
-To help the comparison each author’s labeled data was used as input to
- STMT's implementation of Labeled-LDA which produced a set of topics.
-The topics and their relevant bug reports were compared to ensure
+reports.
+The topics of the labeled bug reports were also compared: each annotator's labeled data was used as input to
+ Labeled-LDA which produced a set of topics.
+These topics and their relevant bug reports were compared to ensure
+that annotators had a 
 consistent interpretation of the bug reports and their labels.
 
 
@@ -642,7 +778,7 @@ consistent interpretation of the bug reports and their labels.
 
 \subsection{Labelling the HTC and Motorola Bug Reports}
 
-Once the labelling rules were agreed upon each author (Zhang and Fan)
+Once the labelling rules were agreed upon each annotator (Zhang and Fan)
 seperately labeled HTC and Motorola bug reports, taking over 60 man
 hours of manual labelling effort.
 %After this, we tag the rest of bug reports separately for both HTC and
@@ -652,9 +788,9 @@ Using the previously stated labelling methodology, labels were created as necess
 %already have, we would create a new label together based on our
 %definition of labels, i.e. the functionalities and applications on an
 %Android mobile phone or the components of the handsets. 
-For example, the label ``calculator'' was created in order to label
-bug reports that occurred later that were relevant to this feature as
-were several bug reports regarding the correctness of the
+For example, the label ``calculator'' was created because later in
+Android's history there were 
+several bug reports about the correctness of the
 calculator's results. 
 % So we added it to our labels. 
 %The manual labelling took approximately 30 hours per person. 
@@ -683,40 +819,49 @@ and Motorola.
 
 
 Once the bug reports were labeled we wanted to extract the topics
-associated with the labels. First we had to preprocess the bug reports 
+associated with the labels. First we had to process the bug reports 
 in order to apply Labeled-LDA to the labeled bug reports. 
-We convert the title and description of each bug report to lowercase,
-tokenize and filter the words to remove stop words (words that are less than 3 characters and
+We converted the title and description of each bug report to lowercase,
+split the text into tokens, and filtered out stop words (words that are less than 3 characters and
 common English stop words such as ``all'', ``about'', ``the'',
-``that'' and ``were'' ), and then produce word counts/distribution per
-each HTC bug report and each Motorola bug report.
+``that'' and ``were'' ). Then produced word counts/distribution from
+these sets of bug-report derived words.
 
-Separately, we applied Labeled-LDA to these preprocessed HTC bug reports and Motrola bug reports.
+Separately, we applied Labeled-LDA to these processed HTC bug reports and Motrola bug reports.
 %We then supplied Labelled-LDA with these word distributions of the bug reports.
-Labeled-LDA then outputs the topic, a word distribution, associated
-with our label, as well as a document-topic matrix which links our
-labels to the documents in the each bug report corpus (HTC and
-Motorola).
+Labeled-LDA then outputs the topics, word distributions, associated
+with our labels, as well as a document-topic matrix which links our
+labels (topics) to the bug reports from HTC and Motorola.
+% in the each bug report corpus (HTC and
+% Motorola).
 %By applying Labeled-LDA to the bug reports of HTC and Motorola
 %separately, we have the word distribution of each label and a matrix
 %that provides the relationship between bug reports and the labels. 
 
 The topic analysis is based on these results. 
-In order to visualize the association of a label (an extracted
-Labeled-LDA topic) to bug reports over time, we grouped the 
+To visualize the association of a label (an extracted
+Labeled-LDA topic) to bug reports over time,
 %In order to investigate the trend of each label by time, 
 we grouped
 all the bug reports by month from 2009 to 2011 based on their open
 date for each of the two vendors. 
-For each label, we computed the average relevance values of bug
+We then computed the average relevance values of bug
 reports to this label in each month. 
-The average relevance value of a label \begin{math} \l_i \end{math} in month \begin{math} m_j \end{math} is the sum of all the relevance values of this label over all bug reports in this month divided by the number of bug reports in this month,
+The average relevance value of a label \begin{math} \l_i \end{math} in
+month \begin{math} m_j \end{math} is the sum of all the relevance
+values of this label over all bug reports in this month divided by the
+number of bug reports in this month,
 \begin{equation}
 A(\l_i,m_j) = \frac{\sum_{\substack{k=1}}^{|m_j|}r(\l_i,d_k)}{|m_j|}
 \label{equation1}
 \end{equation}
 where $r(\l_i,d_k)$ is the relevance value of label $\l_i$ to bug
-report $d_k$, $|m_j|$ is the number of bug reports in this month. We generated a distribution of average relevance among three years for each label, showed in Figure\ref{commontopic}, Figure \ref{fixtopic}, Figure \ref{uniquehtc} and Figure \ref{uniquemoto}.
+report $d_k$, $|m_j|$ is the number of bug reports in this month. 
+We generated a distribution of average relevance across three years of
+Android history
+each label, depicted in Figure \ref{commontopic}, Figure \ref{fixtopic},
+Figure \ref{uniquehtc} and Figure \ref{uniquemoto}.
+
 
 % XXX mention the topics
 % XXX VVV what is this stuff?
@@ -736,31 +881,34 @@ report $d_k$, $|m_j|$ is the number of bug reports in this month. We generated a
 % can use the manual labels to tag them).
 
 
-In order to compare the performance between LDA and Labeled-LDA in
-order to see if Labeled-LDA is worth the effort, 
-we applied LDA to the extracted the same bug reports of HTC and Motorola
+In order to compare the performance between LDA and Labeled-LDA and
+ to see if Labeled-LDA is worth the manual labeling effort, 
+we applied LDA to the same processed bug reports of HTC and Motorola
 but without our manual labels. 
-We used the same preprocessing method used on the bug-reports used in
-the Labeled-LDA analysis.
 
 Applying LDA had one complication, LDA requires an input, $n$ that
-determines the number of topics that LDA is supposed to extract. If
-$n$ is too large, the topics tend to repeat themselves and tend to
-represent similar issues. If $n$ is too small, the topics tend to
-be cluttered and lack a coherent topic. This can interpreted manually
-by reading the topics and evaluating the top 10 or 20 words associated
-with a topic.
+determines the number of topics that LDA is supposed to extract. 
+If $n$ is too large, the topics tend to repeat themselves and tend to
+represent similar issues. 
+If $n$ is too small, the topics tend to be cluttered and lack a
+coherent focus.
+This can be interpreted manually by reading the topics and evaluating
+the top 10 or 20 words associated with a topic.
 To choose the number of topics $n$, we ran LDA using multiple values
-of $n$ that included: 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65
-and 70 on the bug reports of HTC. 
+of $n$ ranging from 10 to 70, counting by 5,
+on the bug reports of HTC. 
 Three of the authors (Han, Zhang and Fan) evaluated the word distribution of each topic
-together in each case. 
-We determined if topics were distinct enough based on labeling. Given
-our previous manual labels that were used by Labeled-LDA we tried to label these LDA topics
-with those labels. If we repeated too much, or too many labels were
-clustered around a topic, we considered that choice of $n$ to be unfit.
-The authors chose the $n = 35$, as the topics generated by LDA
-were distinct enough from each other, had few repetitions and could be
+together in each case of $n$. 
+We determined if topics were distinct enough based on matching the
+topics to labels we had created and used for Labeled-LDA. 
+%Given
+%our previous manual labels that were used by Labeled-LDA we tried to label these LDA topics
+%with those labels. 
+For a given $n$, if the labels did not repeat too much, and topics did not receive too
+many labels, then we preferred that $n$ over others without these
+characteristics.
+The authors chose $n = 35$, as the topics generated by LDA with $n = 35$
+were distinct from each other, had few repetitions and could be
 interpreted well by the authors based on their own judgment.
 Other researchers had some similar results
 \cite{Thomas:2011,Hindle2011,Hindle}. 
@@ -786,15 +934,17 @@ Table \ref{seleted2} lists a few selected topics from LDA with manual labels.
 % chose threshold to be 0.2 the mean of the similarities is the
 % biggest. 
 
-In order to determine if LDA would generate the similar results to
-Labeled-LDA we had to compare the results.
+In order to determine if LDA would generate similar results to
+Labeled-LDA we had to compare the topics of each.
 % Thus nce LDA and Labelled-LDA were applied to the bug reports of HTC and
 % Motorola we had to compare the topics that were extracted.
 Both LDA and Labeled-LDA produce matrices of
- the relationship between bug reports of two vendors and the
-label or topics. 
-That is if the topics generated by LDA that were labeled as the same
-ones in Labeled-LDA would be related to similar bug reports.
+ the relationships between bug reports of two vendors and the
+labels or topics.
+Thus we wanted to know if the LDA extracted topics that we manually
+labeled matched the Labeled-LDA topics that were labeled via our bug
+report labeling. If the results were similar there would be little
+point in applying Labeled-LDA in the future.
 
 We determined topic similarity by comparing the sets of documents
 relevant to a LDA topic and those relevant to a Labeled-LDA
@@ -816,17 +966,25 @@ vendor.
 
 %XXX I still don't understand where 0.2 comes from
 % under the threshold of 0.2 we computed the similarities which had the biggest mean value.
-The topic-document matrix often contains quiet noise and weak
+The topic-document matrix often contains noise and weak
 relationships between topics and documents, thus it is necessary to
 provide a threshold of document relevance to determine if a document
 is relevant to a topic or not.
 We used several thresholds (0.01, 0.05, 0.1, 0.2, 0.3, 0.4 and 0.5) on
-the relevance value of a bug report to a label in LDA when generating
-the Jaccard similarity coefficients. We eventually chose $0.2$ as the similarities had the biggest mean value.
-We plotted these pairwise tests in order to explore the match between
+the relevance value of a bug report to a topic in LDA when generating
+the Jaccard similarity coefficients. 
+We eventually chose $0.2$ as the similarities had the biggest mean
+value. 
+We plotted these pairwise tests (see Figure \ref{similarityhtc} and
+Figure \ref{similaritymoto}) in order to explore the match between
 LDA and Labeled-LDA.
 
-Then we counted the number of bug reports that are related to labels which are both shared by LDA and Labeled-LDA in HTC and Motorola. We applied the Chi-squared test on the two sets of distribution to study if each of the two distributions match.
+% XXX WHAT? 
+Then we counted the number of bug reports that are related to labels
+that are both shared by LDA and Labeled-LDA in HTC and Motorola. 
+We applied the Chi-squared test on the two sets of distribution to
+study if each of the two distributions match.
+
 
 
 \begin{table}[!t]
@@ -859,6 +1017,7 @@ Motorola & wifi &connect, xoom, hotspot, netbook, wifi, ssid, \\
 
 
 \section{Topic Mining and Analysis}
+\label{sec:topicanalysis}
 
 In order to investigate fragmentation within Android, we mined the bug reports of Android and analyzed the results from both quantitative and qualitative aspects.
 
@@ -1008,6 +1167,8 @@ In Figure \ref{uniquemoto}, comparing two vendors, we can see the distribution o
 In summary, for different vendors, they have specific topics which imply there may be portability problems. For a specific vendor, the associated terms of topics implicate that the corresponding features have portability issues across its devices.
 
 \section{Discussion of Fragmentation}
+\label{sec:fragmentation}
+
 %What is feature evolution?
 According to the analysis about \textit{Common Troubled Topics}, we can see that there is no strong correlation between the feature evolution and Android evolution. In addition, The topic - upgrade has strong correlation with Android 2.1 and Android 2.2. As there are some features evolution demonstrate stable trends with Android evolution implicated by the \textit{Common Improved Topics}, we can conclude that Android has compatibility issue in some features.
 
@@ -1067,12 +1228,15 @@ When we refer to Android, we generally mean all Android versions existing in the
 %\end{figure*}
 
 \section{Comparing of LDA and Labeled-LDA}
+\label{sec:comparinglda}
+
 In this section we investigate if LDA and Labeled-LDA would generate the similar results.
 
 Figure \ref{similarityhtc} and Figure \ref{similaritymoto} depict the pairwise Jaccard similarities of labels from LDA and Labeled-LDA. The brighter spots mean the pair of labels have higher Jaccard similarity. These two labels in LDA and Labeled-LDA would be relevant to more similar set of bug reports. The darker spots mean the pair of labels have lower Jaccard similarity and share less bug reports in common. 
 
-From these two Jaccard similarity plots (Figure \ref{similarityhtc} and Figure \ref{similaritymoto}) of labels between LDA and Labeled-LDA, we can observe that most of the Jaccard similarity values are quite small except a few diagonal ones, especially in HTC. This observation is expected since most of the diagonal spots are the Jaccard similarities between the same labels from LDA and Labeled-LDA. However, even the mean similarities of the diagonal spots are just about 0.2 for HTC and 0.08 for Motorola. The similarity plot for Motorola has much more noises than the plot for HTC.  
+From these two Jaccard similarity plots (Figure \ref{similarityhtc} and Figure \ref{similaritymoto}) of labels between LDA and Labeled-LDA, we can observe that most of the Jaccard similarity values are quite small except a few diagonal ones, especially in HTC. This observation is expected since most of the diagonal spots are the Jaccard similarities between the same labels from LDA and Labeled-LDA. However, even the mean similarities of the diagonal spots are just about 0.2 for HTC and 0.08 for Motorola. The similarity plot for Motorola has much more noise than the plot for HTC.  
 
+%XXX how close
 Figure \ref{bughtc} shows the number of bug reports that related to the same labels in the bug reports of HTC and Figure \ref{bugmoto} illustrates the number of bug reports that related to the same labels in the bug reports of Motorola. The $ p $ values of the Chi-squared test on the two sets of distribution are both close to zero. Hence the number of bug reports related to same labels in LDA and Labeled-LDA are quite different.
 
 \begin{figure*}[htb]
@@ -1231,6 +1395,7 @@ Motorola Unique Topics
 \end{table*}
 
 \section{Threats to validity}
+\label{sec:threats}
 
 \textit{Construct validity} – Our data originated from MSR Mining Challenge \cite{MSRChallenge2012} and the dataset only ranges from 2009 to 2011. Furthermore we just took all the bug reports related to two vendors in this repository as the dataset to investigate. There may be other bug report repositories can be applied to increase the volume of our dataset. 
 
@@ -1242,6 +1407,7 @@ Motorola Unique Topics
 
 
 \section{Conclusion and Future Work}
+\label{sec:conclusions}
 
 In this paper we studied Android bug reports for two vendors, HTC and Motorola. Based on topic analysis using Labeled-LDA on a corpus of manually tagged bug reports with multiple labels, we extracted the top 18 topics and categorized them into \textit{Common Troubled Topics}, \textit{Common Improved Topics} and \textit{Unique Topics} for both vendors. The \textit{Common Troubled Topics} show that there is no correlation between the troubled features of Android and Android evolution. In other words, there may be the incompatibility problem existing to the specific features of Android. The \textit{Common Improved Topics} show that some features within the same vendors have portability issues across their multiple devices. The \textit{Unique Topics} show that different vendor has specific bug topics which imply there may be the portability problem on the different vendors. Furthermore, we found that the manual efforts of labeling all the bug reports would help us gain the better topic models generated by Labeled-LDA after comparing LDA and Label-LDA. 
 
