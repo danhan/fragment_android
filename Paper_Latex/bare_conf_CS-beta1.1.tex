@@ -405,9 +405,39 @@ Edmonton, Canada\\
 
 
 \begin{abstract}
-Android fragmentation has been a controversial topic. In this study, we investigated the fragmentation of Android by a comparison of Android vendor's bug reports via topic analysis. We mined and analyzed the Android bug reports related to two popular Android vendors, HTC and Motorola. We manually annotated bug reports with labels and applied Labeled Latent Dirichlet Allocation (Labeled-LDA) to the datasets to produce bug topics. By comparing the distribution of average relevance of top 18 bug topics over time for both vendors, we categorized the topics into three types which are \textit{Common Troubled Topics}, \textit{Common Improved Topics} and \textit{Unique Topics}. The \textit{Common Troubled Topics} show that there is no correlation between the troubled features of Android and Android evolution. The \textit{Common Improved Topics} show that some features within the same vendors have portability issues across their multiple devices. The \textit{Unique Topics} show that different vendors have specific bug topics which imply there may be the portability problem on the different vendors. Our findings can be used by Android system community, stakeholders, Android device vendors and developers to make project dashboards, process investigation and feature analysis.
 
+  The fragmentation of the Android ecosystem is a topic of substantial
+  debate, and pundits claim (without much actual evidence) that it is
+  worsening. In this study, we search for evidence of fragmentation in
+  the topics of vendor-specific bug reports. 
 
+  More specifically, we have mined and analyzed the Android bug
+  reports related to two popular vendors, HTC and Motorola. First, we
+  manually annotated the bug reports with labels. Next, we used
+  Labeled LDA (Latent Dirichlet Allocation) on the labeled data to
+  infer their topics. 
+  % ES: I have no idea what "By comparing the distribution of average
+  % relevance of the top 18 bug topics over time for both vendors"
+  % means
+  Finally, by examining the relevance of the top 18 bug topics over
+  time for the bugs eported by each of the vendors, we categorized the
+  topics into three types: \textit{Common Troubled Topics},
+  % ES: I propose to make "Common Troubled Topics" into "common problems"
+  \textit{Common Improved Topics} 
+  % ES: I propose to make "Common Impoved Topics" into "common desired
+  % improvements  
+  and \textit{Unique Topics}. The \textit{Common Troubled Topics} show
+  that there is no correlation between the troubled features of
+  Android and Android evolution. The \textit{Common Improved Topics}
+  show that some features within the same vendors have portability
+  issues across their multiple devices. The existence of
+  \textit{Unique Topics} shows that different vendors have specific bug
+  topics which imply there may be the portability problem on the
+  different vendors.
+  % ES: we need a better statement below
+  Our findings can be used by Android system community, stakeholders,
+  Android device vendors and developers to make project dashboards,
+  process investigation and feature analysis.
 
 \end{abstract}
 
@@ -431,25 +461,81 @@ Bug reports; Topic mining; Labeled-LDA
 \section{Introduction}
 % no \IEEEPARstart
 
-The market share of mobile phones is always changing and getting more and more competitive among various mobile device vendors\footnote{The Global Smartphone Market Landscape: \url{http://www.asymco.com/2011/11/17/the-global-smartphone-market-landscape (retrieved March, 2012)}}. The iPhone and Android phones share almost 70\% of US mobile phone market \cite{usmarket}. Compared to Apple’s closed ecosystem for iOS, in general, Android has both software fragmentation and hardware fragmentation \cite{analysis}. Android software fragmentation includes (1)multiple Android versions (2)customized device-specific Android and UI-specific Android from vendors (3) customized carrier-specific Android from vendors. Hardware fragmentation means that at any given point in time, devices based on the same Android are running on different types of hardware, related to processors, graphics processors, and screen size \cite{analysis}. The fragmentation leads to the additional testing work for Android application across multiple devices; it stops Android users experiencing some new features of Android because of the upgrading delay; and it also makes people lose confidence in Android.
+Mobile-device vendors continuously compete against each other for
+increased market share, and the maket landscape is extremely
+volatile\footnote{The Global Smartphone Market Landscape:
+  \url{http://www.asymco.com/2011/11/17/the-global-smartphone-market-landscape
+    (retrieved March, 2012)}}. Together, iPhone and Android phones
+constitute almost 70\% of the US mobile-phone market
+\cite{usmarket}. These two very successful platforms are very
+different from each other: where Apple tightly controls the software
+(iOS) and the hardware (iPhone) platform and its evolution, there
+exist a variety of Android phones produced by different vendors, which
+often come with custom software, thus giving rise to hardware and
+software fragmentation in the Android ecosystem ~\cite{analysis}. The
+term {\em hardware fragmentation} refers to the fact that at any point
+in time, devices based on the same Android operating system run on
+different processors, graphics cards, and screen sizes
+\cite{analysis}. The term {\em software fragmentation} refers to three
+related problems. First, there exist multiple versions of the Android
+operating system. Second, vendors offer device-specific Andorid
+versions with custom user interfaces. Finally, carriers also offer
+software customizations.
 
+This fragmentation implies an opportunity for personalization and
+increased usability, since it enables users to choose the device and
+software that best meets their needs. On the flip side, it also
+implies that, due to insufficient cross-platform
+testing\cite{testing}, Android applications may not behave
+consistently across devices and software.  Furthermore, it tends to
+prevent some Android users from experiencing new features, when these
+features are slow to appear on their chosen devices. These problems
+may cause clients to lose confidence in the Android platform and cost
+the brand market share. Given its potential impact, Android
+fragmentation is the topic of much discussion and
+controversy. However, there has been little systematic evidence on how
+exactly it may impact consumer opinon.
+% Someone from industry performed experiments of Android on different
+% devices, and they found that the root cause of fragmentation is the
+% classical software engineering issues \cite{testing}.
 
-Android fragmentation has been a controversial topic which swells up now and again regrading its provenance and its impacts.  However, no one can provide strong evidences to support their statements. Someone from industry performed experiments of Android on different devices, and they found that the root cause of fragmentation is the classical software engineering issues \cite{testing}.
+Our objective in this study is to search for evidence of the Android
+fragmentation in the bug reports submitted by users of Android devices
+from different vendors. To that end, we applied topic analysis on the
+Android bug reports. 
+%A topic of the document (e.g. bug reports, source code changes and
+%commits) is generated by topic models which has been used to help
+%understand software systems. 
+Several topic-analysis methods have been used by researchers in
+software engineering, including Latent Dirichlet Allocation (LDA)
+\cite{Marcus04aninformation}, Latent Semantic Indexing (LSI)
+\cite{Asuncion:2010}, and Labeled Latent Dirichlet Allocation
+(Labeled-LDA) \cite{Linstead:2009}. We applied the
+labeled-LDA\cite{labeledlda} topic-analysis method on the bug reports
+of different vendors, and identified several recurring topics in these
+bugs. Next, we examined the bug topics to gain some intuition on the
+causes of Android fragmentation.	
 
-In this study, we want to explore the fragmentation of Android by mining and analyzing Android user bug reports. We applied topic analysis on the Android bug reports. A topic of the document (e.g. bug reports, source code changes and commits) is generated by topic models which has been used to help understand software systems. There are a few topic models utilized by researchers in software engineering, e.g. Latent Dirichlet Allocation (LDA), Latent Semantic Index (LSI) and Labeled Latent Dirichlet Allocation (Labeled-LDA) \cite{Marcus04aninformation} \cite{Asuncion:2010} \cite{Linstead:2009}. We applied labeled-LDA\cite{labeledlda} on bug reports of different vendors and analyzed topics in bug reports. We then did the analysis on the bug topics and based on the topics analysis, we discussed what features of Android contribute much on Android fragmentation in the end. 
-	
-In terms of bug reports, we chose the bug reports of HTC and Motorola in this study. HTC's first Android phone was the HTC Dream manufactured in Oct. 2008. HTC has made more than thirty different Android phones since then. Motorola made their first Android phone in Oct. 2009 and has released more than twenty different Android phones since then. Their Android products have gained widespread popularity. 
+Our study focused on the bug reports of HTC and Motorola, two of the
+most prominent Android phone vendors. The first HTC Android phone was
+the ``HTC Dream'', manufactured in Oct. 2008. HTC has made more than
+thirty different Android phones since then. Motorola produced their
+first Android phone in Oct. 2009 and has released more than twenty
+different and very popular Android phones since then. 
  
-This paper makes the following contributions:
-\begin{itemize}
-\item we found that some features of Android contribute to both software fragmentation and hardware fragmentation.
-\end{itemize}
+This paper makes two important contributions. First, it provides
+specific evidence on Android features that contribute to both software
+and hardware fragmentation. Second, and equally importantly, it lays
+out a methodology, which can be used to examine fragmentation across
+Android manufacturers, beyond the two we have already studied. 
 
-\begin{itemize}
-\item We provided a methodology which can be used to analyze other Android branches' fragmentation.
-\end{itemize}
-
-The paper is organized as follows: Section 2 describes the background; we discuss the related work in section 3; in section 4, we introduce our methodology; we apply the analysis of topic evolution models in section 5; section 6 compares and evaluates the topic models generated by LDA and labeled-LDA;  the paper concludes with a discussion of two research questions, threats to validity, conclusion and future work in section 7, 8 and 9 correspondingly.
+The rest of the paper is organized as follows. Section 2 reviews the
+background of our work and Section 3 discusses related work. Section 4
+introduces our methodology, which is applied to our data set in
+Section 5. Section 6 compares and evaluates the topic models generated
+by LDA and labeled-LDA. The paper concludes with a discussion of two
+research questions, threats to validity, conclusion and future work in
+Sections 7, 8 and 9 correspondingly.
 
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
