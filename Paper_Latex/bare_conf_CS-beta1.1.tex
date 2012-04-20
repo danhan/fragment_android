@@ -609,19 +609,17 @@ Compared with all these approaches, the most important difference is the topic m
 
 % Do not make this oneline again. reading wide is not fun and it
 % messes up the git log where I can't tell what the edits actually were!
-Our methodology is to extract bug reports, assign multiple labels to
-each of them and then apply Labeled-LDA on the labeled data. 
-After
-that we calculate the average relevance of bug reports to each label
+Our methodology for investigating Android fragmentation starts with extracting
+bug reports, labelling the bug reports and then applying
+Labeled-LDA on the labeled data.
+Then 
+ we calculate the average relevance of bug reports to each label
 over time\cite{Hindle} and compare them between two Android vendors,
-HTC and Motorola. 
-In order to compare the performance between LDA and
-Labeled-LDA, we also apply LDA on the extracted bug reports of HTC and
-Motorola without our manual labels. 
-We label all the topics generated
-by LDA. 
-For each vendor, we calculate the similarity of each pair of
-labels from LDA and Labeled-LDA to evaluate their performance.
+HTC and Motorola in order to look for fragmentation.
+We also compare the performance LDA topics from the context of
+Labeled-LDA topics by comparing the 
+the similarity of each pair of
+topics from  LDA and Labeled-LDA.
 
 \subsection{Generating the data}
 
