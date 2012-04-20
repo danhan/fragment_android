@@ -414,35 +414,42 @@ Edmonton, Canada\\
   More specifically, we have mined and analyzed the Android bug
   reports related to two popular vendors, HTC and Motorola. First, we
   manually annotated the bug reports with labels. Next, we used
-  Labeled LDA (Latent Dirichlet Allocation) on the labeled data to
+  Labeled LDA (Latent Dirichlet Allocation) and LDA on the labeled data to
   infer their topics. 
   % ES: I have no idea what "By comparing the distribution of average
   % relevance of the top 18 bug topics over time for both vendors"
   % means
   Finally, by examining the relevance of the top 18 bug topics over
-  time for the bugs eported by each of the vendors, we categorized the
+  time for the bugs reported by each of the vendors, we categorized the
   topics into three types: \textit{Common Troubled Topics},
   % ES: I propose to make "Common Troubled Topics" into "common problems"
   \textit{Common Improved Topics} 
   % ES: I propose to make "Common Impoved Topics" into "common desired
   % improvements  
+  % XXX: Fix this. The whole common troubled thing is infuriating
+  % wrongly labelled
   and \textit{Unique Topics}. The \textit{Common Troubled Topics} show
   that there is no correlation between the troubled features of
   Android and Android evolution. The \textit{Common Improved Topics}
   show that some features within the same vendors have portability
   issues across their multiple devices. The existence of
-  \textit{Unique Topics} shows that different vendors have specific bug
+  \textit{Unique Topics}, exclusive to each vendor, shows that different vendors have specific bug
   topics which imply there may be the portability problem on the
   different vendors.
   % ES: we need a better statement below
   Our findings can be used by Android system community, stakeholders,
   Android device vendors and developers to make project dashboards,
   process investigation and feature analysis.
+  In this study we show that there is evidence with Android's bug
+  repository of fragmentation across
+  Android handsets of multiple vendors.\
+  % XXX show we mention the labeled lda results
+
 
 \end{abstract}
 
 \begin{IEEEkeywords}
-Bug reports; Topic mining; Labeled-LDA
+Bug reports; Topic mining; LDA; Labeled-LDA; Fragmentation
 \end{IEEEkeywords}
 
 
@@ -464,23 +471,23 @@ Bug reports; Topic mining; Labeled-LDA
 Mobile-device vendors continuously compete against each other for
 increased market share, and the maket landscape is extremely
 volatile\footnote{The Global Smartphone Market Landscape:
-  \url{http://www.asymco.com/2011/11/17/the-global-smartphone-market-landscape
-    (retrieved March, 2012)}}. Together, iPhone and Android phones
+  \url{http://www.asymco.com/2011/11/17/the-global-smartphone-market-landscape}
+  (retrieved March, 2012)}. Together, iPhone and Android phones
 constitute almost 70\% of the US mobile-phone market
 \cite{usmarket}. These two very successful platforms are very
 different from each other: where Apple tightly controls the software
 (iOS) and the hardware (iPhone) platform and its evolution, there
 exist a variety of Android phones produced by different vendors, which
 often come with custom software, thus giving rise to hardware and
-software fragmentation in the Android ecosystem ~\cite{analysis}. The
+software fragmentation in the Android ecosystem~\cite{analysis}. The
 term {\em hardware fragmentation} refers to the fact that at any point
 in time, devices based on the same Android operating system run on
 different processors, graphics cards, and screen sizes
 \cite{analysis}. The term {\em software fragmentation} refers to three
 related problems. First, there exist multiple versions of the Android
-operating system. Second, vendors offer device-specific Andorid
-versions with custom user interfaces. Finally, carriers also offer
-software customizations.
+operating system. Second, vendors offer customized device-specific
+Android versions. Finally, carriers also offer software
+customizations.
 
 This fragmentation implies an opportunity for personalization and
 increased usability, since it enables users to choose the device and
