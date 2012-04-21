@@ -642,13 +642,13 @@ unsupervised algorithms but at the expense of manual labeling.
 \section{Methodology}
 \label{sec:methodology}
 
-Our methodology for investigating Android fragmentation starts with extracting
+Our methodology for investigating Android fragmentation starts by extracting
 bug reports, labeling the bug reports and then applying
-Labeled-LDA on the labeled bug reports.
+Labeled-LDA to the labeled bug reports.
 Then 
- we calculate the average relevance of bug reports to each label
+ we calculate and visualize the average relevance of bug reports to each label
 over time~\cite{Hindle} and compare them between two Android vendors,
-HTC and Motorola in order to look for fragmentation.
+HTC and Motorola, in order to look for fragmentation.
 We also compare the performance of LDA topics compared with
 Labeled-LDA topics by comparing the 
 the similarity of each pair of
@@ -670,19 +670,9 @@ Challenge~\cite{MSRChallenge2012} as table in a SQL Server database.
 
 
 Then we selected bug reports that identified themselves as being
-relevant to HTC or Motorola that mentioned HTC or
-Motorola in the title text or the description text of the bug report.  
-% We used regular expressions to extract these relevant bug reports
-% (e.g.,$'\%[\hat{ }0-9a-z]htc[ \hat{ }0-9a-z]\%'$ and $'\%[ \hat{
-% }0-9a-z]motorola[ \hat{ }0-9a-z]\%'$).
-%`\texttt{[\^0-9a-z]HTC[\^0-9a-z]}' and
-%`\texttt{[\^0-9a-z]motorola[\^0-9a-z]}').
-% Using regexes, we extract bug reports highly related to
-% Android phones of HTC and Motorola respectively. 
-% We use the title,
-% opened date and description in each bug report. 
-% XXX: What does declined mean: There is a status field in the bug repo. "Declined" is a bug status which means bug reports are not accepted by the bug repo, e.g. the bug reports might not be related to Android devices.
-We then removed all the declined and duplicate bug reports, leaving us
+relevant to HTC or Motorola, by selecting those bug reports that mention HTC or
+Motorola in their title text or their description text.
+We then removed all the declined (unaccepted) and duplicate bug reports, leaving us
 with 1503 HTC bug reports and 1058 Motorola bug reports.
 
 \begin{table}[!t]
@@ -753,9 +743,6 @@ Motorola.
 %\subsection{Developing Labels}
 %Multi-labeling}
 
-Once we became familiar with the Android operating system and Android
-ecosystem we needed to agree and train ourselves to consistently label
-Android bug reports.
 
 % 3. Label the bug reports: Zhang and Fan labeled 248 HTC bug reports in
 % 2009 separately and then compared the results by each bug to ensure
@@ -763,22 +750,24 @@ Android bug reports.
 % Fan labeled the rest of the bug reports separately.
 
 %XXX we need a cite
+Once we became familiar with the Android operating system and Android
+ecosystem we needed to agree and train ourselves to consistently label
+Android bug reports.
 Following a grounded theory-like coding approach, similar to the
 approach taken in by Hindle et al.~\cite{Hindle2011}, authors Zhang
 and Fan selected a set of HTC 248 bug reports to label
 separately. 
 
-To label a bug report, the annotator (Zhang or Fan) reads the bug
+To label a bug report, our annotators (Zhang or Fan) read the bug
 report text, both the title and the description, and  then based on their
 personal interpretation they related that bug report to the relevant
-features. This means that one bug report can receive multiple labels
+features. This means that one bug report could receive multiple labels
 if it is relevant to multiple identified features. Labels were created
-as necessary, if a label regarding a feature did not already exist, it
+as necessary: if a label regarding a feature did not already exist, it
 was created.
-These labels 
-consisted of the features and applications on an Android mobile
-phone, such as SMS/MMS, browser and Wi-Fi or the components of the
-handsets mentioned in the bug reports, such as GPS, screens and
+Our labels 
+consisted of the features, applications and hardware of Android phones
+such as SMS/MMS, browser, Wi-Fi , GPS, screens and
 keyboards.
 
 
@@ -788,13 +777,13 @@ Each annotator, authors Zhang and Fan, separately labeled each of these 248 bug 
 with labels inspired by the previous research on Android
 features. 
 Upon completion of labeling, 
- Zhang and Fan compared the labels
-and discussed label agreement and
+ Zhang and Fan compared the labels,
+discussing label agreement and
 disagreement in order to train themselves to consistently label bug
 reports.
 The topics of the labeled bug reports were also compared: each annotator's labeled data was used as input to
  Labeled-LDA which produced a set of topics.
-These topics and their relevant bug reports were compared to ensure
+The resulting test topics and their relevant bug reports were compared to ensure
 that annotators had a 
 consistent interpretation of the bug reports and their labels.
 
@@ -815,12 +804,12 @@ seperately labeled HTC and Motorola bug reports, taking over 60 man
 hours of manual labeling effort.
 %After this, we tag the rest of bug reports separately for both HTC and
 %Motorola. 
-Using the previously stated labeling methodology, labels were created as necessary.
+%Using the previously stated labeling methodology, labels were created as necessary.
 %When there is a bug report that cannot be tagged by the labels we
 %already have, we would create a new label together based on our
 %definition of labels, i.e. the functionalities and applications on an
 %Android mobile phone or the components of the handsets. 
-For example, the label ``calculator'' was created because later in
+New labels were created as necessary: the label ``calculator'' was created because later in
 Android's history there were 
 several bug reports about the correctness of the
 calculator's results. 
@@ -855,12 +844,12 @@ in order to apply Labeled-LDA to the labeled bug reports.
 We converted the title and description of each bug report to lowercase,
 split the text into tokens, and filtered out stop words (words that are less than 3 characters and
 common English stop words such as ``all'', ``about'', ``the'',
-``that'' and ``were'' ). Then produced word counts/distribution from
+``that'' and ``were'' ). Then produced word distributions from
 these sets of bug-report derived words.
 
 Separately, we applied Labeled-LDA to these processed HTC bug reports and Motrola bug reports.
 %We then supplied Labelled-LDA with these word distributions of the bug reports.
-Labeled-LDA then outputs the topics, word distributions, associated
+Labeled-LDA produced the topics, word distributions, associated
 with our labels, as well as a document-topic matrix which links our
 labels (topics) to the bug reports from HTC and Motorola.
 % in the each bug report corpus (HTC and
@@ -869,12 +858,12 @@ labels (topics) to the bug reports from HTC and Motorola.
 %separately, we have the word distribution of each label and a matrix
 %that provides the relationship between bug reports and the labels. 
 
-The topic analysis is based on these results. 
+Our topic analysis is based on these results. 
 To visualize the association of a label (an extracted
 Labeled-LDA topic) to bug reports over time,
 %In order to investigate the trend of each label by time, 
 we grouped
-all the bug reports by month from 2009 to 2011 based on their open
+all the bug reports by month, from 2009 to 2011, based on their open
 date for each of the two vendors. 
 We then computed the average relevance values of bug
 reports to this label in each month. 
@@ -1003,7 +992,6 @@ We plotted these pairwise tests (see Figure \ref{similarityhtc} and
 Figure \ref{similaritymoto}) in order to explore the match between
 LDA and Labeled-LDA.
 
-% XXX WHAT? 
 Then we counted the number of bug reports which are related to labels
 that are both shared by LDA and Labeled-LDA in HTC and Motorola. 
 We applied the Chi-squared test on the two sets of distribution to
@@ -1043,14 +1031,22 @@ Motorola & wifi &connect, xoom, hotspot, netbook, wifi, ssid, \\
 \section{Topic Mining and Analysis}
 \label{sec:topicanalysis}
 
-In order to investigate fragmentation within Android, we mined the bug reports of Android and analyzed the results from both quantitative and qualitative aspects.
+In order to investigate fragmentation within Android, we mined the bug
+reports of Android and analyzed the topic analysis results both
+quantitatively and qualitatively.
+We started by exploring the distribution of the number of bug reports
+over time for HTC and Motorola. Then we compared and discussed the
+distribution of average relevance for each topic over time for both
+vendors.
 
-We started by exploring the distribution of the number of bug reports over time for HTC and Motorola. Then we compared and discussed the distribution of average relevance for each topic over time for both vendors.
 
 \begin{figure*}[htb]
 \centering
 \includegraphics[width=1\textwidth]{bugovertime.png}
-\caption{Number of bug reports over time for HTC and Motorola. Bottom horizontal axis is the months from Jan. 2009 to Dec. 2011. The top horizontal axis orders the Android versions by their released date. Vertical axis is the number of bug reports.}
+\caption{The number of bug reports over time for HTC and Motorola. Bottom
+  horizontal axis is the months from January 2009 to December 2011. The top
+  horizontal axis orders the Android versions by their released
+  date. Vertical axis is the number of bug reports per month.}
 \label{bugovertime}
 \end{figure*}
 
