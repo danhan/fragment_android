@@ -567,22 +567,10 @@ introduces our methodology, which is applied to our data set in
 Section \ref{sec:topicanalysis}. Section \ref{sec:fragmentation}
 discusses the evidence for fragmentation within Android. Section \ref{sec:comparinglda} compares and evaluates the topic models generated
 by LDA and Labeled-LDA. 
-%XXX No research questions?
-%The paper concludes with a discussion of two
-%research questions, 
 We conclude with threats to validity in Section \ref{sec:threats},
 and conclusion and future work in
 Section \ref{sec:conclusions}.
 
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
-
-%\subsection{Subsection Heading Here}
-%Subsection text here.
-
-
-%\subsubsection{Subsubsection Heading Here}
-%Subsubsection text here.
 
 \section{Background}
 \label{sec:background}
@@ -592,13 +580,13 @@ Topic analysis,  is useful in a variety of software engineering text
 processing applications~\cite{hindle9s}. 
 Topic analysis has two main steps: topic identification and text
 segmentation~\cite{li2003topic}. Topic analysis is also used for
-indexing the texts automatically in information retrieval. %XXX cite lukins
-With it, we can understand what the main topics and sets of associated
-words with these topics, and where those associated words lie within
+indexing the textual documents automatically for information retrieval. %XXX cite lukins
+Topic analysis helps extract the main topics and sets of 
+words associated with these topics, and where those associated words lie within
 the text~\cite{li2003topic}. 
-LDA is an unsupervised topic model to credit text documents as
+LDA is an unsupervised topic model used describe text documents as
 mixtures of latent topics, where topics correspond to key word lists
-presents in the corpus~\cite{ldawiki}.
+present in the corpus~\cite{ldawiki}.
 LDA, as a totally unsupervised algorithm, automatically learns a set
 of terms for each topic on a corpus without any constraints. 
 
@@ -606,9 +594,10 @@ of terms for each topic on a corpus without any constraints.
 In our research, we applied Labeled-LDA, 
 a supervised topic model for credit
 attribution in multi-labeled corpora~\cite{labeledlda}. It defines a
-one-to-one mapping between LDA's latent topics and tags labeled by
-users. In other words, Labeled-LDA incorporates the multiple tags into
-the topics learning process and only builds topics around these tags,
+one-to-one mapping between LDA's latent topics and labels applied to
+documents by 
+users. In other words, Labeled-LDA incorporates labels into
+the topics learning process and only builds topics around these labels,
 which is quite different from LDA. 
 To apply Labeled-LDA, we utilize the Stanford Topic Modeling Toolbox (STMT)~\cite{stmt}. 
 
