@@ -606,9 +606,29 @@ To apply Labeled-LDA, we utilize the Stanford Topic Modeling Toolbox (STMT)~\cit
 
 \section{Related Work}
 \label{sec:relatedwork}
-Topic models have been used to help understand software systems. Marcus et al.~\cite{Marcus04aninformation} used Latent Semantic Indexing (LSI) on both source code and user queries and then identified the most relevant source code documents with similarity measurements. Asuncion et al.~\cite{Asuncion:2010} applied a coherence measurement on topics learned by LDA to model the quality of bug reports. Linstead et al.~\cite{Linstead:2009} performed LDA to generate traceability links for artifacts in software projects automatically. Topic modeling is also utilized by Thomas et al.~\cite{Thomas:2011} to study the evolution of topics in software projects.
+Topic models have been used to help understand software systems. 
+Marcus et al.~\cite{Marcus04aninformation} used Latent Semantic
+Indexing (LSI) on both source code and user queries and then
+identified the most relevant source code documents with similarity
+measurements. 
+Asuncion et al.~\cite{Asuncion:2010} applied a coherence measurement
+on topics learned by LDA to model the quality of bug reports. 
+Linstead et al.~\cite{Linstead:2009} performed LDA to generate traceability links for artifacts in software projects automatically. Topic modeling is also utilized by Thomas et al.~\cite{Thomas:2011} to study the evolution of topics in software projects.
+While these studies used 
+ LDA to extract topics,  we applied both Labeled-LDA and LDA to
+obtain the topics. 
+With LDA, researchers need to predefine the number of topics, this is
+often hard to interpret as the optimal choice can be subjective.
+In our work, we first manually labeled the bug reports with multiple
+labels and then employed
+Labeled-LDA to associate topics and documents with the labels we
+provided~\cite{labeledlda}. 
+While during the learning process, LDA cannot incorporate these manual
+labels. 
+Our technique
+overcomes the disadvantages of these
+unsupervised algorithms but at the expense of manual labeling.
 
-Compared with all these approaches, the most important difference is the topic models applied in the studies. They used LDA to extract topics, while we applied Labeled-LDA to obtain the topics. With LDA, researchers need to predefine the number of topics and the topics are often hard to interpret. In our work, we first manually labeled bug reports with multiple labels. Then we employed Labeled-LDA which constrains the topic model to just use those topics that correspond to a document's label set~\cite{labeledlda}. While during the learning process, LDA cannot incorporate these manual labels. The manual work in our study would overcome the disadvantages of these unsupervised algorithms by pre-defining the number of topics and interpreting the extracted topics. 
 
 \section{Methodology}
 \label{sec:methodology}
@@ -633,7 +653,8 @@ topics from LDA and Labeled-LDA.
 % e.g. '%[^0-9a-z]HTC[^0-9a-z]%' and '%[^0-9a-z]motorola[^0-9a-z]%'. We
 % also removed the declined and duplicated bug reports.
 
-Our first step was to extract the Android bug reports and then find
+First, we
+extract the Android bug reports and then find
 the bug reports relevant to HTC and Motorola.  We parse and store the
 Android bug reports provided by the MSR Mining
 Challenge~\cite{MSRChallenge2012} as table in a SQL Server database.
@@ -705,9 +726,9 @@ Motorola & calling network settings gtalk calendar signal contact\\
 % [http://en.wikipedia.org/wiki/Comparison_of_Android_devices]. The
 % labels are based on these three aspects of Android phones.
 
-In order to investigate fragmentation from a feature-oriented
-perspective we needed to label the bug reports by their
-relevant features. This would allow us to find feature-relevant bug reports
+To investigate hardware fragmentation from a feature-oriented
+perspective we labeled the bug reports by their
+relevant features. This allows us to find feature-relevant bug reports
 for each manufacturer.
 To ensure our feature-oriented labels would agree with actual
 Android features we studied various descriptions~\footnote{Android Operating System summary:
