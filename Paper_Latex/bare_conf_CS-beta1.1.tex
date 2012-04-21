@@ -1024,7 +1024,11 @@ We grouped the bug reports monthly based on their opened date and counted the to
 
 From Figure \ref{bugovertime}, we can observe that the first HTC bug report was opened in Jan. 2009, and the first Motorola bug report was opened in Oct. 2009. According to the brief history of Android devices survey \cite{historyofandroid}, HTC released the first Android device in Oct. 2008, while Motorola released its first device in Oct. 2009. The first bug reports of both vendors are in order of the first device released by them. There is a strong time correlation between the first opened bug report and the first released Android device of both vendors.
 
-In addition, Figure \ref{bugovertime} shows the first spike for HTC happened in Sept. 2010, and for Motorola it happened in Dec. 2009. According to counts of bug reports by Android versions, 80\% bug reports are related with Android 2.1 and 2.2. By reading the bug reports, we found that the spike of HTC was caused by the fact that many people upgraded Android version from 2.1 to 2.2, and some features did not work well after upgrade. For example, users could not send message after the upgrade. This suggests that the bug reports activities have strong correlation with Android upgrade. The spike of Motorola mainly contributed to the new features of Android 2.0 and the release of their first Android device which is called Droid (different areas have different product model names, in Europe the model name is A853 or Milestone, in Latin America the model name is A854 or Motoroi). Droid runs Android 2.0 with new features, such as touchscreen display, free turn-by-turn navigation from Google Maps, and sliding QWERTY keyboard. By reading the bug subjects, we found many bug reports related with Google Maps and the sliding QWERTY keyboard. It reveals that there is a high correlation between Android 2.0 and Android Droid.
+In addition, Figure \ref{bugovertime} shows the peak of the number of bug reports for HTC happened in Sept. 2010, and for Motorola it happened in Dec. 2009. 
+
+For HTC, out of 109 bug reports shown in that peak, 43 bug reports were related with Android 2.1; and 50 bug reports were related with Android 2.2. By reading the bug reports, we found that the peak of HTC was caused by the fact that many people upgraded Android version from 2.1 to 2.2, and some features did not work well after upgrading. For example, users could not send messages after the upgrading. This suggests that the bug reports of HTC have strong correlation with Android upgrading. 
+
+For Motorola, according to the count of bug reports, 95 out of 100 bug reports in Nov. 2009 were related with Android 2.0. Among 107 bug reports happened in Dec. 2009, 54 bug reports were associated with Android 2.0 and 53 bug reports were related to Android 2.0.1. By reading bug reports, most of bug reports related to Android upgrading from 2.0 to 2.0.1. From the perspective of Android features, some bug reports were related to Android new features. Motorola released its first Android device, which is called Droid (different areas have different product model names, in Europe the model name is A853 or Milestone, in Latin America the model name is A854 or Motoroi). It runs Android 2.0 with new features, such as touchscreen display, free turn-by-turn navigation from Google Maps, and sliding QWERTY keyboard. From the details of bug reports, we found many bug reports were related to Google Maps and the sliding QWERTY keyboard. Therefore, we can conclude that the bug reports of Motorola have strong correlation with Android upgrading and new features.
 % xxx [fixed] You didn't compare the hardware platforms. How can you have this conclision?
 
 
@@ -1032,21 +1036,21 @@ In addition, Figure \ref{bugovertime} shows the first spike for HTC happened in 
 
 As shown in Table \ref{selected1} we extracted 72 topics for HTC and 57 topics for Motorola with Labeled-LDA.
 
-Based on Equation \ref{equation1} each topic has a distribution of average relevance over time. According to the comparison of each topic's distribution in both vendors, we categorized the topics into three types, which are \textit{Common Erratic Topics}, \textit{Common Inerratic Topics}, and \textit{Unique Topics}. 
-The \textit{Common Erratic Topics} mean that the distribution of the average relevance of the topics have fluctuations all the time for both HTC and Motorola. The \textit{Common Inerratic Topics} mean that the distribution of the average relevance of topics turn to be flat over time after several fluctuations for HTC and Motorola. The \textit{Unique Topics} mean that the distribution of average relevance of topics have significant differences between HTC and Motorola.
+Based on Equation \ref{equation1} each topic has a distribution of average relevance over time. According to the comparison of each topic's distribution in both vendors, we categorized the topics into three types, which are \textit{Common Erratic Topic}, \textit{Common Inerratic Topic}, and \textit{Unique Topic}. 
+The \textit{Common Erratic Topic} represents that the distribution of the average relevance of the topics have fluctuations all the time for both HTC and Motorola. The \textit{Common Inerratic Topic} represents that the distribution of the average relevance of topics turn to be flat over time after several fluctuations for HTC and Motorola. The \textit{Unique Topic} represents that the distribution of average relevance of topics have significant differences between HTC and Motorola.
 
 A representative subset of top 18 topics, which are obtained by
 sorting the number of related bug reports for HTC and Motorola
 respectively, is given in Table \ref{topicslist}.
 Each topic is associated with top 15 terms generated by Labeled-LDA for
-both HTC and Motorola. 
-%These topics are associated with 85\% bugs of HTC, and 83\% bugs of Motorola. 
-As mentioned before, the label column in Table \ref{topicslist} represents the feature of Android. %Please refer to the resarch features as potential labels to have a better understanding of all the labels.
+both HTC and Motorola. As mentioned before, the label column in Table \ref{topicslist} represents the features of Android. 
+%Please refer to the resarch features as potential labels 
+%to have a better understanding of all the labels.
 
 \begin{figure*}[htb]
 \centering
 \includegraphics[width=1\textwidth]{commontopic.png}
-\caption{Common Erratic Topics in HTC and Motorola. X axis is months from Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.}
+\caption{Common Topics in HTC and Motorola. X axis is months from Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.}
 \label{commontopic}
 \end{figure*}
 
@@ -1055,50 +1059,36 @@ As mentioned before, the label column in Table \ref{topicslist} represents the f
 %relevance shoule be written as the distribution of the average relevance
 Eight \textit{Common Erratic Topics} shared by two vendors are shown in Table \ref{topicslist} and the distribution of average relevance of each topic is shown in Figure \ref{commontopic}. 
 %all the labels should be consistent with all the labels in table I.
-\textit{Common Erratic Topics} shown in Table \ref{topicslist} for HTC and Motorola share many identical terms. That means they have the same bug reports about sms\//mms(\textit{text, thread, send}), calendar(\textit{event, day, google,appointment,time}), email(\textit{gmail, send, thread}), contact (\textit{number, google,list}), display (\textit{screen,button,behavior}), bluetooth (\textit{headset,connect, calling}), synchronization (\textit{contact, exchange, google}) and settings(\textit{turn,network,mode}). 
+\textit{Common Erratic Topics} shown in Table \ref{topicslist} for HTC and Motorola share many identical topics. That means they have many bug reports related to sms\//mms (\textit{text, thread, send}), calendar (\textit{event, day, google,appointment,time}), email (\textit{gmail, send, thread}), contact (\textit{number, google,list}), display (\textit{screen,button,behavior}), bluetooth (\textit{headset,connect, calling}), synchronize (\textit{contact, exchange, google}) and settings (\textit{turn,network,mode}). For example, bug reports related to \textit{sms\//mms} happened frequently in both vendors when people sent and received messages. \textit{Bluetooth} in both HTC and Motorola have strong correlation with Android 2.1 and Android 2.2. Moreover, in Figure \ref{commontopic}, HTC and Motorola share the same trend of the distribution of average relevance of topics. Both of them have continuous spikes and drops for each topic over time. There is no obvious decreasing trend of bug reports with Android evolution.
 
-We found that multiple topics share some same terms for each vendor. For HTC, five topics including \textit{sms\//mms, contact, display, bluetooth} and \textit{settings} share the same term ``desire". This indicates that these topics happened frequently in HTC Desire device. \textit{Calendar} and \textit{bluetooth} share the same term ``2.2" and ``2.2" means Android version 2.2. This indicates that these two topics happened frequently for Android 2.2 in HTC devices. For Motorola, seven topics except \textit{settings} share the same term ``droid" and it means Motorola Droid device. In addition, \textit{calendar} and \textit{synchronization} in Motorola share ``milestone" which indicates these two topics discussed mostly in Motorola Milestone device. ``Xoom" shared by \textit{display} and \textit{settings} indicates that Motorola Xoom has more bug reports related with these two topics. Furthermore, \textit{synchronization} associates with both ``Xoom" and ``milestone" terms. This indicates bug reports related with \textit{synchronization} happened frequently in both Motorola Xoom and Motorola Milestone. 
+On the other hand, each vendor share the same terms in different topics. For HTC, five topics including \textit{sms\//mms, contact, display, bluetooth} and \textit{settings} share the same term ``desire". This indicates that these topics happened frequently in ``HTC Desire". Furthermore, \textit{Calendar} and \textit{bluetooth} share the same term ``2.2" which reveals that these two topics occurred frequently in Android 2.2. For Motorola, seven topics except \textit{settings} share the same term ``droid" which stands for that these topics have high relevance with ``Motorola Droid". In addition, ``xoom" shared by \textit{display} and \textit{settings} indicates that there are lots of bug reports related with these two topics in ``Motorola Xoom". Furthermore, \textit{synchronize} associates with both ``xoom" and ``milestone" terms. This indicates that bug reports related to \textit{synchronize} happened frequently in both ``Motorola Xoom'' and ``Motorola Milestone''. 
 
-In Figure \ref{commontopic}, HTC and Motorola share the same trend of the distribution of average relevance of topics. Both of them have continuous spikes and drops for each topic over time. There is no obvious decreasing trends of bug reports with Android evolution.
+
 %more explain why android version should make the trend of topics decrease in the ideal case.
 
-In summary, \textit{calendar} in HTC and display in Motorola are strongly correlated with different Android versions. \textit{Bluetooth} in both of HTC and Motorola have strong correlation with Android 2.1 and Android 2.2. With Android evolution, these distribution of average relevance of each topic for both vendors do not demonstrate the decreasing trend with Android evolution as we expect. Both of vendors have some topics associated with their typical devices. For HTC, five out of eight topics have correlation with HTC Desire device. For Motorola, seven out of eight topics have correlation with Motorola Droid device. These eight features which correspond to these topics demonstrate the compatibility issues.
+In summary, both vendors not only share a few same topics and terms associated with these \textit{Common Erratic Topics}, but also have the same topics evolution over time. With Android evolution, both vendors have been correlated with the Android specific versions. These distribution of average relevance of each topic in both vendors do not demonstrate the decreasing trend with Android evolution as we expect. In addition, Both vendors have some topics associated with their typical devices. For HTC, five out of eight topics have correlation with ``HTC Desire". For Motorola, seven out of eight topics have correlation with ``Motorola Droid". As a result, there might be incompatibility problems related to these Android features for both vendors' devices.
 
 \begin{figure*}[htb]
 \centering
 \includegraphics[width=1\textwidth]{fixtopic.png}
-\caption{Common Inerratic Topics in HTC and Motorola. X axis is months from Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.}
+\caption{Common Topics in HTC and Motorola. X axis is months from Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.}
 \label{fixtopic}
 \end{figure*}
 
-\subsubsection{Common Inerratic Topic}
+\subsubsection{Common Topic}
 
 Six \textit{Common Inerratic Topics} shared by two vendors are shown in Table \ref{topicslist} and the distribution of the average relevance of each topic is shown in Figure \ref{fixtopic}.
 
-\textit{Common Inerratic Topics} shown in Table \ref{topicslist} for HTC and Motorola share many identical terms for wifi (\textit{connection,ssid,network}), upgrade (\textit{2.2,2.1,http}), and image(\textit{gallery,picture,photo}). Both vendors have the issues in upgrading from Android 2.1 to Android 2.2. This indicates Android 2.2 might have compatibility issue with the upgrading devices. 
+\textit{Common Inerratic Topics} shown in Table \ref{topicslist} for HTC and Motorola share many identical terms, such as wifi (\textit{connection,ssid,network}), upgrade (\textit{2.2,2.1,http}), and image (\textit{gallery,picture,photo}). Both vendors have the issues in upgrading from Android 2.1 to Android 2.2. This indicates Android 2.2 might have compatibility issues with the activity of upgrading devices.
 
-Meanwhile, the \textit{Common Inerratic Topics} also own some special terms. For HTC, bug reports related with \textit{calling} happened frequently in Android 2.1, and bug reports related with \textit{image} and \textit{audio} happened frequently in Android 2.2. For Motorola, bug reports related to \textit{calling} happened frequently in Android 2.2. In addition, four out of six topics have correlation with HTC Desire device. For Motorola, seven out of eight topics have correlation with Motorola Droid device and the other one have correlation with Motorola MileStone device. Therefore, these six topics have strong correlation with the Android hardware devices for each vendor.
 
-In Figure \ref{fixtopic}, both HTC and Motorola have spikes in the early stage, and then stay in their values. It indicates the corresponding features of Android tend to be more robust over time with Android evolution during the whole observed period.
+Moreover,In Figure \ref{fixtopic}, both HTC and Motorola have spikes in the early stage, and then stay steady. It indicates the corresponding features of Android tend to be more robust over time with Android evolution during the whole observed period.
 
-In summary, \textit{calling} from both vendors has different correlation with Android versions. With the evolution of Android, these distributions of average relevance of topics demonstrate the improved trends with Android evolution as expected. However, these topics still have strong correlation with their typical devices for both vendors. This indicates these topics contribute to the hardware fragmentation.
+The \textit{Common Inerratic Topics} also own some special terms. For HTC, bug reports related to \textit{calling} happened frequently in Android 2.1, and bug reports related to \textit{image} and \textit{audio} happened frequently in Android 2.2. For Motorola, bug reports related to \textit{calling} happened frequently in Android 2.2. In addition, four out of six topics have correlation with ``HTC Desire'' device. For Motorola, seven out of eight topics have correlation with ``Motorola Droid'' device and the other one have correlation with ``Motorola MileStone'' device. Therefore, these six bug topics have strong correlation with the Android hardware devices for each vendor.
 
-% The above summary is not clear to me.
+In summary, \textit{calling} from both vendors has different correlation with Android versions. With the evolution of Android, the distribution of average relevance of these topics demonstrate that the improved trends with Android evolution as expected. However, these topics still have strong correlation with their typical devices for both vendors. This indicates these topics contribute to the hardware fragmentation of Android.
 
-%\begin{figure*}[htb]
-%\centering
-%\includegraphics[width=1\textwidth]{uniquehtc.png}
-%\caption{Unique Topics relevance in HTC}
-%\label{uniquehtc}
-%\end{figure*}
-
-%\begin{figure*}[htb]
-%\centering
-%\includegraphics[width=1\textwidth]{uniquemoto.png}
-%\caption{Unique Topics relevance in Motorola}
-%\label{uniquemoto}
-%\end{figure*}
-
+%xx The above summary is not clear to me.
 
 \begin{figure*}[htb]
 \centering
@@ -1201,7 +1191,7 @@ We can conclude that only few of the bug reports in HTC and Motorola are predict
 \hline
 Topic Type & Label & HTC & Motorola\\ 
 \hline
-Common Erratic Topics & sms\//mms &message,	sms,	text, thread, time,  & message, text, sms, droid, send,	\\
+Common Topics & sms\//mms &message,	sms,	text, thread, time,  & message, text, sms, droid, send,	\\
 && sent, desire, contact, new, number, &	thread, messaging, sent,user, version,\\ 
 &&conversation, send, version, app, screen &version, person, threads, number, http\\ \cline{2-4}
 
@@ -1232,9 +1222,8 @@ Common Erratic Topics & sms\//mms &message,	sms,	text, thread, time,  & message,
   & settings&volume, sound,	set, pattern,  default,&settings, device, menu, turn,	network, \\
  && turn, desire, static, control, apps,&vpn, honeycomb, button, xoom,  settings, \\
   && change, settings, media, dns, screen &behavior,	right, wireless, headset, mode\\
-\hline
+\cline{2-4}
 
-Common Inerratic Topics 
 &wifi & wifi, access, network, connection, connect, &wifi, xoom, connect, hotspot, turn, \\
 &&router, ssid, desire, http, wi-fi,&connection, ssid, radio, error,signal, \\
 
