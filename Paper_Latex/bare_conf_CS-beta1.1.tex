@@ -421,9 +421,9 @@ on the data without manual labels.
 Finally, by
 examining the relevance of the top 18 bug topics over
 time extracted from the bugs reports of each vendor, we categorized 
-topics into \textit{Common Topics} and \textit{Unique
-  Topics}. 
-The dominance of shared \textit{Common Topics} provides evidence that
+topics into \textit{common topics} and \textit{unique
+  topics}. 
+The dominance of shared \textit{common topics} provides evidence that
 fragmentation might not be severe.
 % \textit{Common Topics} show
 % that there is no correlation between the features of
@@ -432,7 +432,7 @@ fragmentation might not be severe.
 % show that some features within the same vendors have portability
 % issues across their multiple devices. 
 Whereas the
-\textit{Unique Topics}, topics exclusive to each vendor, provide
+\textit{unique topics}, topics exclusive to each vendor, provide
 evidence that  there are some  portability and fragmentation issues
 with Android.
 We compared Labeled-LDA with LDA and found that Labeled-LDA 
@@ -530,7 +530,7 @@ of Android fragmentation.
 
 Our study focused on the bug reports of HTC and Motorola, two of the
 most prominent Android phone vendors. The first HTC Android phone was
-the ``HTC Dream'', manufactured in October 2008. HTC has made more than
+the HTC Dream, manufactured in October 2008. HTC has made more than
 thirty different Android phones since then. Motorola produced their
 first Android phone in October 2009 and has released more than twenty
 different Android phones since then. 
@@ -751,7 +751,7 @@ report text, both the title and the description, and  then based on their
 personal interpretation they related that bug report to the relevant
 features. This means that one bug report could receive multiple labels
 if it is relevant to multiple identified features. Labels were created
-as necessary: if a label regarding a feature did not already exist, it
+as necessary: if a label regarding a feature did not exist, it
 was created.
 Our labels 
 consisted of the features, applications and hardware of Android phones
@@ -826,7 +826,7 @@ Our topic analysis is based on these results.
 To visualize the association of a label (an extracted
 Labeled-LDA topic) to bug reports over time,
 we grouped
-all the bug reports by month, from 2009 to 2011, based on their open
+all the bug reports by month, from 2009 to 2011, based on their opened
 date for each of the two vendors. 
 We then computed the average relevance values of bug
 reports to this label in each month. 
@@ -842,8 +842,8 @@ where $r(\l_i,d_k)$ is the relevance value of label $\l_i$ to bug
 report $d_k$, $|m_j|$ is the number of bug reports in this month. 
 We generated a distribution of average relevance across three years of
 Android history for 
-each label, depicted in Figure \ref{commontopic}, Figure \ref{fixtopic},
-Figure \ref{uniquehtc} and Figure \ref{uniquemoto}.
+each label, depicted in Figure \ref{commontopic}, and
+Figure \ref{uniquehtc}.
 
 
 \subsection{Applying LDA}
@@ -1071,12 +1071,12 @@ average relevance over time.
 We compared these distributions between vendors and categorized these
 topics
 into 
-\textit{Common Topics}and \textit{Unique Topics}.
-The \textit{Common Topics} represent the topics that are shared
+\textit{common topics}and \textit{unique topics}.
+The \textit{common topics} represent the topics that are shared
 between both vendors; common topics also tend to share 
 similar distributions of the average relevance over
 time.
-The \textit{Unique Topics} represent those topics with significantly
+The \textit{unique topics} represent those topics with significantly
 different topic relevance over time (or topics that are completely
 unique to either vendor).
 
@@ -1096,7 +1096,7 @@ each vendor.
 %\centering
 %\includegraphics[width=1\textwidth]{fixtopic.png}
 \includegraphics[width=1\textwidth]{combinedcommon.png}
-\caption{Common Topics in HTC and Motorola. X axis is months from Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.}
+\caption{Common topics in HTC and Motorola. X axis is months from Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.}
 \label{fixtopic}
 %\end{figure*}
 %\caption{Common Topics in HTC and Motorola. X axis is months from
@@ -1107,7 +1107,7 @@ each vendor.
 
 \subsubsection{Common Topics}
 
-There are 14 \textit{Common Topics} shared between the vendors, shown
+There are 14 \textit{common topics} shared between the vendors, shown
 in Table \ref{topicslist}.
 Figure \ref{commontopic} depicts common topics between HTC and
 Motorola. The top 8 topics are busy topics, whereas the bottom 6
@@ -1140,7 +1140,7 @@ For instance, 5 of HTC's topics, \textit{sms\//mms, contact,
 % occurred frequently in Android 2.2. 
 Motorola topics tend to share the term ``droid'' and the term ``xoom'', which refers to their
 Motorola Droid and Motorola Xoom line of smartphones.
-Motorola topics that mentioned ``Xoom'' included \textit{display,
+Motorola topics that mentioned ``xoom'' included \textit{display,
   settings} and \textit{synchronize}.
 Thus there is evidence that different product lines, faced different issues.
 %For Motorola, seven topics except
@@ -1270,7 +1270,7 @@ specific.
 
 \textit{Browser} (\textit{browser, page, text, http, open, server}) is
 an unique topics of Motorola. Table \ref{topicslist} shows that
-Motorola's product lines,
+Motorola's product-lines,
 \textit{droid}, \textit{milestone} and \textit{xoom}, are relevant
 to \textit{browser}.
 Motorola's \textit{GPS} topic
@@ -1284,7 +1284,7 @@ time. Thus \emph{GPS} and \emph{browser} are two topics where both vendor differ
 
 In summary, for both vendors, they have vendor specific topics which imply
 there may be portability issues, and thus give rise to issues of
-fragmentation, especially in terms internationalization, keyboards and
+fragmentation, especially in terms of internationalization, keyboards and
 GPS support.
 
 \section{Fragmentation Discussion}
@@ -1340,7 +1340,7 @@ vendor.
 \label{sec:comparinglda}
 
 In this section we investigate if LDA and Labeled-LDA would generate
-the similar results. This is an important issue because labelled-LDA
+the similar results. This is an important issue because Labeled-LDA
 took around 60 times the amount of time it took to label the topics
 extracted by plain LDA.
 
@@ -1390,16 +1390,16 @@ in the bug reports of Motorola. The $ p $ values of the Chi-squared
 %XXX what is the chi-squared value
 test on the two sets of distribution are both close to zero ($p < 0.01$). Hence the
 number of bug reports related to same labels in LDA and Labeled-LDA
-are statistically significant quite different.
+are different.
 
 
 %Most of the same labels from LDA and Labeled-LDA have the comparable amount of bug reports. For example, the label ``calling'' from the HTC bug reports has exactly the same number of bugs related to for both results of LDA and Labeled-LDA. However, the similarity of these related bug reports in terms of this label ``calling'' is very low which means LDA and Labeled-LDA related quite different bug reports to this label. When doing this comparison, we cannot ignore the number of bugs that related to each label from both two techniques. That is, for one label, the ratio (the smaller number is divided by the bigger number so the ratio is always less or equal to one) of the number of bug reports related to this label predicted by LDA to that of Labeled-LDA would be the upper bound of the similarity value. From Figure \ref{bughtc} and Figure \ref{bugmoto} that the relation between topics and each bug report modeled by LDA is quite different from the results generated by Labeled-LDA.
 
 %The similarity values for these labels in Figure \ref{similaritymoto} are quite low compared with the ratio. Only about ten labels in HTC have similarity values that are larger than half of the ratio. For Motorola, the similarity values are all very low compared with the upper bound of the similarity values.
 
-We can conclude that only few of the bug reports in HTC and Motorola
-are predicted by LDA and Labeled-LDA are related to the same
-labels. In other words, the relation between topics and each bug
+For LDA and Labeled-LDA topics with the same label, we found that LDA
+predicted fewer of the relevant bugs reports.
+In other words, the relation between topics and each bug
 report modeled by LDA is quite different from the results generated by
 Labeled-LDA. 
 Thus LDA topics and Labeled-LDA topics are different, we found the
