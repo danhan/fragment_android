@@ -1129,6 +1129,9 @@ The \textit{Unique Topics} represent those topics with significantly
 different topic relevance over time (or topics that are completely
 unique to either vendor).
 
+% XXX TABLE TOPICSLIST IS DEFINED HERE
+\input{topictable}
+
 Table \ref{topicslist} depicts 
 the top 18 most frequent labeled-topics of HTC and
 Motorola.
@@ -1141,110 +1144,143 @@ each vendor.
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=1\textwidth]{commontopic.png}
-\caption{Common Topics in HTC and Motorola. X axis is months from
-  Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.
-}
+%\includegraphics[width=1\textwidth]{commontopic.png}
+%\begin{figure*}[htb]
+%\centering
+%\includegraphics[width=1\textwidth]{fixtopic.png}
+\includegraphics[width=1\textwidth]{combinedcommon.png}
+\caption{Common Topics in HTC and Motorola. X axis is months from Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.}
+\label{fixtopic}
+%\end{figure*}
+%\caption{Common Topics in HTC and Motorola. X axis is months from
+%  Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.
+%}
 \label{commontopic}
 \end{figure*}
 
 \subsubsection{Common Topics}
 
-There are fourteen \textit{Common Topics} shared by two vendors in
-Table \ref{topicslist}. In Figure \ref{commontopic}, eight topics
-represent that the distribution of the average relevance of the topics
-have fluctuations all the time for both HTC and Motorola. In Figure
-\ref{fixtopic}, six topics represent that the distribution of the
-average relevance of topics turn to be flat over time after several
-fluctuations for HTC and Motorola.
+There are fourteen \textit{Common Topics} shared by two vendors, shown
+in 
+Table \ref{topicslist}. 
+Figure \ref{commontopic} depicts common topics between HTC and
+Motorola. The top 8 topics are busy topics, whereas the bottom 6
+topics peak and then flatten in interest over time.
+% where HTC and 
+% represent that the distribution of the average relevance of the topics
+% have fluctuations all the time for both HTC and Motorola. In Figure
+% \ref{fixtopic}, six topics represent that the distribution of the
+% average relevance of topics turn to be flat over time after several
+% fluctuations for HTC and Motorola.
 
-Eight topics in Figure \ref{commontopic} share many identical topics
-in HTC and Motorola. That means they have the same bug reports about
+The first 8 topics in Figure \ref{commontopic} share many identical
+topic words between vendors.
+Thus the bug reports use similar language between the vendors:
 sms\//mms(\textit{text, thread, send}), calendar(\textit{event, day,
   google,appointment,time}), email(\textit{gmail, send, thread}),
 contact (\textit{number, google,list}), display
 (\textit{screen,button,behavior}), bluetooth (\textit{headset,connect,
   calling}), synchronize (\textit{contact, exchange, google}) and
-settings(\textit{turn,network,mode}). For example, bug reports
-releated with \textit{sms\//mms} happened frequently in both vendors
-when people sent and texted messages. \textit{Bluetooth} in both of
-HTC and Motorola have strong correlation with Android 2.1 and Android
-2.2. Moreover, in Figure \ref{commontopic}, HTC and Motorola share the
-same trend of the distribution of average relevance of topics. Both of
-them have continuous spikes and drops for each topic over time. There
-is no obvious decreasing trends of bug reports with Android evolution.
+settings(\textit{turn,network,mode}).
+The \textit{Bluetooth} topic has a cross vendor peak 
+with the release of both
+ Android 2.1 and Android
+2.2. 
+% We did There
+% is no obvious decreasing trends of bug reports with Android evolution.
 
-On the other hand, each vendor share the same terms in different
-topics. For HTC, five topics including \textit{sms\//mms, contact,
-  display, bluetooth} and \textit{settings} share the same term
-``desire". This indicates that these topics happened frequently in
-``HTC Desire". Furthermore, \textit{Calendar} and \textit{bluetooth}
-share the same term ``2.2" which reveals that these two topics
-occurred frequently in Android 2.2. For Motorola, seven topics except
-\textit{settings} share the same term ``droid" which stands these
-topics have high relevance with ``Motorola Droid". In addition,
-``xoom" shared by \textit{display} and \textit{settings} indicates
-that there are lots of bug reports related with these two topics in
-``Motorola Xoom". Furthermore, \textit{synchronize} associates with
-both ``xoom" and ``milestone" terms. This indicates bug reports
-related with \textit{synchronize} happened frequently in both Motorola
-Xoom and Motorola Milestone.
+The topics of one vendor tended to share vendor specific terms.
+For instance, 5 of HTC's topics, \textit{sms\//mms, contact,
+  display, bluetooth} and \textit{settings}, shared the term
+``desire'', which refers to the HTC Desire phone.
+%On the other hand, each vendor share the same terms in different
+%topics. For HTC, five topics  share the same term
+%``desire". This indicates that these topics happened frequently in
+%``HTC Desire". 
+% In the HTC topics \textit{Calendar} and \textit{bluetooth}
+% share the same term ``2.2" which reveals that these two topics
+% occurred frequently in Android 2.2. 
+Motorola topics tend to share the term ``droid'' and the term ``xoom'', which refers to their
+Motorola Droid and Motorola Xoom line of smartphones.
+Motorola topics that mentioned ``Xoom'' included \textit{display,
+  settings} and \textit{synchronize}.
+Thus there is evidence that different product lines, faced different issues.
+%For Motorola, seven topics except
+%\textit{settings} share the same term ``droid" which stands these
+%topics have high relevance with ``Motorola Droid". In addition,
+%``xoom" shared by \textit{display} and \textit{settings} indicates
+%that there are lots of bug reports related with these two topics in
+%``Motorola Xoom". Furthermore, \textit{synchronize} associates with
+% both ``xoom" and ``milestone" terms. This indicates bug reports
+% related with \textit{synchronize} happened frequently in both Motorola
+% Xoom and Motorola Milestone.
 
+For Motorola vendor specific brand names tended to occur in the top
+topic words of their common topics.
 Six topics in Figure \ref{fixtopic} share many identical terms for
 wifi (\textit{connection,ssid,network}), upgrade
 (\textit{2.2,2.1,http}), and image(\textit{gallery,picture,photo}) in
 HTC and Motorola. For example, bug reports releated with
 \textit{upgrade} happened frequently in both vendors when people
 upgraded Android from 2.1 to 2.2. It indicates Android 2.2 might have
-incompatibility issue with the upgrading devices. Moreover, in Figure
-\ref{fixtopic}, both HTC and Motorola have spikes in the early stage,
-and decrease to a plateau. It indicates these features tend to be more
-stable over time with Android evolution.
+incompatibility issue with the upgrading devices.  
 
-There are some special terms in these six topics for each
-vendor. Table \ref{topicslist} shows bug reports of HTC related with
-\textit{calling} happened frequently in Android 2.1, and some of them
-related with \textit{image} and \textit{audio} happened frequently in
-Android 2.2. Four out of six topics have correlation with ``HTC
-Desire". For Motorola, bug reports related to \textit{calling}
-happened frequently in Android 2.2. All of these topics have
-correlation with ``Motorola Droid" (``Motorola MileStone"). As a
-result, these six topics have a strong correlation with Android
-vendor's devices and some of topics have a strong correlation with
-Android versions.
+% There are some special terms in these six topics for each
+% vendor. Table \ref{topicslist} shows bug reports of HTC related with
+% \textit{calling} happened frequently in Android 2.1, and some of them
+% related with \textit{image} and \textit{audio} happened frequently in
+% Android 2.2. Four out of six topics have correlation with ``HTC
+% Desire". For Motorola, bug reports related to \textit{calling}
+% happened frequently in Android 2.2. All of these topics have
+% correlation with ``Motorola Droid" (``Motorola MileStone"). As a
+% result, these six topics have a strong correlation with Android
+% vendor's devices and some of topics have a strong correlation with
+% Android versions.
 
 In summary, both vendors share some same topics and terms associated
 with these topics and also have the similar topics evolution over
-time. HTC and Motorola have some topics associated with their typical
-devices. For HTC, eight out of fourteen topics have correlation with
-``HTC Desire". For Motorola, twelve out of fourteen topics have
-correlation with ``Motorola Droid" and three out of fourteen topics
-have correlation with ``Motorola Xoom". As a result, there might be
-portability issues in these topics for both vendors. Moreover, with
-Android evolution, some \textit{Common Topics} for both vendors have
-been correlated with the Android specific versions. As a result, there
-might be incompatibility problems in these Android features.
+time. HTC and Motorola topics tend to differ in terms of the
+product-lines that appear in the topic words.
+The ``HTC Desire", ``Motorola Droid", and  ``Motorola Xoom" are often
+mentioned.
+Both vendors share some \emph{common topics}, but even within these
+topics and vendors it seems certain product-lines are affected by
+different bugs. Thus this is evidence that there are portability
+issues and fragmentation issues relevant to the shared \emph{common topics}
+of vendors, and even across different vendor's smart-phone product
+lines (Motorola Xoom and Droid correlated more with different topics).
+
+% Thus this shows 
+% These topics are common but there are platform specific issues that
+% must be add
+%  As a result, there might be
+% portability issues in these topics for both vendors. Moreover, with
+% Android evolution, some \textit{Common Topics} for both vendors have
+% been correlated with the Android specific versions. As a result, there
+% might be incompatibility problems in these Android features.
+
+% \begin{figure*}[htb]
+% \centering
+% \includegraphics[width=1\textwidth]{fixtopic.png}
+% \caption{Common Topics in HTC and Motorola. X axis is months from Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.}
+% \label{fixtopic}
+% \end{figure*}
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=1\textwidth]{fixtopic.png}
-\caption{Common Topics in HTC and Motorola. X axis is months from Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.}
-\label{fixtopic}
-\end{figure*}
-
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=1\textwidth]{uniquehtc.png}
-\caption{Unique Topics relevance in HTC. X axis is months from Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.}
+%\includegraphics[width=1\textwidth]{uniquehtc.png}
+\includegraphics[width=1\textwidth]{combinedunique.png}
+\caption{Unique Topics relevance in HTC (top) and Motorola (bottom). X axis is months from Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.}
 \label{uniquehtc}
-\end{figure*}
-
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=1\textwidth]{uniquemoto.png}
-\caption{Unique Topics relevance in Motorola. X axis is months from Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.}
 \label{uniquemoto}
 \end{figure*}
+
+% \begin{figure*}[htb]
+% \centering
+% \includegraphics[width=1\textwidth]{uniquemoto.png}
+% \caption{Unique Topics relevance in Motorola. X axis is months from Jan. 2009 to Dec. 2011. Y axis is the average relevance of topics.}
+% \label{uniquemoto}
+% \end{figure*}
 
 \begin{figure*}[htb]
 \centering
@@ -1263,12 +1299,12 @@ might be incompatibility problems in these Android features.
 
 \subsubsection{Unique Topics}
 
-Both vendors not only have common topics, they also have unique
-topics. In Table \ref{topicslist}, there are two unique topics for HTC
-and Motorola, respectively. Figure \ref{uniquehtc} shows the
-distribution of the average relevance of each topic for HTC. Figure
-\ref{uniquemoto} is a line plot view of the distribution of the
-average relevance of each topic for Motorola.
+Some topics are more unique to one vendor than the other.
+%Both vendors not only have common topics, they also have unique
+%topics. 
+In Table \ref{topicslist} we present 2 unique HTC topics and 2 unique
+Motorola topics. Figure \ref{uniquehtc} shows the distribution of the
+average relevance of each topic for HTC and Motorola.
 
 
 \textit{Language} (\textit{arabic, desire, language, 2.2, letters,
@@ -1405,10 +1441,11 @@ Labeled-LDA. We think the manual efforts of labeling all the bug
 reports would help us gain the better topic models generated by
 Labeled-LDA.
 
-\input{topictable}
+
 
 \begin{comment}
 %XXXX COMMENTED OUT XXXXX
+%REPLACED BY AN INPUT \input{topictable}
 \begin{table*}[!htb]
 \renewcommand{\arraystretch}{1.3}
 % if using array.sty, it might be a good idea to tweak the value of
