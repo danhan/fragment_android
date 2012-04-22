@@ -13,7 +13,7 @@ fragmentation.pdf: fragmentation.tex msrreference.bib $(FIGURES)
 	pdflatex fragmentation
 
 
-fragmentation.tex: bare_conf_CS-beta1.1.tex
+fragmentation.tex: bare_conf_CS-beta1.1.tex topictable.tex
 	cp bare_conf_CS-beta1.1.tex fragmentation.tex
 
 clean:
