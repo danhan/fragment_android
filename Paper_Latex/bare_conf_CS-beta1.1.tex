@@ -636,7 +636,7 @@ Then
  we calculate and visualize the average relevance of bug reports to each label
 over time and compare them between two Android vendors,
 HTC and Motorola, in order to look for fragmentation.
-We also compare the performance of LDA topics compared with
+We also compare the performance of LDA topics versus
 Labeled-LDA topics by comparing the 
 the similarity of each pair of
 topics from LDA and Labeled-LDA.
@@ -657,44 +657,45 @@ Challenge~\cite{MSRChallenge2012} as table in a SQL Server database.
 
 
 Then we selected bug reports that identified themselves as being
-relevant to HTC or Motorola, by selecting those bug reports that mention HTC or
-Motorola in their title text or their description text.
+relevant to HTC or Motorola if they mentioned HTC or Motorola in their
+title text or their description text.
 We then removed all the declined (unaccepted) and duplicate bug reports, leaving us
 with 1503 HTC bug reports and 1058 Motorola bug reports.
 
 \begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
+%\renewcommand{\arraystretch}{1.3}
 % if using array.sty, it might be a good idea to tweak the value of
 % \extrarowheight as needed to properly center the text within the cells
-\caption{Manual labels from bug reports of HTC and Motorola.}
+\caption{Manual labels applied to bug reports of HTC and Motorola.}
 \label{selected1}
 \centering
-\begin{tabular}{|c||l|}
+\begin{tabular}{|m{1.3cm}<{\centering}|m{.35\textwidth}<{\centering}|}
+%|c||l|}
 \hline
 Vendor & Label\\
 \hline
-HTC & sms\//mms calling email contact video time network\\ 
-  & android\_market display browser bluetooth audio\\
-  & notification image SIM\_card settings layout app\\
-  & wifi google\_map keyboard calendar alarm language car\\
-  & dialing USB touchscreen CPU gtalk voicedialing signal\\
-  & google\_voice ringtone google\_navigation location font\\
-  & google\_earth battery google\_translate twitter date VPN\\
-  & picassa video\_call rSAP region screen\_shot download\\
-  & IPV6 SD\_card storage 3G proxy compass calculator\\
-  & synchronization  voicemail  voice\_recognition facebook flash\\
-  & google\_latitude GPS camera youtube input search radio\\
-  & system memory  upgrade  lock\\
+HTC & sms\/mms calling email contact video time network
+    android\_market display browser bluetooth audio 
+    notification image SIM\_card settings layout app 
+    wifi google\_map keyboard calendar alarm language car 
+    dialing USB touchscreen CPU gtalk voicedialing signal 
+    google\_voice ringtone google\_navigation location font 
+    google\_earth battery google\_translate twitter date VPN 
+    picassa video\_call rSAP region screen\_shot download 
+    IPV6 SD\_card storage 3G proxy compass calculator 
+    synchronization  voicemail  voice\_recognition facebook flash 
+    google\_latitude GPS camera youtube input search radio 
+    system memory  upgrade  lock \\
 \hline
-Motorola & calling network settings gtalk calendar signal contact\\
-    & android\_market input camera image app wifi keyboard\\
-    & layout sms\//mms bluetooth display browser email\\
-& alarm audio multimedia\_dock car SD\_card screen\\
-& voicedialing battery upgrade dialing ringtone volume\\
-& video time swype search exchange headset synchronization\\
-& facebook google\_wave download youtube upload\\
-& monkey flash VPN touchscreen vibrate CPU system\\
-& notification text lock GPS calculator  USB\\
+Motorola & calling network settings gtalk calendar signal contact
+      android\_market input camera image app wifi keyboard
+      layout sms\//mms bluetooth display browser email
+  alarm audio multimedia\_dock car SD\_card screen
+  voicedialing battery upgrade dialing ringtone volume
+  video time swype search exchange headset synchronization
+  facebook google\_wave download youtube upload
+  monkey flash VPN touchscreen vibrate CPU system
+  notification text lock GPS calculator  USB\\
 \hline
 \end{tabular}
 \end{table}
