@@ -737,13 +737,13 @@ Motorola.
 % the same interpretation of the labels from last step. Then Zhang and
 % Fan labeled the rest of the bug reports separately.
 
-%XXX we need a cite
+
 Once we became familiar with the Android operating system and Android
 ecosystem we needed to agree and train ourselves to consistently label
 Android bug reports.
 Following a grounded theory-like coding approach, similar to the
 approach taken in by Hindle et al.~\cite{Hindle2011}, authors Zhang
-and Fan selected a set of HTC 248 bug reports to label
+and Fan selected a set of 248 HTC bug reports to label
 separately. 
 
 To label a bug report, our annotators (Zhang or Fan) read the bug
@@ -761,48 +761,31 @@ keyboards.
 
 To ensure consistency and agreement in labeling the authors trained
 themselves in consistent labeling.
-Each annotator, authors Zhang and Fan, separately labeled each of these 248 bug reports, 
-with labels inspired by the previous research on Android
-features. 
-Upon completion of labeling, 
- Zhang and Fan compared the labels,
-discussing label agreement and
-disagreement in order to train themselves to consistently label bug
-reports.
-The topics of the labeled bug reports were also compared: each annotator's labeled data was used as input to
- Labeled-LDA which produced a set of topics.
-The resulting test topics and their relevant bug reports were compared to ensure
-that annotators had a 
-consistent interpretation of the bug reports and their labels.
+Each annotator, authors Zhang and Fan, separately labeled each of
+these 248 bug reports, with labels inspired by the previous research
+on Android features.
+Upon completion of labeling, Zhang and Fan compared the labels,
+discussing label agreement and disagreement in order to train
+themselves to consistently label bug reports.
+The topics of the labeled bug reports were also compared: each
+annotator's labeled data was used as input to Labeled-LDA which
+produced a set of topics.
+The resulting test topics and their relevant bug reports were
+compared to ensure that annotators had a consistent interpretation of
+the bug reports and their labels.
 
 
 
-%First, two of us (Zhang and Fan) separately tag the HTC 248 bug
-%reports in 2009 with the multiple labels. 
-% Then we train each author’s labeled data with STMT. 
-% By comparing each set of trained topics in the results and returning
-% to the bug reports, we check to ensure the same interpretation of each
-% bug when labeling. 
-% Then we come up with the same labeling rules to process the data. 
 
 \subsection{Labeling the HTC and Motorola Bug Reports}
 
 Once the labeling rules were agreed upon each annotator (Zhang and Fan)
 seperately labeled HTC and Motorola bug reports, taking over 60 man
 hours of manual labeling effort.
-%After this, we tag the rest of bug reports separately for both HTC and
-%Motorola. 
-%Using the previously stated labeling methodology, labels were created as necessary.
-%When there is a bug report that cannot be tagged by the labels we
-%already have, we would create a new label together based on our
-%definition of labels, i.e. the functionalities and applications on an
-%Android mobile phone or the components of the handsets. 
 New labels were created as necessary: the label ``calculator'' was created because later in
 Android's history there were 
 several bug reports about the correctness of the
 calculator's results. 
-% So we added it to our labels. 
-%The manual labeling took approximately 30 hours per person. 
 
 
 1304 HTC and 985 Motorola bug reports were labeled with multiple
