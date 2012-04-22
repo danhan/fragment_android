@@ -1304,79 +1304,86 @@ Some topics are more unique to one vendor than the other.
 %topics. 
 In Table \ref{topicslist} we present 2 unique HTC topics and 2 unique
 Motorola topics. Figure \ref{uniquehtc} shows the distribution of the
-average relevance of each topic for HTC and Motorola.
+average relevance of each of these unique topics for HTC and Motorola.
 
 
-\textit{Language} (\textit{arabic, desire, language, 2.2, letters,
+Topic \textit{language} (\textit{arabic, desire, language, 2.2, letters,
   characters, translation, character, read}) is an unique topic of
 HTC. The associated terms indicate that bug reports related with
-\textit{language} happened frequently in Android 2.2. This stems from
-the fact that the feature of ``Multiple keyboard languages" is a new
+\textit{language}, and internationalization occurred frequently in
+Android 2.2. 
+This stems from
+the fact that the feature of ``multiple keyboard languages" was a new
 feature in Android 2.2. With this feature, multi-lingual users can add
 multiple languages to the keyboard and switch between multiple
-Latin-based input languages.\cite{androidwebsite}. Particularly, most
-of HTC devices have no physical keyboards, so this new feature has
-been used frequently by HTC users. In contrast, for Motorola, as most
-of devices have the physical keyboards, this feature has seldom been
-used. Thus, \textit{language} and \textit{keyboard} share the same
-reason for the unique topics of HTC. Figure \ref{uniquehtc} shows that
-HTC \textit{keyboard} turns to stay steady, while \textit{keyboard} in
-Motorola has spikes and drops over time. It means that
-\textit{keyboard} has different evolution in both vendors. HTC has
-\textit{language} as a topic while Motorola does not have. This
-contributes to that there are more bug reports of HTC related with
-\textit{language} than that of Motorola.
+input languages~\cite{androidwebsite}. Most
+HTC devices have no physical keyboards, so this new feature is 
+frequently by HTC users. In contrast, Motorola's Android devices tend
+to  have physical keyboards, which might explain the lack of activity
+in the  Motorola bug reports.
+Figure \ref{uniquehtc} shows that
+HTC \textit{keyboard} relevance is steady, while \textit{keyboard} in
+Motorola peaks and drops out. This behaviour suggests that hardware
+and software configuration dictate the importance of the \emph{keyboard}
+topic.
+We did not notice internationalization or language issues in the
+Motorola bug reports that we labeled, thus this issue seems more HTC
+specific.
 
 
 \textit{Browser} (\textit{browser, page, text, http, open, server}) is
-an unique topics of Motorola. In table \ref{topicslist}, it shows
-Motorola has \textit{droid}, \textit{milestone} and \textit{xoom}
-terms related with \textit{browser}. This indicates that the
-\textit{browser} bug reports happened frequently in three Motorola
-devices. As a result, there might be portability issues about
-\textit{browser} within Motorola Android devices. \textit{GPS}
+an unique topics of Motorola. Table \ref{topicslist} shows that
+Motorola's product lines,
+s \textit{droid}, \textit{milestone} and \textit{xoom}, are relevant
+to \textit{browser}.
+Motorola's \textit{GPS} topic
 (\textit{gps, data, position, location, maps, google, time, lock,
-  wrong, icon, turn, home, latitude}) is another unique topic of
-Motorola. Figure \ref{uniquemoto} shows that the distribution of
-average relevance of \textit{GPS} stays steady in the beginning and
-then have strikes and drops afterwards. While the topic of GPS in HTC
-has strikes and drops in the early stage, and then stay steady. As a
-result, there might be portability issues about the component of GPS
-in Motorola.
+  wrong, icon, turn, home, latitude}), shown in Figure
+\ref{uniquemoto},
+starts slowly, peaks and drops off while HTC's GPS issues occur much
+earlier and tend to fall off.
+Motorola and HTC did not share the same GPS software at this
+time. Thus GPS and browser are two topic where both vendor differ.
 
-In summary, for both vendors, they have specific topics which imply there may be portability issues.
+In summary, for both vendors, they have vendor specific topics which imply
+there may be portability issues, and thus give rise to issues of
+fragmentation, especially in terms internationalization, keyboards and
+GPS support.
 
 \section{Discussion of Fragmentation}
 \label{sec:fragmentation}
 %What is feature evolution?
 
-According to the topic analysis, either some of the \textit{Common
-  Topics} or the \textit{Unique Topics} in both HTC and Motorola are
-strongly correlated with a few Android versions, such as 2.0, 2.1, 2.2
-and 2.0.1. Hence the multiple versions of Android contribute to these
-bug topics across hardware platforms and cause the incompatibility
-issues in Android devices. This can be considered as one of the
-evidence of software fragmentation in Android ecosystem.
+
+Many of our topics, bug reports, and peaks in activity are correlated
+to Android releases such as versions 2.0, 2.1, and 2.2. It is
+intuitive that new features and changes to the OS would induce bug
+reports due to the difficulty in testing across all of these vendors
+and product lines. The evidence we present indicates that
+fragmentation might worsen the issues faced by users during an Android
+OS version update.
+Whether it is multiple versions of android that must be addressed or
+the danger of Android updated, we witnessed both different and similar
+behaviour within the bug reports of each vendor and their product-lines.
 
 
-In addition, various HTC and Motorola devices are related to
-\textit{Common Topics}. The variation of hardware devices in each
+The variation in topic words in our \emph{common topics} tended to
+relate to the distinct product lines of the vendors. Sometimes
+different product lines were associated with different topics
+indicating there might be fragmentation issues internal within the
+product lines of a vendor.  The variation of hardware devices in each
 vendor contribute to the bug topics about both Android features and
-components of handsets. \textit{Unique Topics} also show that two
-vendors have a few different bug topics and Android features behave
-quite differently on both vendors. Therefore, the portability issues
-correlated with these bug topics lead to the conclusion that the
-hardware fragmentation exits in Android.
+components of handsets. The \textit{Unique Topics} provide more
+evidence that this might be the case.  Therefore, these portability
+issue relevant to these bug topics leads us to conclude that there is
+some hardware fragmentation within Android.
 
-
-When we refer to Android, we generally mean all Android versions
-existing in the world which include both Android branches from Android
-community and that from vendors. In the sense of Android itself, we
-can see that Android has software fragmentation issue. We also
-discover that there are some features has strong correlation with
-vendors' devices. In the sense of Android devices from different
-vendor, we can conclude that Android has hardware fragmentation as
-well.
+When we refer to Android, we mean all the deployed Android versions
+both from the community, vendors and carriers. We can see that Android
+has a software fragmentation issue and it is evident in the issues
+when updating, but we lacked a lot of necessary data to talk about the
+conflicts caused by multiple supported versions of the same operating
+system. 
 
 
 \section{Comparing of LDA and Labeled-LDA}
