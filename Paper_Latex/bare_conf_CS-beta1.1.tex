@@ -548,8 +548,8 @@ by applying both Labeled-LDA and LDA we evaluated if the extra effort
 to label bug reports for Labeled-LDA is worth the effort compared with
 labeling LDA topics.
 \end{itemize}
-%Android manufacturers, beyond the two we have already studied. 
 
+%XXX Can be cut down
 The rest of the paper is organized as follows. Section \ref{sec:background} reviews the
 background of our work and Section \ref{sec:relatedwork} discusses related work. Section \ref{sec:methodology}
 introduces our methodology, which is applied to our data set in
@@ -567,18 +567,16 @@ Section \ref{sec:conclusions}.
 
 Topic analysis,  is useful in a variety of software engineering text
 processing applications~\cite{hindle9s}. 
-Topic analysis has two main steps: topic identification and text
-segmentation~\cite{li2003topic}. Topic analysis is also used for
+Topic analysis is also used for
 indexing the textual documents automatically for information retrieval. %XXX cite lukins
 Topic analysis helps extract the main topics and sets of 
 words associated with these topics, and where those associated words lie within
 the text~\cite{li2003topic}. 
-LDA is an unsupervised topic model used describe text documents as
-mixtures of latent topics, where topics correspond to key word lists
-present in the corpus~\cite{ldawiki}.
 LDA, as a totally unsupervised algorithm, automatically learns a set
-of terms for each topic on a corpus without any constraints. 
-
+of terms for each topic on a corpus without any constraints~\cite{blei2003}.
+LDA describes text documents as
+mixtures of latent topics, where topics correspond to key word lists
+present in the corpus.
 
 In our research, we applied Labeled-LDA, 
 a supervised topic model for credit
@@ -588,7 +586,8 @@ documents by
 users. In other words, Labeled-LDA incorporates labels into
 the topics learning process and only builds topics around these labels,
 which is quite different from LDA. 
-To apply Labeled-LDA, we utilize the Stanford Topic Modeling Toolbox (STMT)~\cite{stmt}. 
+We used the Stanford Topic Modeling Toolbox's
+(STMT)~\cite{stmt} implementation of Labeled-LDA. 
 
 %\begin{figure*}[htb]
 %\centering
@@ -615,17 +614,16 @@ the evolution of topics within software projects.
 While these studies used 
  LDA to extract topics,  we applied both Labeled-LDA and LDA to
 obtain the topics. 
-With LDA, researchers need to predefine the number of topics, this is
-often hard to interpret as the optimal choice can be subjective.
+Unlike Labeled-LDA, LDA takes the number of topics as an input, but
+the optimal number of topics can be subjective.
 In our work, we first manually labeled the bug reports with multiple
 labels and then employed
 Labeled-LDA to associate topics and documents with the labels we
 provided~\cite{labeledlda}. 
-While during the learning process, LDA cannot incorporate these manual
-labels. 
-Our technique
-overcomes the disadvantages of these
-unsupervised algorithms but at the expense of manual labeling.
+LDA cannot incorporate these manual labels during the learning process.
+Our technique overcomes the disadvantages of these unsupervised
+algorithms but at the expense of manual labeling.
+
 
 
 \section{Methodology}
