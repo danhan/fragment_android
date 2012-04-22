@@ -780,12 +780,11 @@ the bug reports and their labels.
 \subsection{Labeling the HTC and Motorola Bug Reports}
 
 Once the labeling rules were agreed upon each annotator (Zhang and Fan)
-seperately labeled HTC and Motorola bug reports, taking over 60 man
+separately labeled HTC and Motorola bug reports, taking over 60 man
 hours of manual labeling effort.
-New labels were created as necessary: the label ``calculator'' was created because later in
-Android's history there were 
-several bug reports about the correctness of the
-calculator's results. 
+New labels were created as necessary: the label ``calculator'' was
+created because later in Android's history there were several bug
+reports about the correctness of the calculator's results.
 
 
 1304 HTC and 985 Motorola bug reports were labeled with multiple
@@ -815,24 +814,17 @@ in order to apply Labeled-LDA to the labeled bug reports.
 We converted the title and description of each bug report to lowercase,
 split the text into tokens, and filtered out stop words (words that are less than 3 characters and
 common English stop words such as ``all'', ``about'', ``the'',
-``that'' and ``were'' ). Then produced word distributions from
+``that'' and ``were'' ). Then we produced word distributions from
 these sets of bug-report derived words.
 
 Separately, we applied Labeled-LDA to these processed HTC bug reports and Motrola bug reports.
-%We then supplied Labelled-LDA with these word distributions of the bug reports.
 Labeled-LDA produced the topics, word distributions, associated
 with our labels, as well as a document-topic matrix which links our
 labels (topics) to the bug reports from HTC and Motorola.
-% in the each bug report corpus (HTC and
-% Motorola).
-%By applying Labeled-LDA to the bug reports of HTC and Motorola
-%separately, we have the word distribution of each label and a matrix
-%that provides the relationship between bug reports and the labels. 
 
 Our topic analysis is based on these results. 
 To visualize the association of a label (an extracted
 Labeled-LDA topic) to bug reports over time,
-%In order to investigate the trend of each label by time, 
 we grouped
 all the bug reports by month, from 2009 to 2011, based on their open
 date for each of the two vendors. 
@@ -849,7 +841,7 @@ A(\l_i,m_j) = \frac{\sum_{\substack{k=1}}^{|m_j|}r(\l_i,d_k)}{|m_j|}
 where $r(\l_i,d_k)$ is the relevance value of label $\l_i$ to bug
 report $d_k$, $|m_j|$ is the number of bug reports in this month. 
 We generated a distribution of average relevance across three years of
-Android history
+Android history for 
 each label, depicted in Figure \ref{commontopic}, Figure \ref{fixtopic},
 Figure \ref{uniquehtc} and Figure \ref{uniquemoto}.
 
@@ -887,9 +879,6 @@ Three of the authors (Han, Zhang and Fan) evaluated the word distribution of eac
 together in each case of $n$. 
 We determined if topics were distinct enough based on matching the
 topics to labels we had created and used for Labeled-LDA. 
-%Given
-%our previous manual labels that were used by Labeled-LDA we tried to label these LDA topics
-%with those labels. 
 For a given $n$, if the labels did not repeat too much, and topics did not receive too
 many labels, then we preferred that $n$ over others without these
 characteristics.
@@ -922,8 +911,6 @@ Table \ref{seleted2} lists a few selected topics from LDA with manual labels.
 
 In order to determine if LDA would generate similar results to
 Labeled-LDA we had to compare the topics of each.
-% Thus nce LDA and Labelled-LDA were applied to the bug reports of HTC and
-% Motorola we had to compare the topics that were extracted.
 Both LDA and Labeled-LDA produce matrices of
  the relationships between bug reports of two vendors and the
 labels or topics.
@@ -939,15 +926,15 @@ topic we did pair-wise similarity comparisons.
 
 We applied the Jaccard similarity coefficient to compute the
 similarity between each topic in LDA and each label in Labeled-LDA. 
-That is, the Jaccard similarity coefficient between label A in LDA and
-label B in Labeled-LDA is the ratio of the intersection of bug reports
-related to label A and label B to the union of the bug reports related
-to label A and label B,
+That is, the Jaccard similarity coefficient between label $A$ in LDA and
+label $B$ in Labeled-LDA is the ratio of the intersection of bug reports
+related to label $A$ and label $B$ to the union of the bug reports related
+to label $A$ and label $B$,
 \begin{equation}
 sim(A,B) = \frac{\phi(A,d)\bigcap\phi(B,d)}{\phi(A,d)\bigcup\phi(B,d)}
 \end{equation}
 where the $\phi(A,d)$ is the set of bug reports that has relevance
-values to label A and $d$ is a set of all the bug reports in each
+values to label $A$ and $d$ is a set of all the bug reports in each
 vendor.
 
 The topic-document matrix often contains noise and weak
@@ -957,7 +944,7 @@ is relevant to a topic or not.
 We used several thresholds (0.01, 0.05, 0.1, 0.2, 0.3, 0.4 and 0.5) on
 the relevance value of a bug report to a topic in LDA when generating
 the Jaccard similarity coefficients. 
-We eventually chose $0.2$ as the similarities had the biggest mean
+We eventually chose $0.2$ as the similarities had the largest mean
 value. 
 We plotted these pairwise tests (see Figure \ref{similarityhtc} and
 Figure \ref{similaritymoto}) in order to explore the match between
@@ -965,7 +952,7 @@ LDA and Labeled-LDA.
 
 Then we counted the number of bug reports which are related to labels
 that are both shared by LDA and Labeled-LDA in HTC and Motorola. 
-We applied the Chi-squared test on the two sets of distribution to
+We applied the Chi-squared test ($\chi^2$) on the two sets of distribution to
 study if each of the two distributions match.
 
 
@@ -1007,7 +994,7 @@ reports of Android and analyzed the topic analysis results both
 quantitatively and qualitatively.
 We started by exploring the distribution of the number of bug reports
 over time for HTC and Motorola. Then we compared and discussed the
-distribution of average relevance for each topic over time for both
+distributions of average relevance for each topic over time for both
 vendors.
 
 
