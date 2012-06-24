@@ -408,9 +408,16 @@ Edmonton, Canada\\
 
 % XXX KEEP THIS BELOW 200 WORDS
 \begin{abstract}
-The fragmentation of the Android ecosystem is a topic of substantial
-debate, and pundits claim (without much actual evidence) that it is
-worsening. In this study, we search for evidence of fragmentation in
+%TODO 1 edit according to the review
+%The fragmentation of the Android ecosystem is a topic of substantial
+%debate, and pundits claim (without much actual evidence) that it is
+%worsening.
+The fragmentation of the Android ecosystem causes portability and compatibility 
+issues among different product lines,
+which disappoints users, adds workload for developers, and delays deployment. 
+Many existing studies on fragmentation roughly demonstrate basic statistics \cite{androidfragmentation}\cite{uglyhead}\cite{boonorbane}, 
+without specific information about where the fragmentation exists.
+ In this study, we search for evidence of fragmentation in
 the topics of vendor-specific bug reports.
 
 More specifically, we have mined and analyzed the Android bug
@@ -567,9 +574,11 @@ Section \ref{sec:conclusions}.
 
 Topic analysis,  is useful in a variety of software engineering text
 processing applications~\cite{hindle9s}. 
-Topic analysis is also used for
+%TODO 4 edit according to review
+It is also used for
 indexing the textual documents automatically for information retrieval. %XXX cite lukins
-Topic analysis helps extract the main topics and sets of 
+%TODO 4 edit according to review
+And it helps extract the main topics and sets of 
 words associated with these topics, and where those associated words lie within
 the text~\cite{li2003topic}. 
 LDA, as a totally unsupervised algorithm, automatically learns a set
@@ -580,7 +589,11 @@ present in the corpus.
 
 In our research, we applied Labeled-LDA, 
 a supervised topic model for credit
-attribution in multi-labeled corpora~\cite{labeledlda}. It defines a
+attribution in multi-labeled corpora~\cite{labeledlda}.
+%TODO 5 edit background of Labeled LDA
+Labeled-LDA can find out which parts of each document correspond to each label,
+and it can learn accurate models of the words best associated with each label globally\cite{stmt}.
+ It defines a
 one-to-one mapping between LDA's latent topics and labels applied to
 documents by 
 users. In other words, Labeled-LDA incorporates labels into
@@ -791,7 +804,9 @@ reports about the correctness of the calculator's results.
 labels, leaving 199 and 73 bug reports that could not be clearly labeled.
 In total, there are 72 labels for HTC and 57 labels for Motorola.
 Table \ref{selected1} lists all the manual labels from bug reports of HTC
-and Motorola.
+and Motorola,
+%TODO 4 edit according to the review
+with 20 labels overlapping.
 
 \subsection{Applying Labeled-LDA}
 
@@ -827,8 +842,11 @@ To visualize the association of a label (an extracted
 Labeled-LDA topic) to bug reports over time,
 we grouped
 all the bug reports by month, from 2009 to 2011, based on their opened
-date for each of the two vendors. 
-We then computed the average relevance values of bug
+date for each of the two vendors.
+%TODO 3 edit according to the review
+In order to avoid other factors influencing the analysis results except the real fragmentation,
+such as different number of bugs and terms in those bugs across vendors,
+we then computed the average relevance values of bug
 reports to this label in each month. 
 The average relevance value of a label \begin{math} \l_i \end{math} in
 month \begin{math} m_j \end{math} is the sum of all the relevance
@@ -955,8 +973,6 @@ that are both shared by LDA and Labeled-LDA in HTC and Motorola.
 We applied the Chi-squared test ($\chi^2$) on the two sets of distribution to
 study if each of the two distributions match.
 
-
-
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
 % if using array.sty, it might be a good idea to tweak the value of
@@ -970,7 +986,7 @@ Vendor & Label & Top 10 terms\\
 \hline
 HTC & sms\//mms &sms, message, text, sent, send, conversation, \\
             && received, reply, time, number \\ \cline{2-3}
-  & email & Email, mail, gmail, app. Inbox, send, emails, \\
+  & email & Email, mail, gmail, app, Inbox, send, emails, \\
             &&message, client, read \\ \cline{2-3}
   & browser&browser, page, web, http, open, website, \\
             &&webview, click, url, load\\
@@ -1065,7 +1081,7 @@ Much like HTC, Motorola bug reports were often caused by Android upgrades.
 In order to study the similarities and differences of bug reports in
 Motorola and HTC we used topic analysis to pull out the trends of the
 bug reports for each vendor.
-Table \ref{selected1} shows that we extracted 72 topics for HTC and
+Table \ref{selected1} shows that we obtained 72 topics for HTC and
 57 topics for Motorola with Labeled-LDA.
 Based on Equation \ref{equation1}, each topic has a distribution of
 average relevance over time. 
@@ -1432,6 +1448,9 @@ relevant to the bug reports.
 Also our automatic selection of vendor-specific bug reports
 might not accurately reflect the vendor-specific issues within the
 bug repository.
+%TODO3 edited accroding to review
+In addition, the bug reports, as one of the ways of retrieving evidence of fragmentation, 
+might not comprehensively reflect all existence of fragmentation existence.
 
 % Our data originated from MSR Mining
 % Challenge~\cite{MSRChallenge2012} and the dataset only ranges from
