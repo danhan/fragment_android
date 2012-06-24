@@ -77,6 +77,7 @@
 \usepackage{comment}
 \usepackage{array}
 \usepackage{epstopdf}
+\usepackage{threeparttable}
 
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
@@ -478,7 +479,7 @@ increased market share, and the market landscape is extremely
 volatile\footnote{The Global Smartphone Market Landscape:
   \url{http://www.asymco.com/2011/11/17/the-global-smartphone-market-landscape}
   (retrieved March, 2012)}. Together, iPhone and Android phones
-constitute almost 70\% of the US mobile-phone market~\cite{usmarket}. 
+constitute almost 70\% of the US smartphone market~\cite{usmarket}. 
 These two very successful platforms are very
 different from each other: where Apple tightly controls the software
 (iOS) and the hardware (iPhone) platform and its evolution, there
@@ -506,8 +507,7 @@ These problems
 may cause users to lose confidence in the Android platform and cost
 the brand market-share. Given its potential impact, Android
 fragmentation is the topic of much discussion and
-controversy. However, there has been little empirical evidence on how
-fragmentation impacts consumer opinion.
+controversy. However, there has been little empirical evidence on where the fragmentation exists.
 
 Our objective in this study is to search for evidence of Android
 fragmentation within the bug reports submitted by users of Android
@@ -842,7 +842,7 @@ where $r(\l_i,d_k)$ is the relevance value of label $\l_i$ to bug
 report $d_k$, $|m_j|$ is the number of bug reports in this month. 
 We generated a distribution of average relevance across three years of
 Android history for 
-each label, depicted in Figure \ref{commontopic}, and
+each label, depicted in  \ref{commontopic}, and
 Figure \ref{uniquehtc}.
 
 
@@ -1502,7 +1502,7 @@ We found that LDA (with manually labeled topics) and Labeled-LDA
 produced some similar topics that the labeled-topics of Labeled-LDA were more
 feature specific and more useful to our analysis, yet the cost of
 labeling bug-reports versus labeling LDA topics is almost 2 orders of
-magnitude greater in terms of man-hours.
+magnitude greater in terms of person-hours.
 
 
 %  to see if unsupervised LDA could produce similar topics to
