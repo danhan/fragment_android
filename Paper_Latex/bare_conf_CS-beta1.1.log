@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.12.15)  3 JUL 2012 23:52
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.12.15)  4 JUL 2012 15:41
 entering extended mode
 **bare_conf_CS-beta1.1.tex
 (D:\git\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.tex
@@ -427,29 +427,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Warning: Command \l invalid in math mode on input line 856.
-
-
-LaTeX Warning: Command \l invalid in math mode on input line 861.
-
-
-LaTeX Warning: Command \l invalid in math mode on input line 861.
+LaTeX Warning: Command \l invalid in math mode on input line 859.
 
 
 LaTeX Warning: Command \l invalid in math mode on input line 864.
 
 
 LaTeX Warning: Command \l invalid in math mode on input line 864.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 867.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 867.
 
 [3]
-Overfull \hbox (18.04703pt too wide) in paragraph at lines 987--1006
+Overfull \hbox (18.04703pt too wide) in paragraph at lines 990--1009
  [][] 
  []
 
 <bugovertime.png, id=185, 1430.34375pt x 643.40375pt>
 File: bugovertime.png Graphic file (type png)
  <use bugovertime.png>
-Package pdftex.def Info: bugovertime.png used on input line 1023.
+Package pdftex.def Info: bugovertime.png used on input line 1026.
 (pdftex.def)             Requested size: 505.89pt x 227.56071pt.
 
 [4]
@@ -475,29 +475,29 @@ Package epstopdf Info: Source file: <commontopic.eps>
 (epstopdf)                    size: 90348 bytes
 (epstopdf)             Command: <epstopdf --outfile=commontopic-eps-converted-t
 o.pdf commontopic.eps>
-(epstopdf)             \includegraphics on input line 1118.
+(epstopdf)             \includegraphics on input line 1121.
 Package epstopdf Info: Output file is already uptodate.
  <commontopic-eps-converted-to.pdf, id=200, 884.30376pt x 728.7225pt>
 File: commontopic-eps-converted-to.pdf Graphic file (type pdf)
 
 <use commontopic-eps-converted-to.pdf>
 Package pdftex.def Info: commontopic-eps-converted-to.pdf used on input line 11
-18.
+21.
 (pdftex.def)             Requested size: 505.89pt x 416.88838pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1136--1149
+Underfull \hbox (badness 10000) in paragraph at lines 1139--1152
 \OT1/ptm/m/it/10 send, thread\OT1/ptm/m/n/10 ), con-tact (\OT1/ptm/m/it/10 num-
 ber, google,list\OT1/ptm/m/n/10 ), dis-play
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1136--1149
+Underfull \hbox (badness 10000) in paragraph at lines 1139--1152
 \OT1/ptm/m/n/10 (\OT1/ptm/m/it/10 screen,button,behavior\OT1/ptm/m/n/10 ), blue
 -tooth (\OT1/ptm/m/it/10 head-set,connect,
  []
 
 
-Underfull \hbox (badness 1603) in paragraph at lines 1136--1149
+Underfull \hbox (badness 1603) in paragraph at lines 1139--1152
 \OT1/ptm/m/n/10 set-tings(\OT1/ptm/m/it/10 turn,network,mode\OT1/ptm/m/n/10 ). 
 The \OT1/ptm/m/it/10 Blue-tooth \OT1/ptm/m/n/10 topic has a
  []
@@ -513,7 +513,7 @@ Package epstopdf Info: Source file: <uniquetopic.eps>
 (epstopdf)                    size: 36246 bytes
 (epstopdf)             Command: <epstopdf --outfile=uniquetopic-eps-converted-t
 o.pdf uniquetopic.eps>
-(epstopdf)             \includegraphics on input line 1232.
+(epstopdf)             \includegraphics on input line 1235.
 Package epstopdf Info: Output file is already uptodate.
 
 <uniquetopic-eps-converted-to.pdf, id=212, 815.045pt x 219.82124pt>
@@ -521,7 +521,7 @@ File: uniquetopic-eps-converted-to.pdf Graphic file (type pdf)
 
 <use uniquetopic-eps-converted-to.pdf>
 Package pdftex.def Info: uniquetopic-eps-converted-to.pdf used on input line 12
-32.
+35.
 (pdftex.def)             Requested size: 505.89pt x 136.44205pt.
 Package epstopdf Info: Source file: <htcsim.eps>
 (epstopdf)                    date: 2012-06-24 17:34:47
@@ -531,14 +531,14 @@ Package epstopdf Info: Source file: <htcsim.eps>
 (epstopdf)                    size: 51815 bytes
 (epstopdf)             Command: <epstopdf --outfile=htcsim-eps-converted-to.pdf
  htcsim.eps>
-(epstopdf)             \includegraphics on input line 1248.
+(epstopdf)             \includegraphics on input line 1251.
 Package epstopdf Info: Output file is already uptodate.
 
 <htcsim-eps-converted-to.pdf, id=213, 1692.3225pt x 667.49374pt>
 File: htcsim-eps-converted-to.pdf Graphic file (type pdf)
 
 <use htcsim-eps-converted-to.pdf>
-Package pdftex.def Info: htcsim-eps-converted-to.pdf used on input line 1248.
+Package pdftex.def Info: htcsim-eps-converted-to.pdf used on input line 1251.
 (pdftex.def)             Requested size: 455.2979pt x 179.57387pt.
 Package epstopdf Info: Source file: <motosim.eps>
 (epstopdf)                    date: 2012-06-24 17:34:47
@@ -548,14 +548,14 @@ Package epstopdf Info: Source file: <motosim.eps>
 (epstopdf)                    size: 49439 bytes
 (epstopdf)             Command: <epstopdf --outfile=motosim-eps-converted-to.pd
 f motosim.eps>
-(epstopdf)             \includegraphics on input line 1256.
+(epstopdf)             \includegraphics on input line 1259.
 Package epstopdf Info: Output file is already uptodate.
 
 <motosim-eps-converted-to.pdf, id=214, 1604.99625pt x 771.88374pt>
 File: motosim-eps-converted-to.pdf Graphic file (type pdf)
 
 <use motosim-eps-converted-to.pdf>
-Package pdftex.def Info: motosim-eps-converted-to.pdf used on input line 1256.
+Package pdftex.def Info: motosim-eps-converted-to.pdf used on input line 1259.
 (pdftex.def)             Requested size: 455.2979pt x 218.96446pt.
 
 Underfull \vbox (badness 3240) has occurred while \output is active []
@@ -578,7 +578,7 @@ Package epstopdf Info: Source file: <htcldallda.eps>
 (epstopdf)                    size: 30380 bytes
 (epstopdf)             Command: <epstopdf --outfile=htcldallda-eps-converted-to
 .pdf htcldallda.eps>
-(epstopdf)             \includegraphics on input line 1382.
+(epstopdf)             \includegraphics on input line 1385.
 Package epstopdf Info: Output file is already uptodate.
 
 <htcldallda-eps-converted-to.pdf, id=285, 645.41125pt x 379.4175pt>
@@ -586,10 +586,10 @@ File: htcldallda-eps-converted-to.pdf Graphic file (type pdf)
 
 <use htcldallda-eps-converted-to.pdf>
 Package pdftex.def Info: htcldallda-eps-converted-to.pdf used on input line 138
-2.
+5.
 (pdftex.def)             Requested size: 252.94499pt x 148.6959pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 1382--1383
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 1385--1386
  [][] 
  []
 
@@ -601,17 +601,17 @@ Package epstopdf Info: Source file: <motoldallda.eps>
 (epstopdf)                    size: 35405 bytes
 (epstopdf)             Command: <epstopdf --outfile=motoldallda-eps-converted-t
 o.pdf motoldallda.eps>
-(epstopdf)             \includegraphics on input line 1390.
+(epstopdf)             \includegraphics on input line 1393.
 Package epstopdf Info: Output file is already uptodate.
 <motoldallda-eps-converted-to.pdf, id=286, 527.9725pt x 355.3275pt>
 File: motoldallda-eps-converted-to.pdf Graphic file (type pdf)
 
 <use motoldallda-eps-converted-to.pdf>
 Package pdftex.def Info: motoldallda-eps-converted-to.pdf used on input line 13
-90.
+93.
 (pdftex.def)             Requested size: 252.94499pt x 170.22993pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 1390--1391
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 1393--1394
  [][] 
  []
 
@@ -641,14 +641,14 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1827.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1832.
 [11
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1827.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1832.
  (D:\git\fragment_android\Paper_Latex\bare_conf_CS-beta1.1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1827.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1827.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1832.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1832.
 
 Package rerunfilecheck Info: File `bare_conf_CS-beta1.1.out' has not changed.
 (rerunfilecheck)             Checksum: 645E31F9B85EF5102EA289A60373B003;1340.
@@ -660,7 +660,7 @@ Here is how much of TeX's memory you used:
  9961 multiletter control sequences out of 15000+200000
  45422 words of font info for 95 fonts, out of 3000000 for 9000
  718 hyphenation exceptions out of 8191
- 30i,11n,28p,1020b,451s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,11n,28p,1020b,453s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/miktex/fonts/enc/dvips/fontname/8r.enc}<D:/Program Files/mi
 ktex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Program Files/miktex/fonts/t
 ype1/public/amsfonts/cm/cmmi10.pfb><D:/Program Files/miktex/fonts/type1/public/
@@ -672,7 +672,7 @@ miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/miktex/fonts
 mes/utmb8a.pfb><D:/Program Files/miktex/fonts/type1/urw/times/utmbi8a.pfb><D:/P
 rogram Files/miktex/fonts/type1/urw/times/utmr8a.pfb><D:/Program Files/miktex/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on bare_conf_CS-beta1.1.pdf (11 pages, 471109 bytes).
+Output written on bare_conf_CS-beta1.1.pdf (11 pages, 471321 bytes).
 PDF statistics:
  392 PDF objects out of 1000 (max. 8388607)
  66 named destinations out of 1000 (max. 500000)
