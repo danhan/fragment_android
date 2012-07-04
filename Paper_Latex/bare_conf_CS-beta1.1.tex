@@ -415,8 +415,9 @@ Edmonton, Canada\\
 The fragmentation of Android ecosystem causes portability and compatibility 
 issues with entire Android platform,
 which disappoints users, raises the workload for developers, and delays deployment. 
-Many existing studies on fragmentation roughly demonstrate basic statistics, 
-without specific information about where the fragmentation exists.
+Many existing studies on fragmentation roughly demonstrate basic statistics, without
+specific and concrete evidence about the existence of fragmentation.
+%without specific information about where the fragmentation exists.
  In this study, we search for evidence of fragmentation in
 the topics of vendor-specific bug reports.
 
@@ -508,14 +509,14 @@ software that best meets their needs. On the flip side, it also
 implies that, due to insufficient cross-platform
 testing~\cite{testing}, Android applications may not behave
 consistently across devices and software.  
-Fragmentation tends to delay some users from updating their apps
-and Android operating system until their specific device is fully supported.
+%TODO add the citations mentioned by reviewer one.
+Fragmentation tends to delay some users from updating their applications
+and Android operating system until their specific devices are fully supported.
 These problems
-may cause users to lose confidence in the Android platform and cost
+may cause users to lose confidence in the Android platform and damage
 the brand market-share. Given its potential impact, Android
 fragmentation is the topic of much discussion and
-controversy. However, there has been little empirical evidence on where the fragmentation exists \cite{androidfragmentation}\cite{uglyhead}.
-%\cite{boonorbane}.
+controversy. However, there has been little empirical evidence on where the fragmentation exists \cite{androidfragmentation}, \cite{uglyhead}, \cite{boonorbane}.
 
 Our objective in this study is to search for evidence of Android
 fragmentation within the bug reports submitted by users of Android
@@ -524,7 +525,7 @@ applied topic analysis on these bug reports.
 
 Several topic-analysis methods have been used by researchers in
 software engineering, including Latent Dirichlet Allocation
-(LDA)~\cite{Asuncion:2010}~\cite{Linstead:2009}, Latent Semantic Indexing
+(LDA) \cite{Asuncion:2010}, \cite{Linstead:2009}, Latent Semantic Indexing
 (LSI)~\cite{Marcus04aninformation}, and Labeled Latent Dirichlet
 Allocation (Labeled-LDA)~\cite{labeledlda}.
 We applied both Labeled-LDA and LDA topic-analysis to the bug reports
@@ -579,7 +580,7 @@ processing applications~\cite{hindle9s}.
 It is also used for
 indexing the textual documents automatically for information retrieval. %XXX cite lukins
 %TODO 4 edit according to review
-And it helps extract the main topics and sets of 
+it helps extract the main topics and sets of 
 words associated with these topics, and where those associated words lie within
 the text~\cite{li2003topic}. 
 LDA, as an unsupervised algorithm, automatically learns a set
@@ -592,7 +593,7 @@ In our research, we applied Labeled-LDA,
 a supervised topic model for credit
 attribution in multi-labeled corpora~\cite{labeledlda}.
 %TODO 5 edit background of Labeled LDA
-Labeled-LDA can find out which parts of each document correspond to each label,
+With the multi-lables assigned manually for each document, Labeled-LDA can find out which parts of the document correspond to each label,
 and it can learn accurate models of the words best associated with each label globally\cite{stmt}.
  It defines a
 one-to-one mapping between LDA's latent topics and labels applied to
@@ -624,7 +625,10 @@ on topics learned by LDA to model the quality of bug reports.
 Linstead et al.~\cite{Linstead:2009} performed LDA to generate
 traceability links for artifacts in software projects automatically. 
 Thomas et al.~\cite{Thomas:2011} studied
-the evolution of topics within software projects.
+the evolution of topics within software projects. Hindle et al. \cite{hindle-icsm-2012} investigated 
+whether the topics extracted by LDA make sense to practitioners.
+
+
 While these studies used 
  LDA to extract topics,  we applied both Labeled-LDA and LDA to
 obtain the topics. 
@@ -836,7 +840,9 @@ these sets of bug-report derived words.
 Separately, we applied Labeled-LDA to these processed HTC bug reports and Motorola bug reports.
 Labeled-LDA produced the topics, word distributions, associated
 with our labels, as well as a document-topic matrix which links our
-labels (topics) to the bug reports from HTC and Motorola.
+labels (topics) to the bug reports from HTC and Motorola. 
+%TODO reviewer one argued about this.
+The hyper-parameters $\alpha$ and $\beta$ of Labeled-LDA are both 0.1.
 
 Our topic analysis is based on these results. 
 To visualize the association of a label (an extracted
@@ -880,8 +886,7 @@ In order to compare the performance between LDA and Labeled-LDA,
 we applied LDA to the same processed bug reports of HTC and Motorola
 but without our manual labels. 
 
-%Applying LDA had one complication, 
-LDA requires an input, $n$ that determines the number of topics that LDA is supposed to extract. 
+Applying LDA had one complication, LDA requires an input, $n$ that determines the number of topics that LDA is supposed to extract. 
 If $n$ is too large, the topics tend to repeat themselves and tend to
 represent similar issues. 
 If $n$ is too small, the topics tend to be cluttered and lack a
@@ -905,7 +910,7 @@ Other researchers had some similar results
 \cite{Thomas:2011}\cite{Hindle2011}. 
 
 We applied the same process to the bug reports of Motorola and we chose
-the number of topics to be $n = 30$. 
+the number of topics to be $n = 30$. The hyper-parameters $\alpha$ and $\beta$ for LDA are also both 0.1. 
 As described for the HTC bug reports, we also labeled the topics
 generated by LDA with our manual labels.
 Three of the authors annotated the topics together and it took two
@@ -946,13 +951,13 @@ That is, the Jaccard similarity coefficient between label $A$ in LDA and
 label $B$ in Labeled-LDA is the ratio of the intersection of bug reports
 related to label $A$ and label $B$ to the union of the bug reports related
 to label $A$ and label $B$,
-% Jaccard equation is not that important. Due to the page limitation :(
-%\begin{equation}
-%sim(A,B) = \frac{\phi(A,d)\bigcap\phi(B,d)}{\phi(A,d)\bigcup\phi(B,d)}
-%\end{equation}
-%where the $\phi(A,d)$ is the set of bug reports that has relevance
-%values to label $A$ and $d$ is a set of all the bug reports in each
-%vendor.
+% Jaccard equation is not that important. We can delete it if there is no space:(
+\begin{equation}
+sim(A,B) = \frac{\phi(A,d)\bigcap\phi(B,d)}{\phi(A,d)\bigcup\phi(B,d)}
+\end{equation}
+where the $\phi(A,d)$ is the set of bug reports that has relevance
+values to label $A$ and $d$ is a set of all the bug reports in each
+vendor.
 
 The topic-document matrix often contains noise and weak
 relationships between topics and documents, thus it is necessary to
@@ -1357,10 +1362,10 @@ vendor.
 \label{sec:comparinglda}
 
 In this section we investigate if LDA and Labeled-LDA would generate
-the similar results. 
-%This is an important issue because Labeled-LDA
-%took around 60 times the amount of time it took to label the topics
-%extracted by plain LDA.
+the similar results. This is an important issue because Labeled-LDA 
+took around 60 times the amount of time it took to label the topics 
+extracted by plain LDA.
+
 Figure \ref{similarityhtc} and Figure \ref{similaritymoto} depict the
 pairwise Jaccard similarities of labels from LDA and Labeled-LDA. The
 brighter spots mean the pair of labels have higher Jaccard
@@ -1447,7 +1452,7 @@ relevant to the bug reports.
 Also our automatic selection of vendor-specific bug reports
 might not accurately reflect the vendor-specific issues within the
 bug repository.
-%TODO3 edited accroding to review
+%TODO edited accroding to review
 In addition, the bug reports, as one of the ways to retrieve evidence of fragmentation, 
 might not comprehensively reflect all the existence of fragmentation.
 
@@ -1712,6 +1717,7 @@ magnitude greater in terms of person-hours.
 %REPLACED BY AN INPUT \input{topictable}
 \begin{table*}[!htb]
 \renewcommand{\arraystretch}{1.3}
+%TODO changed the order of the labels to match figure 2 and 3.
 % if using array.sty, it might be a good idea to tweak the value of
 % \extrarowheight as needed to properly center the text within the cells
 \caption{Topics and associated Word List with Related Top 15 Terms}
