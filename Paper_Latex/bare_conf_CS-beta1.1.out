@@ -1,0 +1,20 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Background}{}% 2
+\BOOKMARK [1][-]{section.3}{Related Work}{}% 3
+\BOOKMARK [1][-]{section.4}{Methodology}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Generating the data}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Creating Labels and Training Annotators}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{Labeling the HTC and Motorola Bug Reports}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.4}{Applying Labeled-LDA}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.5}{Applying LDA}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.6}{Comparing the Effort to Use LDA and Labeled-LDA}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Topic Mining and Analysis}{}% 11
+\BOOKMARK [2][-]{subsection.5.1}{Overview of Bug Reports in HTC and Motorola}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.2}{Topics Analysis of HTC and Motorola}{section.5}% 13
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Common Topics}{subsection.5.2}% 14
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Unique Topics}{subsection.5.2}% 15
+\BOOKMARK [1][-]{section.6}{Fragmentation Discussion}{}% 16
+\BOOKMARK [1][-]{section.7}{Comparing of LDA and Labeled-LDA}{}% 17
+\BOOKMARK [1][-]{section.8}{Threats to Validity}{}% 18
+\BOOKMARK [1][-]{section.9}{Conclusions}{}% 19
+\BOOKMARK [1][-]{section*.1}{References}{}% 20

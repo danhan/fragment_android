@@ -1,0 +1,19 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.12.15)  28 JUN 2012 23:12
+entering extended mode
+**msrreference.tex
+
+! Emergency stop.
+<*> msrreference.tex
+                    
+*** (job aborted, file error in nonstop mode)
+
+ 
+Here is how much of TeX's memory you used:
+ 2 strings out of 494045
+ 22 string characters out of 3145974
+ 48890 words of memory out of 3000000
+ 3399 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 0i,0n,0p,1b,6s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
